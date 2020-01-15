@@ -386,7 +386,8 @@ You can then start the Gaudi EventLoop using this option file, and it will set u
 <p>Usually, you will work with one of the FCC software framework FCCSW that are based on Gaudi.
 One of the most important ones is <em>DaVinci</em>, which provides lots of <em>Algorithms</em> and <em>Tools</em> for physics analysis.</p>
 <p>You can run gaudi using the following command <a class="reference internal" href="prerequisites.html"><span class="doc">on lxplus</span></a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;from Configurables import ApplicationMgr&quot;</span> &gt; option.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /cvmfs/fcc.cern.ch/sw/latest/setup.sh
+<span class="nb">echo</span> <span class="s2">&quot;from Configurables import ApplicationMgr&quot;</span> &gt; option.py
 fccrun option.py
 </pre></div>
 </div>
