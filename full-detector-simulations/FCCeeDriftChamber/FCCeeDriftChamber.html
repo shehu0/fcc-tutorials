@@ -362,7 +362,10 @@
 <div class="section" id="part-i-simulations-with-the-idea-detector-model-in-fccsw">
 <h2>Part I: Simulations with the IDEA detector model in  FCCSW<a class="headerlink" href="#part-i-simulations-with-the-idea-detector-model-in-fccsw" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
-<p>This tutorial is based on the FCC Note http://cds.cern.ch/record/2670936 and describes the use of the FCCee IDEA Driftchamber in the FCC software framework.</p>
+<p>This tutorial is based on the FCC Note http://cds.cern.ch/record/2670936 and describes the use of the FCCee IDEA Driftchamber in the FCC software framework. First, setup the fcc software environment:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source /cvmfs/fcc.cern.ch/sw/latest/setup.sh
+</pre></div>
+</div>
 <p>From the detector display or the command line, check to see the detector subsystems are there.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>geoDisplay $FCCSWBASEDIR/share/FCCSW/Detector/DetFCCeeIDEA/compact/FCCee_DectMaster.xml
 </pre></div>
@@ -383,7 +386,7 @@
 </pre></div>
 </div>
 <p>This simulation configuration creates hits all along the particle trajectory. To obtain the hits on the wire it is necessary to merge them with <a class="reference external" href="https://raw.githubusercontent.com/HEP-FCC/fcc-tutorials/master/full-detector-simulations/FCCeeDriftChamber/mergeDCHits.py">this configuration</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fcccrun mergeDCHits.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun mergeDCHits.py
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rootls -t mergedDCHits.root
@@ -413,9 +416,14 @@ And again, check that your files are present in your current directory:</p>
 <span class="n">c</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>{% challenge %}</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="driftchamber-layers"><i class="fa fa-square-o"></i> Driftchamber layers</p>
+</div>
+<div class="panel-body docutils container">
 <p>Using the simulation hits, find the number of wires in each layer.</p>
-<p>{% endchallenge %}</p>
+</div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">import</span> <span class="nn">ROOT</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
