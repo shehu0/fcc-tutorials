@@ -363,38 +363,16 @@
 <h2>Part I: Simulations with the IDEA detector model in  FCCSW<a class="headerlink" href="#part-i-simulations-with-the-idea-detector-model-in-fccsw" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>This tutorial is based on the FCC Note http://cds.cern.ch/record/2670936 and describes the use of the FCCee IDEA Driftchamber in the FCC software framework.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ROOT</span>
-<span class="n">ROOT</span><span class="o">.</span><span class="n">enableJSVis</span><span class="p">()</span>
+<p>From the detector display or the command line, check to see the detector subsystems are there.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unfortunately this way of displaying the detector won&#39;t work until dd4hep v1-11 is installed in LCG releases</span>
-<span class="c1"># In the meantime, find a similar display here: http://hep-fcc.github.io/FCCSW/geo/geo-ee.html </span>
-
-<span class="c1"># load the dd4hep detector model</span>
-<span class="c1">#import dd4hep</span>
-<span class="c1">#import os</span>
-<span class="c1">#fcc_det_path = os.path.join(os.environ.get(&quot;FCC_DETECTORS&quot;, &quot;&quot;), &quot;/Detector/DetFCCeeIDEA/compact/FCCee_DectMaster.xml&quot;)</span>
-<span class="c1">#print fcc_det_path</span>
-<span class="c1">#description = dd4hep.Detector.getInstance()</span>
-<span class="c1">#description.fromXML(fcc_det_path)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#c = ROOT.TCanvas(&quot;c_detector_display&quot;, &quot;&quot;, 600,600)</span>
-<span class="c1">#description.manager().SetVisLevel(6)</span>
-<span class="c1">#description.manager().SetVisOption(1)</span>
-<span class="c1">#vol = description.manager().GetTopVolume()</span>
-<span class="c1">#vol.Draw()</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!ls $FCCSWBASEDIR/share/FCCSW/Detector/DetFCCeeIDEA/compact
-</pre></div>
-</div>
-<p>From the detector display or the command line, check that the detector subsystems are as you would expect them  from the specifications in the Conceptual Design Report.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!fccrun $FCCSWBASEDIR/share/FCCSW/Examples/options/geant_fullsim_fccee_pgun.py --detectors $FCCSWBASEDIR/share/FCCSW/Detector/DetFCCeeIDEA/compact/FCCee_DectMaster.xml --etaMin -3.5 --etaMax 3.5 -n 20000
 </pre></div>
 </div>
 <p>You can see the created files:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ROOT</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/env python</span>
+<span class="kn">import</span> <span class="nn">ROOT</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TFile</span><span class="p">(</span><span class="s2">&quot;root://eospublic.cern.ch//eos/experiment/fcc/ee/tutorial/fccee_idea_pgun.root&quot;</span><span class="p">)</span>
 <span class="n">events</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;events&quot;</span><span class="p">)</span>
 
@@ -404,6 +382,7 @@
 <span class="n">c</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>This simulation configuration creates hits all along the particle trajectory. To obtain the hits on the wire it is necessary to merge them with <a class="reference external" href="https://raw.githubusercontent.com/HEP-FCC/fcc-tutorials/master/full-detector-simulations/FCCeeDriftChamber/mergeDCHits.py">this configuration</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fcccrun mergeDCHits.py
 </pre></div>
 </div>
@@ -415,13 +394,14 @@ You can try to put them in a “test” folder on the shared disk space on eos.
 The files can already be found under the path <code class="docutils literal notranslate"><span class="pre">/eos/experiment/fcc/ee/tutorial</span></code>.
 To use files on eos, you can simply prepend <code class="docutils literal notranslate"><span class="pre">root://eospublic.cern.ch//eos/experiment/fcc/ee/tutorial/</span></code>  when using TFile, or use <code class="docutils literal notranslate"><span class="pre">xrdcp</span> <span class="pre">root://eospublic.cern.ch/&lt;path</span> <span class="pre">on</span> <span class="pre">eos&gt;</span> <span class="pre">&lt;local</span> <span class="pre">file</span> <span class="pre">name&gt;</span></code>
 And again, check that your files are present in your current directory:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! xrdcp root://eospublic.cern.ch//eos/experiment/fcc/ee/tutorial/mergedDCHits.root mergedDCHits3.root
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xrdcp root://eospublic.cern.ch//eos/experiment/fcc/ee/tutorial/mergedDCHits.root mergedDCHits3.root
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ROOT</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">ROOT</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TFile</span><span class="p">(</span><span class="s2">&quot;root://eospublic.cern.ch//eos/experiment/fcc/ee/tutorial/mergedDCHits.root&quot;</span><span class="p">)</span>
 <span class="n">events</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;events&quot;</span><span class="p">)</span>
-
 
 <span class="c1"># draw hits for first five events</span>
 <span class="n">events</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;DCHitInfo.hit_start.Perp():DCHitInfo.hit_start.z()&quot;</span><span class="p">,</span> <span class="s2">&quot;DCHitInfo.layerId==5&amp;&amp;DCHitInfo.wireId==7&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -430,11 +410,14 @@ And again, check that your files are present in your current directory:</p>
 <span class="n">g</span><span class="o">.</span><span class="n">SetMarkerStyle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">SetTitle</span><span class="p">(</span><span class="s2">&quot;DriftChamber Hits on one Wire;x;z&quot;</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;AP&quot;</span><span class="p">)</span>
-
 <span class="n">c</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ROOT</span>
+<p>{% challenge %}</p>
+<p>Using the simulation hits, find the number of wires in each layer.</p>
+<p>{% endchallenge %}</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">ROOT</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TFile</span><span class="p">(</span><span class="s2">&quot;mergedDCHits.root&quot;</span><span class="p">)</span>
 <span class="n">events</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;events&quot;</span><span class="p">)</span>
@@ -473,9 +456,8 @@ And again, check that your files are present in your current directory:</p>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
+
+<span class="c1"># draw with matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
