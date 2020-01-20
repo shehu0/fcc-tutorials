@@ -354,7 +354,7 @@
 </div>
 <p>First, make sure your setup of the FCC software is working.
 You can check that the command to run jobs in the Gaudi framework is available on the command line:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!which fccrun
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">fccrun</span>
 </pre></div>
 </div>
 <p>If you don’t see a valid path like <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/fccrun</span></code>  you should consult <a class="reference external" href="https://github.com/vvolkl/fcc-tutorials/blob/master/FccSoftwareGettingStarted">the documentation page on FCCSW setup</a></p>
@@ -398,11 +398,11 @@ One of the simplest jobs is to write the geometry to a <code class="docutils lit
 </div>
 <p>Note the printout of the GeoSvc and make sure the information is as expected. If there is something unclear or missing make sure to open an <a class="reference external" href="https://github.com/HEP-FCC/FCCSW/issues">issue</a>!
 Take a look at the resulting gdml file. Although it is text-based it is not really human-readable for a geometry of this size, but you can check the number of lines and volume names if you are familiar with the geometry.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!tail FCCee_IDEA.gdml
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tail</span> <span class="n">FCCee_IDEA</span><span class="o">.</span><span class="n">gdml</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># count occurences of &quot;physvol&quot;
-!grep -c &quot;&lt;physvol&quot; FCCee_IDEA.gdml
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># count occurences of &quot;physvol&quot;</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;&lt;physvol&quot;</span> <span class="n">FCCee_IDEA</span><span class="o">.</span><span class="n">gdml</span>
 </pre></div>
 </div>
 </div>
@@ -414,7 +414,7 @@ This algorithm produces a particles with energies from a flat probability distri
 To use them as input they first need to be converted to the FCC event data model (<code class="docutils literal notranslate"><span class="pre">HepMCToEDMConverter</span></code>) and piped into the Geant4 interface via the <code class="docutils literal notranslate"><span class="pre">SimG4PrimariesFromEdmTool</span></code>.</p>
 <p>A configuration that runs all of this is distributed with FCCSW and can be run with the following command:</p>
 <p>(This simulates the response of 5GeV electrons which makes for modest shower sizes and should produce 500 events in around 2 minutes)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! FCC_DETECTORS=$FCCSWBASEDIR/share/FCCSW; time fccrun  $FCCSWBASEDIR/share/FCCSW/RecFCCeeCalorimeter/options/runCaloSim.py --filename fccee_idea_LAr_pgun.root -n 500 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> FCC_DETECTORS=$FCCSWBASEDIR/share/FCCSW; time fccrun  $FCCSWBASEDIR/share/FCCSW/RecFCCeeCalorimeter/options/runCaloSim.py --filename fccee_idea_LAr_pgun.root -n 500 
 </pre></div>
 </div>
 <p>The output of this job is <code class="docutils literal notranslate"><span class="pre">fccee_idea_LAr_pgun.root</span></code>, a ROOT file containing the simulation products of 500 single particle events (5 Gev e-) in the FCC event data model.
@@ -442,7 +442,7 @@ Check for example that the distribution of the input particles is as you expect:
 <div class="section" id="obtaining-and-plotting-the-energy-resolution">
 <h3>Obtaining and Plotting the Energy Resolution<a class="headerlink" href="#obtaining-and-plotting-the-energy-resolution" title="Permalink to this headline">¶</a></h3>
 <p>Now that the detector response is simulated, it is time to reconstruct the signals. FCCSW includes another configuration to run a Sliding Window reconstruction:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!FCC_DETECTORS=$FCCSWBASEDIR/share/FCCSW; fccrun $FCCSWBASEDIR/share/FCCSW/RecFCCeeCalorimeter/options/runFullCaloSystem_ReconstructionSW_noiseFromFile.py -v --input fccee_idea_LAr_pgun.root -n 100 --noiseFileName root://eospublic.cern.ch//eos/experiment/fcc/ee/simulation/NoiseConstants/elecNoise_ecalBarrelFCCee_50Ohm_traces1_4shieldWidth.root --filename output_allCalo_reco_noise.root
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>FCC_DETECTORS=$FCCSWBASEDIR/share/FCCSW; fccrun $FCCSWBASEDIR/share/FCCSW/RecFCCeeCalorimeter/options/runFullCaloSystem_ReconstructionSW_noiseFromFile.py -v --input fccee_idea_LAr_pgun.root -n 100 --noiseFileName root://eospublic.cern.ch//eos/experiment/fcc/ee/simulation/NoiseConstants/elecNoise_ecalBarrelFCCee_50Ohm_traces1_4shieldWidth.root --filename output_allCalo_reco_noise.root
 </pre></div>
 </div>
 <p>This configuration inludes electronics noise especially calculated for this detector geometry. which is overlayed on the branch <code class="docutils literal notranslate"><span class="pre">ECalBarrelCells</span></code> containing information on all cells in the ECal Barrel.
