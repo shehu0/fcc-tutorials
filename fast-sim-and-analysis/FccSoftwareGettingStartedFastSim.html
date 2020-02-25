@@ -21,13 +21,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/panels.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -115,7 +115,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#getting-started-with-delphes">Getting started with Delphes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#run-fccsw-with-pythia8-delphes">Run FCCSW with Pythia8+Delphes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-fccsw-with-pythia8-delphes-fcc-hh">Run FCCSW with Pythia8+Delphes (FCC-hh)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-fccsw-with-pythia8-delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-the-analysis-in-heppy">Run the analysis in heppy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#make-plots">Make plots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cutflow">CutFlow</a></li>
@@ -348,7 +349,8 @@
 <li><p><a class="reference external" href="#set-up-your-working-directory">Set up your working directory</a></p></li>
 <li><p><a class="reference external" href="#getting-started-with-delphes">Getting started with Delphes</a></p>
 <ul>
-<li><p><a class="reference external" href="#run-fccsw-with-pythia8+delphes">Run FCCSW with Pythia8+Delphes</a></p></li>
+<li><p><a class="reference external" href="#run-fccsw-with-pythia8+delphes-fcc-hh">Run FCCSW with Pythia8+Delphes (FCC-hh)</a></p></li>
+<li><p><a class="reference external" href="#run-fccsw-with-pythia8+delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></p></li>
 <li><p><a class="reference external" href="#run-the-analysis-in-heppy">Run the analysis in heppy</a></p></li>
 <li><p><a class="reference external" href="#make-plots-1">Make plots</a></p></li>
 <li><p><a class="reference external" href="#cutflow">CutFlow</a></p></li>
@@ -433,8 +435,8 @@ FCCSW and write them in the FCC EDM format.</p></li>
 ntuple</p></li>
 <li><p>read this ntuple with ROOT to make a few plots</p></li>
 </ul>
-<div class="section" id="run-fccsw-with-pythia8-delphes">
-<h3>Run FCCSW with Pythia8+Delphes<a class="headerlink" href="#run-fccsw-with-pythia8-delphes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="run-fccsw-with-pythia8-delphes-fcc-hh">
+<h3>Run FCCSW with Pythia8+Delphes (FCC-hh)<a class="headerlink" href="#run-fccsw-with-pythia8-delphes-fcc-hh" title="Permalink to this headline">¶</a></h3>
 <p>Now you are ready to produce 100TeV ttbar events with Pythia, process them through Delphes and store them in the FCC-EDM:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fccrun FCCSW/Sim/SimDelphesInterface/options/PythiaDelphes_config.py --Filename FCCSW/Generation/data/Pythia_ttbar.cmd --DelphesCard FCCSW/Sim/SimDelphesInterface/data/FCChh_DelphesCard_Baseline_v01.tcl
 </pre></div>
@@ -442,6 +444,13 @@ ntuple</p></li>
 <p>you should obtain a file called <code class="docutils literal notranslate"><span class="pre">FCCDelphesOutput.root</span></code>.</p>
 <p>This example will run 100 events by default. To have more events for plotting purposes, you can increase this number or use files that have been already produced and stored on eos (see next section).</p>
 <p>With this file you are now ready to run the analysis framework <a class="reference external" href="https://github.com/HEP-FCC/heppy.git">heppy</a>.</p>
+</div>
+<div class="section" id="run-fccsw-with-pythia8-delphes-fcc-ee">
+<h3>Run FCCSW with Pythia8+Delphes (FCC-ee)<a class="headerlink" href="#run-fccsw-with-pythia8-delphes-fcc-ee" title="Permalink to this headline">¶</a></h3>
+<p>Let us now produce FCC-ee event with the IDEA delphes card. For that we use a different FCC configuration file than FCC-hh and a different detector parametrisation in Delphes.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fccrun /eos/experiment/fcc/ee/utils/config/PythiaDelphes_config_v01.py --delphescard=/eos/experiment/fcc/ee/utils/delphescards/fcc_v01/card.tcl --inputfile=FCCSW/Generation/data/ee_Z_ddbar.cmd --outputfile=events.root --nevents=1000
+</pre></div>
+</div>
 </div>
 <div class="section" id="run-the-analysis-in-heppy">
 <h3>Run the analysis in heppy<a class="headerlink" href="#run-the-analysis-in-heppy" title="Permalink to this headline">¶</a></h3>
