@@ -116,10 +116,11 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#getting-started-with-delphes">Getting started with Delphes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#run-fccsw-with-pythia8-delphes-fcc-hh">Run FCCSW with Pythia8+Delphes (FCC-hh)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-fccsw-with-pythia8-delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-the-analysis-in-heppy">Run the analysis in heppy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#make-plots">Make plots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cutflow">CutFlow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-fccsw-with-pythia8-delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-dataframe-fcc-ee">Run dataframe (FCC-ee)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#legacy-using-the-papas-tool-for-fcc-ee">Legacy: using the Papas tool (for FCC-ee)</a><ul>
@@ -445,13 +446,6 @@ ntuple</p></li>
 <p>This example will run 100 events by default. To have more events for plotting purposes, you can increase this number or use files that have been already produced and stored on eos (see next section).</p>
 <p>With this file you are now ready to run the analysis framework <a class="reference external" href="https://github.com/HEP-FCC/heppy.git">heppy</a>.</p>
 </div>
-<div class="section" id="run-fccsw-with-pythia8-delphes-fcc-ee">
-<h3>Run FCCSW with Pythia8+Delphes (FCC-ee)<a class="headerlink" href="#run-fccsw-with-pythia8-delphes-fcc-ee" title="Permalink to this headline">¶</a></h3>
-<p>Let us now produce FCC-ee event with the IDEA delphes card. For that we use a different FCC configuration file than FCC-hh and a different detector parametrisation in Delphes.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fccrun  /eos/experiment/fcc/ee/utils/config/PythiaDelphes_config_v01.py --DelphesCard /eos/experiment/fcc/ee/utils/delphescards/fcc_v01/card.tcl --Filename FCCSW/Generation/data/ee_Z_ddbar.cmd --filename events.root -n 1000
-</pre></div>
-</div>
-</div>
 <div class="section" id="run-the-analysis-in-heppy">
 <h3>Run the analysis in heppy<a class="headerlink" href="#run-the-analysis-in-heppy" title="Permalink to this headline">¶</a></h3>
 <p>Copy locally the ttbar example of <a class="reference external" href="https://github.com/HEP-FCC/heppy.git">heppy</a>:</p>
@@ -506,6 +500,25 @@ contains an ntuple with the variables we need:</p>
 </div>
 <p>The first column represents the cut, the second one the raw number of events,
 the third one the efficiency of the cut, and the last one the overall efficiency.</p>
+</div>
+<div class="section" id="run-fccsw-with-pythia8-delphes-fcc-ee">
+<h3>Run FCCSW with Pythia8+Delphes (FCC-ee)<a class="headerlink" href="#run-fccsw-with-pythia8-delphes-fcc-ee" title="Permalink to this headline">¶</a></h3>
+<p>Let us now produce FCC-ee event with the IDEA delphes card. For that we use a different FCC configuration file than FCC-hh and a different detector parametrisation in Delphes.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fccrun  /eos/experiment/fcc/ee/utils/config/PythiaDelphes_config_v01.py --DelphesCard /eos/experiment/fcc/ee/utils/delphescards/fcc_v01/card.tcl --Filename FCCSW/Generation/data/ee_Z_ddbar.cmd --filename events.root -n 1000
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-dataframe-fcc-ee">
+<h3>Run dataframe (FCC-ee)<a class="headerlink" href="#run-dataframe-fcc-ee" title="Permalink to this headline">¶</a></h3>
+<p>Clone the repository</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FCCAnalyses.git
+</pre></div>
+</div>
+<p>Follow the installation instruction for RDF</p>
+<p>then run the template analysis</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/Z_Zqq/dataframe/analysis.py  PATHTOTHEFILEPRODUCEBEFORE/events.root
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="legacy-using-the-papas-tool-for-fcc-ee">
