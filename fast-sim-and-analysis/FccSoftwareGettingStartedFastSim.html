@@ -510,11 +510,20 @@ the third one the efficiency of the cut, and the last one the overall efficiency
 </div>
 <div class="section" id="run-dataframe-fcc-ee">
 <h3>Run dataframe (FCC-ee)<a class="headerlink" href="#run-dataframe-fcc-ee" title="Permalink to this headline">¶</a></h3>
-<p>Clone the repository</p>
+<p>Clone the repository and go in it</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FCCAnalyses.git
+cd FCCAnalyses
 </pre></div>
 </div>
-<p>Follow the installation instruction for RDF</p>
+<p>Follow the installation instruction for dataframe in FCCAnalyses</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source setup.sh
+mkdir build install
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=../install
+make install
+cd ..
+</pre></div>
+</div>
 <p>then run the template analysis</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/Z_Zqq/dataframe/analysis.py  PATHTOTHEFILEPRODUCEBEFORE/events.root
 </pre></div>
