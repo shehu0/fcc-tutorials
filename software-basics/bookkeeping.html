@@ -27,7 +27,7 @@
         <script src="../_static/language_data.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -98,7 +98,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="introduction-to-course.html">Goals of the course</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fccsw.html">An introduction to FCC Software</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Finding data in the Bookkeeping</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Finding data in the Bookkeeping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gaining-access-permissions">Gaining access permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finding-data">Finding Data</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="exploring-fcc-files.html">Inspecting an FCC data file</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="exploring-fcc-files.html#the-events-tree">The <code class="docutils literal notranslate"><span class="pre">events</span></code> tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exploring-fcc-files.html#the-metadata-tree">The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> tree</a></li>
@@ -358,6 +362,21 @@ eventually lead to the data you need.</p>
 </ul>
 </div>
 </div>
+<div class="section" id="gaining-access-permissions">
+<h2>Gaining access permissions<a class="headerlink" href="#gaining-access-permissions" title="Permalink to this headline">¶</a></h2>
+<p>Read/write access to the shared filesystem is gained by subscribing to the relevant egroups <a class="reference external" href="https://e-groups.cern.ch/e-groups/EgroupsSearchForm.do">here</a>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fcc-eos-read-hh
+fcc-eos-read-ee
+fcc-eos-read-eh
+
+fcc-eos-write-hh
+fcc-eos-write-ee
+fcc-eos-write-eh
+</pre></div>
+</div>
+</div>
+<div class="section" id="finding-data">
+<h2>Finding Data<a class="headerlink" href="#finding-data" title="Permalink to this headline">¶</a></h2>
 <p>Browse the fcc directory on <code class="docutils literal notranslate"><span class="pre">eos</span></code>, the shared filesystem used by CERN.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tree /eos/experiment/fcc/ -L <span class="m">2</span>
 </pre></div>
@@ -405,6 +424,7 @@ eventually lead to the data you need.</p>
 </div>
 <div class="panel-body docutils container">
 <p>To check that your permissions have been set up correctly, try to write a file called <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;.txt</span></code> to the test directory <code class="docutils literal notranslate"><span class="pre">root://eospublic.cern.ch//eos/experiment/fcc/hh/tests/</span></code></p>
+</div>
 </div>
 </div>
 </div>
