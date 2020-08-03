@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,20 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/starterkit.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -33,12 +40,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/starterkit.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="FCC-hh: Pythia, Delphes, Heppy Analysis" href="FccFullAnalysis.html" />
@@ -56,7 +57,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> FCC Starterkit Lessons
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> FCC Starterkit Lessons
           
 
           
@@ -82,6 +83,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -256,6 +258,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -294,7 +297,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="README.html">Generators, Fast Simulation and Analysis</a> &raquo;</li>
         
@@ -361,14 +364,6 @@
 <li><p><a class="reference external" href="#cutflow">CutFlow</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#getting-started-with-papas-fcc-ee">Legacy: the Papas tool</a></p>
-<ul>
-<li><p><a class="reference external" href="#set-up-your-working-directory-1">Set up your working directory</a></p></li>
-<li><p><a class="reference external" href="#generate-events-with-pythia8">Generate events with pythia8</a></p></li>
-<li><p><a class="reference external" href="#run-papas-and-the-analysis-in-heppy">Run papas and the analysis in heppy</a></p></li>
-<li><p><a class="reference external" href="#make-plots">Make plots</a></p></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -377,7 +372,7 @@
 <p>If you want to get started fast with the analysis of fast-simulated
 events, you’re at the right place.</p>
 <p>Fast simulation is currently supported through the Delphes approach. Support for the Papas approach, initially used for FCC-ee, is
-discontinued and only provided in legacy; see <a class="reference external" href="#getting-started-with-papas-fcc-ee">usage description</a> at the end of the page.</p>
+discontinued.</p>
 <p>An analysis ntuple will be produced with <a class="reference external" href="https://github.com/HEP-FCC/heppy">heppy</a>, a simple modular event processing framework for high energy physics.</p>
 </div>
 <div class="section" id="installation">
@@ -391,7 +386,7 @@ discontinued and only provided in legacy; see <a class="reference external" href
 <p><strong>You will need to source this script everytime you want to use the
 software.</strong></p>
 <ul class="simple">
-<li><p>You can either use the <code class="docutils literal notranslate"><span class="pre">cvmfs</span></code> installation of <code class="docutils literal notranslate"><span class="pre">heppy</span></code>, pointed out by the environment variable HEPPY (defined after sourcing the above script), or clone the <a class="reference external" href="https://github.com/HEP-FCC/heppy">heppy git</a> locally. The latter is mandatory on a fresh virtual machine (for <code class="docutils literal notranslate"><span class="pre">heppy</span></code> internal; problems with <code class="docutils literal notranslate"><span class="pre">gitpython</span></code>).</p></li>
+<li><p>You should clone the <a class="reference external" href="https://github.com/HEP-FCC/heppy">heppy git</a> locally.</p></li>
 </ul>
 <div class="section" id="set-up-your-working-directory">
 <h3>Set up your working directory<a class="headerlink" href="#set-up-your-working-directory" title="Permalink to this headline">¶</a></h3>
@@ -428,6 +423,11 @@ lrwxr-xr-x. 1 ganis sf 123 Sep 30 19:03 FCCSW -&gt; /cvmfs/fcc.cern.ch/sw/releas
 ...
 </pre></div>
 </div>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">heppy</span></code> executable to your PATH:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PATH=$PWD/heppy/bin:$PATH
+</pre></div>
+</div>
+<p>.</p>
 </div>
 </div>
 <div class="section" id="getting-started-with-delphes">
@@ -447,6 +447,14 @@ ntuple</p></li>
 </pre></div>
 </div>
 <p>you should obtain a file called <code class="docutils literal notranslate"><span class="pre">FCCDelphesOutput.root</span></code>.</p>
+<p>Please ignore errors such as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error in &lt;TTree::Bronch&gt;: Cannot find dictionary for class: HepMC::GenEvent
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error in &lt;TList::Clear&gt;: A list is accessing an object (0x35308a0) already deleted (list name = Browsables)
+</pre></div>
+</div>
 <p>This example will run 100 events by default. To have more events for plotting purposes, you can increase this number or use files that have been already produced and stored on eos (see next section).</p>
 <p>With this file you are now ready to run the analysis framework <a class="reference external" href="https://github.com/HEP-FCC/heppy.git">heppy</a>.</p>
 </div>
@@ -743,11 +751,19 @@ Then:
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, FCC Starterkit
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -758,7 +774,6 @@ Then:
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
