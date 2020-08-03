@@ -427,7 +427,20 @@ lrwxr-xr-x. 1 ganis sf 123 Sep 30 19:03 FCCSW -&gt; /cvmfs/fcc.cern.ch/sw/releas
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PATH=$PWD/heppy/bin:$PATH
 </pre></div>
 </div>
-<p>.</p>
+<p>Heppy needs also the GitPython module. If the following fails:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python
+&gt;&gt;&gt; import git
+</pre></div>
+</div>
+<p>you need to install the module:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/gitpython-developers/GitPython git-python
+$ cd git-python
+$ git checkout py2 # only if running python 2
+$ cd  ..
+$ export PYTHONPATH=$PWD/git-python:$PYTHONPATH
+</pre></div>
+</div>
+<p>The above test should be now successful .</p>
 </div>
 </div>
 <div class="section" id="getting-started-with-delphes">
