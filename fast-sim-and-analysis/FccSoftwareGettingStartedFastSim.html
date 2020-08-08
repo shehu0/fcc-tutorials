@@ -116,8 +116,16 @@
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">Generators, Fast Simulation and Analysis</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">FCC: Getting started with the production and analysis of fast-simulated events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-fccsw">Enabling FCCSW</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#set-up-your-working-directory">Set up your working directory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#generators">Generators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pythia8">Pythia8</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#whizard">Whizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#madgraph5">MadGraph5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#herwig">Herwig</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#getting-started-with-delphes">Getting started with Delphes</a><ul>
@@ -130,10 +138,10 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#legacy-using-the-papas-tool-for-fcc-ee">Legacy: using the Papas tool (for FCC-ee)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Set up your working directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Set up your working directory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#generate-events-with-pythia8">Generate events with pythia8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-papas-and-the-analysis-in-heppy">Run papas and the analysis in heppy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Make plots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Make plots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#more-information">More information</a></li>
 </ul>
 </li>
@@ -375,12 +383,18 @@ events, you’re at the right place.</p>
 discontinued.</p>
 <p>An analysis ntuple will be produced with <a class="reference external" href="https://github.com/HEP-FCC/heppy">heppy</a>, a simple modular event processing framework for high energy physics.</p>
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enabling-fccsw">
+<h2>Enabling FCCSW<a class="headerlink" href="#enabling-fccsw" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>To configure your environment for the FCC software, just do:</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source /cvmfs/fcc.cern.ch/sw/latest/setup.sh
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ source /cvmfs/fcc.cern.ch/sw/latest/setup.sh [system] [version]
+</pre></div>
+</div>
+<p>Builds exist on CernVM-FS for CentOS7, Gcc 8 and 9 (this is the system run on <code class="docutils literal notranslate"><span class="pre">lxplus</span></code>), and Ubuntu 20.04 LTS.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">fccrun</span></code> steering application should be available at this point:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ which fccrun
+/cvmfs/fcc.cern.ch/sw/views/releases/fccsw/0.13/LCG_97a_FCC_2/x86_64-centos7-gcc8-opt/scripts/fccrun
 </pre></div>
 </div>
 <p><strong>You will need to source this script everytime you want to use the
@@ -441,6 +455,115 @@ $ export PYTHONPATH=$PWD/git-python:$PYTHONPATH
 </pre></div>
 </div>
 <p>The above test should be now successful .</p>
+</div>
+</div>
+<div class="section" id="generators">
+<h2>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The physicas generators available for FCC typically come form the underlying LCG stack. However, any generator
+able to generate events in one of the understood formats, e.g. HepMC or LHEf, can be used in standalone.
+This pages intend to illustrate the use of a few general purpose generators available when enabling FCCSW:
+pythia8, whizard, MadGraph5, Herwig.</p>
+</div>
+<div class="section" id="pythia8">
+<h3>Pythia8<a class="headerlink" href="#pythia8" title="Permalink to this headline">¶</a></h3>
+<p>Pythia8 is fully intergrated in FCCSW and it provides diverse functionality in addition to event generation,
+including capability to read events in LHEF format.</p>
+</div>
+<div class="section" id="whizard">
+<h3>Whizard<a class="headerlink" href="#whizard" title="Permalink to this headline">¶</a></h3>
+<p>Whizards is available as standalone program:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ which whizard
+/cvmfs/fcc.cern.ch/sw/views/releases/fccsw/0.13/LCG_97a_FCC_2/x86_64-centos7-gcc8-opt/bin/whizard
+</pre></div>
+</div>
+<p>Whizard is run as this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ whizard &lt;process_config&gt;.sin
+</pre></div>
+</div>
+<p>Example of process configuration files are found under</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/cvmfs/fcc.cern.ch/sw/views/releases/fccsw/0.13/LCG_97a_FCC_2/x86_64-centos7-gcc8-opt/share/whizard/examples/
+</pre></div>
+</div>
+<p>Some examples more specific to FCC can be found under</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/eos/project-f/fccsw-web/www/share/gen/whizard/
+</pre></div>
+</div>
+<p>It is advised to work in a separate directory for each process. For example, for Z_mumu, we have:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir test_whizard/Z_mumu; cd test_whizard/Z_mumu
+$ cp -rp /eos/project-f/fccsw-web/www/share/gen/whizard/Zpole/Z_mumu.sin .
+$ whizard Z_mumu.sin
+| Writing log to &#39;whizard.log&#39;
+|=============================================================================|
+|                                                                             |
+|    WW             WW  WW   WW  WW  WWWWWW      WW      WWWWW    WWWW        |
+|     WW    WW     WW   WW   WW  WW     WW      WWWW     WW  WW   WW  WW      |
+|      WW  WW WW  WW    WWWWWWW  WW    WW      WW  WW    WWWWW    WW   WW     |
+|       WWWW   WWWW     WW   WW  WW   WW      WWWWWWWW   WW  WW   WW  WW      |
+|        WW     WW      WW   WW  WW  WWWWWW  WW      WW  WW   WW  WWWW        |
+|                                                                             |
+|                                                                             |
+
+...
+
+|=============================================================================|
+|                               WHIZARD 2.8.2
+|=============================================================================|
+| Reading model file &#39;/cvmfs/sft.cern.ch/lcg/releases/LCG_97a_FCC_2/MCGenerators/whizard/2.8.2/x86_64-centos7-gcc8-opt/share/whizard/models/SM.mdl&#39;
+| Preloaded model: SM
+| Process library &#39;default_lib&#39;: initialized
+| Preloaded library: default_lib
+| Reading model file &#39;/cvmfs/sft.cern.ch/lcg/releases/LCG_97a_FCC_2/MCGenerators/whizard/2.8.2/x86_64-centos7-gcc8-opt/share/whizard/models/SM_hadrons.mdl&#39;
+| Reading commands from file &#39;Z_mumu.sin&#39;
+| Switching to model &#39;SM&#39;, scheme &#39;default&#39;
+
+...
+
+$description = &quot;A WHIZARD 2.8 Example.
+   Z -&gt; mumu @ 91.2 events for FCC ee.&quot;
+$y_label = &quot;$N_{\textrm{events}}$&quot;
+$lhef_version = &quot;3.0&quot;
+$sample = &quot;z_mumu&quot;
+| Starting simulation for process &#39;zmumu&#39;
+| Simulate: using integration grids from file &#39;zmumu.m1.vg&#39;
+| RNG: Initializing TAO random-number generator
+| RNG: Setting seed for random-number generator to 22345
+| Simulation: requested number of events = 1000
+|             corr. to luminosity [fb-1] =   6.6285E-04
+| Events: writing to LHEF file &#39;z_mumu.lhe&#39;
+| Events: writing to raw file &#39;z_mumu.evx&#39;
+| Events: generating 1000 unweighted, unpolarized events ...
+| Events: event normalization mode &#39;1&#39;
+|         ... event sample complete.
+| Events: actual unweighting efficiency =   1.16 %
+Warning: Encountered events with excess weight: 6 events (  0.600 %)
+| Maximum excess weight = 2.465E+00
+| Average excess weight = 4.511E-03
+| Events: closing LHEF file &#39;z_mumu.lhe&#39;
+| Events: closing raw file &#39;z_mumu.evx&#39;
+| There were no errors and    2 warning(s).
+| WHIZARD run finished.
+|=============================================================================|
+</pre></div>
+</div>
+<p>The file <code class="docutils literal notranslate"><span class="pre">z_mumu.lhe</span></code> contains 100 e+e- -&gt; mu+mu- events in LHEf 3.0 format .</p>
+</div>
+<div class="section" id="madgraph5">
+<h3>MadGraph5<a class="headerlink" href="#madgraph5" title="Permalink to this headline">¶</a></h3>
+<p>MadGraph5 is available as standalone program:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ which mg5_aMC
+/cvmfs/fcc.cern.ch/sw/views/releases/fccsw/0.13/LCG_97a_FCC_2/x86_64-centos7-gcc8-opt/bin/mg5_aMC
+</pre></div>
+</div>
+</div>
+<div class="section" id="herwig">
+<h3>Herwig<a class="headerlink" href="#herwig" title="Permalink to this headline">¶</a></h3>
+<p>Herwig is available as standalone program:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ which Herwig
+/cvmfs/fcc.cern.ch/sw/views/releases/fccsw/0.13/LCG_97a_FCC_2/x86_64-centos7-gcc8-opt/bin/Herwig
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="getting-started-with-delphes">
@@ -565,8 +688,8 @@ analysis to create an ntuple</p></li>
 <li><p>read this ntuple with ROOT to make a few plots</p></li>
 </ul>
 <p>But first, you will set up a working directory for your analysis.</p>
-<div class="section" id="id1">
-<h3>Set up your working directory<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Set up your working directory<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Create a directory anywhere:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mkdir Workdir
 cd Workdir
@@ -699,8 +822,8 @@ contains an ntuple with the variables we need:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>Make plots<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Make plots<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Open the root file containing the ntuple in root:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root OutDir/ee_ZH_Zmumu_Hbb/heppy.analyzers.examples.zh.ZHTreeProducer.ZHTreeProducer_1/tree.root
 </pre></div>
