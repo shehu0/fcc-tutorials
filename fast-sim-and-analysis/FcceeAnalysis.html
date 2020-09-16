@@ -117,10 +117,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">Generators, Fast Simulation and Analysis</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html">FCC: Getting started with the production and analysis of fast-simulated events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#enabling-fccsw">Enabling FCCSW</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#set-up-your-working-directory">Set up your working directory</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#enabling-fccsw">Enabling FCCSW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#generators">Generators</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#id1">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#pythia8">Pythia8</a></li>
@@ -131,28 +128,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#getting-started-with-delphes">Getting started with Delphes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-fccsw-with-pythia8-delphes-fcc-hh">Run FCCSW with Pythia8+Delphes (FCC-hh)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-the-analysis-in-heppy">Run the analysis in heppy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#make-plots">Make plots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#cutflow">CutFlow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-fccsw-with-pythia8-delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-dataframe-fcc-ee">Run dataframe (FCC-ee)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#legacy-using-the-papas-tool-for-fcc-ee">Legacy: using the Papas tool (for FCC-ee)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#id2">Set up your working directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#generate-events-with-pythia8">Generate events with pythia8</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-papas-and-the-analysis-in-heppy">Run papas and the analysis in heppy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#id3">Make plots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#more-information">More information</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="FccFullAnalysis.html">FCC-hh: Pythia, Delphes, Heppy Analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccFullAnalysis.html#part-i-generate-and-simulate-events-with-fccsw">Part I: Generate and simulate Events with FCCSW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccFullAnalysis.html#part-ii-analyze-the-output-with-heppy">Part II: Analyze the output with Heppy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccFullAnalysis.html#part-iii-produce-plots">Part III: Produce plots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccFullAnalysis.html#part-iv-homework">Part IV: Homework</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccFullAnalysis.html#other-documentation">Other documentation</a></li>
 </ul>
 </li>
@@ -160,7 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#instructions">Instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -341,38 +324,38 @@ from event generation through parameterized and full detector simulation, recons
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>For this tutorial the software needs to be locally installed. Create a directory for this tutorial and go there:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mkdir FCCeePhysics
-cd FCCeePhysics
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir FCCeePhysics
+<span class="nb">cd</span> FCCeePhysics
 </pre></div>
 </div>
 <p>Clone the repository and go there:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FlatTreeAnalyzer.git
-cd FlatTreeAnalyzer
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FlatTreeAnalyzer.git
+<span class="nb">cd</span> FlatTreeAnalyzer
 </pre></div>
 </div>
 <p>then initialize:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source ./init.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ./init.sh
 </pre></div>
 </div>
 </div>
 <div class="section" id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <p>Analyses are run the following way:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n [analysis_name_in_heppy] -c [heppy_cfg] -t [heppy_tree_location] -o [output_dir] -p [analysis_parameters] -j [proc_dict]
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n <span class="o">[</span>analysis_name_in_heppy<span class="o">]</span> -c <span class="o">[</span>heppy_cfg<span class="o">]</span> -t <span class="o">[</span>heppy_tree_location<span class="o">]</span> -o <span class="o">[</span>output_dir<span class="o">]</span> -p <span class="o">[</span>analysis_parameters<span class="o">]</span> -j <span class="o">[</span>proc_dict<span class="o">]</span>
 </pre></div>
 </div>
 <p>The example we will run here for the ZH with Z to electrons is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n ZH_Zee -c /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/heppy/ZH_Zee/analysis.py -t /eos/project/f/fccsw-web/www/share/tutorials//FcceeAnalysis/FCCSW_WS/data/ZH_Zee/ -o outputs/ZH_zee_ecm240_recoil/ -p templates/FCCee/zh_zee_ecm240_recoil.py -j /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/dict/FCCee_procDict_fcc_v01.json --nev 50000 -m
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n ZH_Zee -c /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/heppy/ZH_Zee/analysis.py -t /eos/project/f/fccsw-web/www/share/tutorials//FcceeAnalysis/FCCSW_WS/data/ZH_Zee/ -o outputs/ZH_zee_ecm240_recoil/ -p templates/FCCee/zh_zee_ecm240_recoil.py -j /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/dict/FCCee_procDict_fcc_v01.json --nev <span class="m">50000</span> -m
 </pre></div>
 </div>
 <p>The example we will run here for the ZH with Z to muons is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n ZH_Zmumu -c /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/heppy/ZH_Zmumu/analysis.py -t /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/data/ZH_Zmumu/ -o outputs/ZH_zmumu_ecm240_recoil/ -p templates/FCCee/zh_zmumu_ecm240_recoil.py -j /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/dict/FCCee_procDict_fcc_v01.json --nev 50000 -m
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n ZH_Zmumu -c /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/heppy/ZH_Zmumu/analysis.py -t /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/data/ZH_Zmumu/ -o outputs/ZH_zmumu_ecm240_recoil/ -p templates/FCCee/zh_zmumu_ecm240_recoil.py -j /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/dict/FCCee_procDict_fcc_v01.json --nev <span class="m">50000</span> -m
 </pre></div>
 </div>
 <p>The files that will need to be edited are  <code class="docutils literal notranslate"><span class="pre">templates/FCCee/zh_zee_ecm240_recoil.p</span></code> for the Z boson decaying to electrons and <code class="docutils literal notranslate"> <span class="pre">templates/FCCee/zh_mumu_ecm240_recoil.py</span></code> for the Z boson decaying to muons.</p>
 <p>Different selections are alrready implemented at the end of the files: <code class="docutils literal notranslate"><span class="pre">selbase</span></code> with no cut, <code class="docutils literal notranslate"><span class="pre">selopt</span></code> that tries to optimise based on some variables, <code class="docutils literal notranslate"><span class="pre">selbb</span></code> that only selects events with exactly 2 b-jets in the recoil, <code class="docutils literal notranslate"><span class="pre">seltautau</span></code> that only selects events with exactly 2 tau-jets in the recoil, <code class="docutils literal notranslate"><span class="pre">selWhadWhad</span></code>  that only selects events with exactly 4 jets in the recoil, <code class="docutils literal notranslate"><span class="pre">selWhadWlep</span></code>  that only selects events with exactly 2 jets and one lepton in the recoil, <code class="docutils literal notranslate"><span class="pre">selWlepWlep</span></code> that only selects events with exactly 2 leptons in the recoil and <code class="docutils literal notranslate"><span class="pre">selWW</span></code> that is a logical or between the various W boson selections.</p>
 <p>Then let’s run the Z-&gt;ee+X analysis with only 50 000 events</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n ZH_Zee -c /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/heppy/ZH_Zee/analysis.py -t /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/data/ZH_Zee/ -o outputs/ZH_zee_ecm240_recoil/ -p templates/FCCee/zh_zee_ecm240_recoil.py -j /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/dict/FCCee_procDict_fcc_v01.json --nev 50000 -m
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bin/analyze.py -n ZH_Zee -c /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/heppy/ZH_Zee/analysis.py -t /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/data/ZH_Zee/ -o outputs/ZH_zee_ecm240_recoil/ -p templates/FCCee/zh_zee_ecm240_recoil.py -j /eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/dict/FCCee_procDict_fcc_v01.json --nev <span class="m">50000</span> -m
 </pre></div>
 </div>
 <p>and look at the plots in <code class="docutils literal notranslate"><span class="pre">outputs/ZH_zee_ecm240_recoil/plots_ZH/</span></code>. The selections are ordered respecting how they have been added in the configuration file, and the plots for selection <code class="docutils literal notranslate"><span class="pre">0==selbase</span></code> to <code class="docutils literal notranslate"><span class="pre">7===selWW</span></code> should look more or less like those (that have been produced with all the statistics).</p>
@@ -381,11 +364,11 @@ cd FlatTreeAnalyzer
 <p><img alt="Selecting 2 bjet in recoil" src="../_images/mrecoil_sel2_nostack_lin.png" /></p>
 <p><img alt="Selecting 2 taus in recoil" src="../_images/mrecoil_sel3_nostack_lin.png" /></p>
 </div>
-<div class="section" id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <p>What you can do for example now, is add a new selection that will select events with 2 photons in the recoil (the variable is <code class="docutils literal notranslate"><span class="pre">nph</span></code>), comment all the other selection except this new one and run over the full statistics by removing the <code class="docutils literal notranslate"><span class="pre">--nev</span> <span class="pre">50000</span></code> in-line argument.</p>
 <p>Then you can also try to further optimise the selection by looking at other variables (check them in the input tree <code class="docutils literal notranslate"><span class="pre">/eos/project/f/fccsw-web/www/share/tutorials/FcceeAnalysis/FCCSW_WS/data/ZH_Zee/p8_ee_ZZ_ecm240/FCCeeAnalyses.ZH_Zee.TreeProducer.TreeProducer_1/tree.root</span> </code>)</p>
-<p>Then you can also do the same with the Z-&gt; mumu analysis</p>
+<p>Then you can also do the same with the Z-&gt; mumu analysis.</p>
 </div>
 </div>
 

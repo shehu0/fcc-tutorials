@@ -117,10 +117,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">Generators, Fast Simulation and Analysis</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html">FCC: Getting started with the production and analysis of fast-simulated events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#enabling-fccsw">Enabling FCCSW</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#set-up-your-working-directory">Set up your working directory</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#enabling-fccsw">Enabling FCCSW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#generators">Generators</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#id1">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#pythia8">Pythia8</a></li>
@@ -131,28 +128,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#getting-started-with-delphes">Getting started with Delphes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-fccsw-with-pythia8-delphes-fcc-hh">Run FCCSW with Pythia8+Delphes (FCC-hh)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-the-analysis-in-heppy">Run the analysis in heppy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#make-plots">Make plots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#cutflow">CutFlow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-fccsw-with-pythia8-delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-dataframe-fcc-ee">Run dataframe (FCC-ee)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#legacy-using-the-papas-tool-for-fcc-ee">Legacy: using the Papas tool (for FCC-ee)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#id2">Set up your working directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#generate-events-with-pythia8">Generate events with pythia8</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#run-papas-and-the-analysis-in-heppy">Run papas and the analysis in heppy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#id3">Make plots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#more-information">More information</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">FCC-hh: Pythia, Delphes, Heppy Analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#part-i-generate-and-simulate-events-with-fccsw">Part I: Generate and simulate Events with FCCSW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#part-ii-analyze-the-output-with-heppy">Part II: Analyze the output with Heppy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#part-iii-produce-plots">Part III: Produce plots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#part-iv-homework">Part IV: Homework</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#other-documentation">Other documentation</a></li>
 </ul>
 </li>
@@ -160,7 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#installation">Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#instructions">Instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#exercices">Exercices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -342,14 +325,11 @@
 <ul class="simple">
 <li><p><strong>generate</strong> signal and background samples with <strong>Pythia8</strong> within FCCSW</p></li>
 <li><p>run a fast parametric <strong>detector simulation</strong> with <strong>Delphes</strong> within FCCSW</p></li>
-<li><p>apply an <strong>event selection</strong> on those samples with <strong>Heppy</strong></p></li>
-<li><p>produce <strong>flat ntuples</strong> with observables of interest with Heppy</p></li>
-<li><p>produce plots</p></li>
 </ul>
 </div>
 </div>
 <p>But first, make sure your <strong>setup of the FCC software</strong> is working correctly. A quick check is that the executable <code class="docutils literal notranslate"><span class="pre">fccrun</span></code>, which allows you to run jobs in the Gaudi framework is available on the command line:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!which fccrun
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which fccrun
 </pre></div>
 </div>
 <p>If the above command fails without printing a path like <code class="docutils literal notranslate"><span class="pre">/cvmfs/fcc.cern.ch/sw/releases/fccsw/0.10/x86_64-centos7-gcc62-opt/scripts/fccrun</span></code> check <a class="reference external" href="https://github.com/HEP-FCC/fcc-tutorials/blob/master/FccSoftwareGettingStarted"><strong>the documentation page on FCC software setup</strong></a>.</p>
@@ -365,7 +345,7 @@ or generate the hard process itself and then run the parton shower and hadroniza
 <strong>In either case, the FCCSW takes as input a Pythia8 configuration file</strong> (<code class="docutils literal notranslate"><span class="pre">.cmd</span></code>), and does not need to know which approach was used.</p>
 <p>For this tutorial, we are going to run Pythia8 on previously produced LHE files (with <a class="reference external" href="https://launchpad.net/mg5amcnlo">MG5_aMCatNLO</a>).
 Additional Pythia8 configurations can be found in <code class="docutils literal notranslate"><span class="pre">FCCSW/Generation/data</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! File: Pythia_pp_h_4l.cmd
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>! File: Pythia_pp_h_4l.cmd
 !
 ! This file contains commands to be read in for a Pythia8 run.
 ! Lines not beginning with a letter or digit are comments.
@@ -581,7 +561,7 @@ Other detector cards can be found in the <code class="docutils literal notransla
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">fccrun</span></code> allows to change most <code class="docutils literal notranslate"><span class="pre">Properties</span></code> of the job on the command line. All possible arguments to fccrun  are listed with the command</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!fccrun PythiaDelphes_config.py -h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py -h
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span> --&gt;  GenAlg  --&gt;  Converter  --&gt;  DelphesSimulation  --&gt;  out  
@@ -648,12 +628,12 @@ optional arguments:
 </pre></div>
 </div>
 <p>Thus The following commands will run Pythia8 and Delphes and produce the relevant signal and background samples:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!xrdcp root://eospublic.cern.ch//eos/experiment/fcc/hh/testsamples/pp_h_4l.lhe ./pp_h_4l.lhe
-!fccrun PythiaDelphes_config.py --Filename $FCCSWBASEDIR/share/FCCSW/Generation/data/Pythia_pp_h_4l.cmd --filename pp_h_4l.root -n 100
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xrdcp root://eospublic.cern.ch//eos/experiment/fcc/hh/testsamples/pp_h_4l.lhe ./pp_h_4l.lhe
+fccrun PythiaDelphes_config.py --Filename <span class="nv">$FCCSWBASEDIR</span>/share/FCCSW/Generation/data/Pythia_pp_h_4l.cmd --filename pp_h_4l.root -n <span class="m">100</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!xrdcp root://eospublic.cern.ch//eos/experiment/fcc/hh/testsamples/pp_zgzg_4l.lhe ./pp_zgzg_4l.lhe
-!fccrun PythiaDelphes_config.py --Filename  $FCCSWBASEDIR/share/FCCSW/Generation/data/Pythia_pp_zgzg_4l.cmd --filename pp_zgzg_4l.root -n 100
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xrdcp root://eospublic.cern.ch//eos/experiment/fcc/hh/testsamples/pp_zgzg_4l.lhe ./pp_zgzg_4l.lhe
+fccrun PythiaDelphes_config.py --Filename  <span class="nv">$FCCSWBASEDIR</span>/share/FCCSW/Generation/data/Pythia_pp_zgzg_4l.cmd --filename pp_zgzg_4l.root -n <span class="m">100</span>
 </pre></div>
 </div>
 <p>For a complete discussion on the structure of configuration file, see <a class="reference external" href="https://github.com/HEP-FCC/FCCSW/blob/master/Sim/SimDelphesInterface/doc/FccPythiaDelphes">this page</a>.
@@ -662,7 +642,7 @@ for most use cases as a user you won’t need to apply any change to the configu
 <p>In addition to the <strong>sequence of modules</strong> to be executed, and which <strong>output collections</strong> to be stored in the output tree, the following
 parameters can be specified via the configuration file:</p>
 <p>The output is a ROOT file containing a tree in the FCC <a class="reference external" href="https://github.com/HEP-FCC/fcc-edm">Event Data Model structure</a>. It is browsable with ROOT:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!rootls -t pp_h_4l.root
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rootls -t pp_h_4l.root
 </pre></div>
 </div>
 <p>It contains the Generation-level particles (<code class="docutils literal notranslate"><span class="pre">skimmedGenParticles</span></code>) as well as the Reconstruction-level Delphes output (<code class="docutils literal notranslate"><span class="pre">muons</span></code>, <code class="docutils literal notranslate"><span class="pre">electrons</span></code> …)</p>
@@ -677,581 +657,17 @@ parameters can be specified via the configuration file:</p>
 <span class="n">c</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to JupyROOT 6.18/04
-</pre></div>
-</div>
 <p><img alt="png" src="fast-sim-and-analysis/FCCFullAnalysis_files/FCCFullAnalysis_16_1.png" /></p>
 <p>To save time and computing power, more events with the same configuration can be taken from eos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!export EOS_MGM_URL=&quot;root://eospublic.cern.ch&quot;
-!cp /eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_h_4l.root .
-!cp /eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_zgzg_4l.root .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">EOS_MGM_URL</span><span class="o">=</span><span class="s2">&quot;root://eospublic.cern.ch&quot;</span>
+cp /eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_h_4l.root .
+cp /eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_zgzg_4l.root .
 </pre></div>
 </div>
-</div>
-<div class="section" id="part-ii-analyze-the-output-with-heppy">
-<h2>Part II: Analyze the output with Heppy<a class="headerlink" href="#part-ii-analyze-the-output-with-heppy" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/HEP-FCC/heppy">Heppy</a> is a python framework suitable for analyzing the FCCSW output.</p>
-<p>Understand the configuration file for this <strong>H-&gt;4l analysis</strong>: <a class="reference external" href="https://github.com/HEP-FCC/heppy/blob/master/heppy/test/analysis_pp_hTo4l_simple_cfg.py"><code class="docutils literal notranslate"><span class="pre">analysis_pp_hTo4l_simple_cfg.py</span></code></a>
-This is where <strong>filters</strong> on input collections and <strong>event selection</strong> are defined.
-The sequence is divided in two parts, a gen level analysis, and a reco level.</p>
-<ul class="simple">
-<li><p>The <strong>gen level analysis</strong> simply filters interesting leptons (<code class="docutils literal notranslate"><span class="pre">gen_leptons</span></code>) and stores pT, eta in in flat tree (<code class="docutils literal notranslate"><span class="pre">gen_tree</span></code>).</p></li>
-</ul>
-<p>Have a look at the corresponding code in <code class="docutils literal notranslate"><span class="pre">heppy/analyzers/examples/hzz4l/HTo4lGenTreeProducer.py</span></code>.</p>
-<ul class="simple">
-<li><p>The <strong>reco level analysis</strong> first <strong>selects isolated leptons</strong> (<code class="docutils literal notranslate"><span class="pre">selected_muons</span></code>, <code class="docutils literal notranslate"><span class="pre">selected_electrons</span></code>), merges them into a single collection (<code class="docutils literal notranslate"><span class="pre">selected_leptons</span></code>),
-<strong>builds Z candidates</strong> (<code class="docutils literal notranslate"><span class="pre">zeds</span></code>) and finally <strong>builds higgs candidates</strong>  (<code class="docutils literal notranslate"><span class="pre">higgses</span></code>). After that an <strong>event selection</strong> is applied (<code class="docutils literal notranslate"><span class="pre">selection</span></code>).</p></li>
-</ul>
-<p>Open <code class="docutils literal notranslate"><span class="pre">heppy/analyzers/examples/hzz4l/selection.py</span></code> and understand the event selection.</p>
-<p>Finally another flat tree is produced <code class="docutils literal notranslate"><span class="pre">HTo4lTreeProducer</span></code>.
-This tree contains contains all relevant information for the two reconstructed Z bosons, the Higgs, and the four associated leptons.
-For comparison, also the MC level counterparts of the reconstructed quantities are stored.</p>
-<p>To summarize, when designing a new analysis, you will have to define:</p>
-<ul class="simple">
-<li><p>a configuration file containing the analysis sequence</p></li>
-<li><p>an event selection</p></li>
-<li><p>one or several tree producer(s) where the variables to be stored in the output tree(s) are specified</p></li>
-<li><p>optionally, new modules that are specific to your analysis (e.g. <code class="docutils literal notranslate"><span class="pre">LeptonicZedBuilder</span></code> here)</p></li>
-</ul>
-<p>Now run HEPPY:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!heppy_loop.py pp_h_4l analysis_pp_hTo4l_simple_cfg.py -f -N 1000 -I root://eospublic.cern.ch//eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_h_4l.root;
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TClass::Init:0: RuntimeWarning: no dictionary for class fcc::FloatData is available
-event 100 (57.2 ev/s)
-event 200 (73.2 ev/s)
-event 300 (87.4 ev/s)
-event 400 (100.6 ev/s)
-event 500 (111.0 ev/s)
-event 600 (118.6 ev/s)
-event 700 (125.5 ev/s)
-event 800 (131.2 ev/s)
-event 900 (135.3 ev/s)
-
-Component: example
-	dataset_entries:   0
-	files          :   [&#39;root://eospublic.cern.ch//eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_h_4l.root&#39;]
-	isData         :   False
-	isEmbed        :   False
-	isMC           :   False
-	tree_name      :   None
-	triggers       :   None
-
-
-      ---- TimeReport (all times in ms; first evt is skipped) ---- 
-processed    all evts    time/proc    time/all   [%]    analyer
----------    --------    ---------   ---------  -----   -------------
-     1000        1000         5.75        5.75  82.3%   heppy.analyzers.fcc.Reader.Reader_1
-     1000        1000         0.06        0.06   0.9%   heppy.analyzers.Selector.Selector_gen_leptons
-     1000        1000         0.51        0.51   7.3%   heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1
-     1000        1000         0.02        0.02   0.3%   heppy.analyzers.Selector.Selector_selected_muons
-     1000        1000         0.02        0.02   0.2%   heppy.analyzers.Selector.Selector_selected_electrons
-     1000        1000         0.01        0.01   0.1%   heppy.analyzers.Merger.Merger_selected_leptons
-     1000        1000         0.17        0.17   2.5%   heppy.analyzers.LeptonicZedBuilder.LeptonicZedBuilder_1
-     1000        1000         0.04        0.04   0.5%   heppy.analyzers.examples.hzz4l.selection.Selection_cuts
-      436        1000         0.04        0.02   0.2%   heppy.analyzers.ResonanceBuilder.ResonanceBuilder_1
-      436        1000         0.90        0.39   5.6%   heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1
----------    --------    ---------   ---------   -------------
-      436        1000        16.03        6.98 100.0%   TOTAL
-
-Counter analyzers :
-	 heppy.analyzers.fcc.Reader.Reader_1                               1000 	 1.00 	 1.0000
-	 heppy.analyzers.Selector.Selector_gen_leptons                     1000 	 1.00 	 1.0000
-	 heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1      1000 	 1.00 	 1.0000
-	 heppy.analyzers.Selector.Selector_selected_muons                  1000 	 1.00 	 1.0000
-	 heppy.analyzers.Selector.Selector_selected_electrons              1000 	 1.00 	 1.0000
-	 heppy.analyzers.Merger.Merger_selected_leptons                    1000 	 1.00 	 1.0000
-	 heppy.analyzers.LeptonicZedBuilder.LeptonicZedBuilder_1           1000 	 1.00 	 1.0000
-	 heppy.analyzers.examples.hzz4l.selection.Selection_cuts            436 	 0.44 	 0.4360
-	 heppy.analyzers.ResonanceBuilder.ResonanceBuilder_1                436 	 1.00 	 0.4360
-	 heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1       436 	 1.00 	 0.4360
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!heppy_loop.py pp_zgzg_4l analysis_pp_hTo4l_simple_cfg.py -f -N 1000 -I root://eospublic.cern.ch//eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_zgzg_4l.root;
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TClass::Init:0: RuntimeWarning: no dictionary for class fcc::FloatData is available
-event 100 (71.2 ev/s)
-event 200 (78.6 ev/s)
-event 300 (97.0 ev/s)
-event 400 (112.2 ev/s)
-event 500 (120.7 ev/s)
-event 600 (126.6 ev/s)
-event 700 (134.1 ev/s)
-event 800 (140.4 ev/s)
-event 900 (145.6 ev/s)
-
-Component: example
-	dataset_entries:   0
-	files          :   [&#39;root://eospublic.cern.ch//eos/experiment/fcc/hh/tutorials/Higgs_4l/pp_zgzg_4l.root&#39;]
-	isData         :   False
-	isEmbed        :   False
-	isMC           :   False
-	tree_name      :   None
-	triggers       :   None
-
-
-      ---- TimeReport (all times in ms; first evt is skipped) ---- 
-processed    all evts    time/proc    time/all   [%]    analyer
----------    --------    ---------   ---------  -----   -------------
-     1000        1000         5.48        5.48  84.2%   heppy.analyzers.fcc.Reader.Reader_1
-     1000        1000         0.06        0.06   1.0%   heppy.analyzers.Selector.Selector_gen_leptons
-     1000        1000         0.49        0.49   7.6%   heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1
-     1000        1000         0.02        0.02   0.3%   heppy.analyzers.Selector.Selector_selected_muons
-     1000        1000         0.02        0.02   0.2%   heppy.analyzers.Selector.Selector_selected_electrons
-     1000        1000         0.01        0.01   0.1%   heppy.analyzers.Merger.Merger_selected_leptons
-     1000        1000         0.13        0.13   2.1%   heppy.analyzers.LeptonicZedBuilder.LeptonicZedBuilder_1
-     1000        1000         0.03        0.03   0.5%   heppy.analyzers.examples.hzz4l.selection.Selection_cuts
-      273        1000         0.04        0.01   0.2%   heppy.analyzers.ResonanceBuilder.ResonanceBuilder_1
-      273        1000         0.90        0.25   3.8%   heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1
----------    --------    ---------   ---------   -------------
-      273        1000        23.88        6.50 100.0%   TOTAL
-
-Counter analyzers :
-	 heppy.analyzers.fcc.Reader.Reader_1                               1000 	 1.00 	 1.0000
-	 heppy.analyzers.Selector.Selector_gen_leptons                     1000 	 1.00 	 1.0000
-	 heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1      1000 	 1.00 	 1.0000
-	 heppy.analyzers.Selector.Selector_selected_muons                  1000 	 1.00 	 1.0000
-	 heppy.analyzers.Selector.Selector_selected_electrons              1000 	 1.00 	 1.0000
-	 heppy.analyzers.Merger.Merger_selected_leptons                    1000 	 1.00 	 1.0000
-	 heppy.analyzers.LeptonicZedBuilder.LeptonicZedBuilder_1           1000 	 1.00 	 1.0000
-	 heppy.analyzers.examples.hzz4l.selection.Selection_cuts            273 	 0.27 	 0.2730
-	 heppy.analyzers.ResonanceBuilder.ResonanceBuilder_1                273 	 1.00 	 0.2730
-	 heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1       273 	 1.00 	 0.2730
-</pre></div>
-</div>
-<p>The runs create two output directories <code class="docutils literal notranslate"><span class="pre">pp_h_4l</span></code> and <code class="docutils literal notranslate"><span class="pre">pp_zgzg_4l</span></code>, with various subdirectories. The breakdown of
-efficiencies by cut can be found in:</p>
-<p><code class="docutils literal notranslate"><span class="pre">example/heppy.analyzers.examples.hzz4l.selection.Selection_cuts/cut_flow.txt</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat pp_h_4l/example/heppy.analyzers.examples.hzz4l.selection.Selection_cuts/cut_flow.txt
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Counter cut_flow :
-	 All events                                                        1000 	 1.00 	 1.0000
-	 At least one Z -&gt; l+ l- candidates                                 985 	 0.98 	 0.9850
-	 40 &lt; mZ1 &lt; 120                                                     811 	 0.82 	 0.8110
-	 At least a second Z -&gt; l+ l- candidates                            449 	 0.55 	 0.4490
-	 12 &lt; mZ2 &lt; 120                                                     441 	 0.98 	 0.4410
-	 leading lepton pT &gt; 20                                             437 	 0.99 	 0.4370
-	 sub-leading lepton pT &gt; 10                                         436 	 1.00 	 0.4360
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cat pp_zgzg_4l/example/heppy.analyzers.examples.hzz4l.selection.Selection_cuts/cut_flow.txt
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Counter cut_flow :
-	 All events                                                        1000 	 1.00 	 1.0000
-	 At least one Z -&gt; l+ l- candidates                                 958 	 0.96 	 0.9580
-	 40 &lt; mZ1 &lt; 120                                                     689 	 0.72 	 0.6890
-	 At least a second Z -&gt; l+ l- candidates                            362 	 0.53 	 0.3620
-	 12 &lt; mZ2 &lt; 120                                                     278 	 0.77 	 0.2780
-	 leading lepton pT &gt; 20                                             274 	 0.99 	 0.2740
-	 sub-leading lepton pT &gt; 10                                         273 	 1.00 	 0.2730
-</pre></div>
-</div>
-<p>The <strong>gen-level</strong> and <strong>reco-level</strong> output trees can be found here:</p>
-<p><code class="docutils literal notranslate"><span class="pre">example/heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1/tree.root</span></code>
-<code class="docutils literal notranslate"><span class="pre">example/heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1/tree.root</span></code></p>
-</div>
-<div class="section" id="part-iii-produce-plots">
-<h2>Part III: Produce plots<a class="headerlink" href="#part-iii-produce-plots" title="Permalink to this headline">¶</a></h2>
-<p>Produce Gen-level plots:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">ROOT</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">TFile</span><span class="p">,</span> <span class="n">gROOT</span><span class="p">,</span> <span class="n">TH1D</span><span class="p">,</span> <span class="n">kRed</span><span class="p">,</span> <span class="n">TLegend</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-
-<span class="k">def</span> <span class="nf">printCanvas</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">format</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span> <span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir &quot;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span>
-        <span class="n">outFile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="nb">format</span>
-        <span class="n">canvas</span><span class="o">.</span><span class="n">Print</span><span class="p">(</span><span class="n">outFile</span><span class="p">)</span>
-
-
-
-<span class="k">def</span> <span class="nf">drawDoublehisto</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">legend</span><span class="p">,</span> <span class="n">leftText</span><span class="p">,</span> <span class="n">rightText</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">logY</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">logY</span> <span class="p">:</span> 
-        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&quot;_logY&quot;</span>
-    <span class="n">canvas</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TCanvas</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span> 
-    <span class="k">if</span> <span class="n">logY</span> <span class="p">:</span> 
-        <span class="n">canvas</span><span class="o">.</span><span class="n">SetLogy</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    
-    <span class="n">font</span> <span class="o">=</span> <span class="mi">132</span>
-    
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gPad</span><span class="o">.</span><span class="n">SetLeftMargin</span><span class="p">(</span><span class="mf">0.20</span><span class="p">)</span> <span class="p">;</span> 
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gPad</span><span class="o">.</span><span class="n">SetRightMargin</span><span class="p">(</span><span class="mf">0.10</span><span class="p">)</span> <span class="p">;</span> 
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gPad</span><span class="o">.</span><span class="n">SetBottomMargin</span><span class="p">(</span><span class="mf">0.20</span><span class="p">)</span> <span class="p">;</span> 
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gStyle</span><span class="o">.</span><span class="n">SetOptStat</span><span class="p">(</span><span class="mi">0000000</span><span class="p">);</span>
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gStyle</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
-    
-    <span class="n">Tleft</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TLatex</span><span class="p">(</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="n">leftText</span><span class="p">)</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">SetNDC</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kTRUE</span><span class="p">)</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">SetTextSize</span><span class="p">(</span><span class="mf">0.044</span><span class="p">)</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> 
-    
-    <span class="n">Tright</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TText</span><span class="p">(</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="n">rightText</span><span class="p">)</span> <span class="p">;</span>
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetTextAlign</span><span class="p">(</span><span class="mi">31</span><span class="p">);</span>
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetNDC</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kTRUE</span><span class="p">)</span> 
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetTextSize</span><span class="p">(</span><span class="mf">0.044</span><span class="p">)</span> 
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> 
-    
-    <span class="n">maxh</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">h1</span><span class="o">.</span><span class="n">GetMaximum</span><span class="p">(),</span><span class="n">h2</span><span class="o">.</span><span class="n">GetMaximum</span><span class="p">())</span>
-    
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleOffset</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleOffset</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelOffset</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelOffset</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">SetNdivisions</span><span class="p">(</span><span class="mi">505</span><span class="p">);</span>
-    <span class="n">h1</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetNdivisions</span><span class="p">(</span><span class="mi">505</span><span class="p">);</span>
-
-    <span class="n">h1</span><span class="o">.</span><span class="n">SetMaximum</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">maxh</span><span class="p">)</span> 
-    <span class="n">h1</span><span class="o">.</span><span class="n">SetTitle</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> 
-    <span class="n">h1</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">h2</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;same&quot;</span><span class="p">)</span>
-
-    <span class="n">legend</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> 
-    <span class="n">legend</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span> 
-    <span class="n">Tright</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span> 
-    <span class="n">printCanvas</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span> 
-    <span class="n">canvas</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
-
-
-<span class="n">treeName</span> <span class="o">=</span> <span class="s2">&quot;events&quot;</span>
-<span class="n">FileS</span> <span class="o">=</span> <span class="s2">&quot;pp_h_4l/example/heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1/tree.root&quot;</span>
-<span class="n">FileB</span> <span class="o">=</span> <span class="s2">&quot;pp_zgzg_4l/example/heppy.analyzers.examples.hzz4l.HTo4lGenTreeProducer.HTo4lGenTreeProducer_1/tree.root&quot;</span>
-
-<span class="n">Vars</span> <span class="o">=</span> <span class="p">{</span>   
-    <span class="s2">&quot;lep1vsPt_pt&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep1vsPt_pt&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;p_</span><span class="si">{T}</span><span class="s2">^{(1)} [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;lep2vsPt_pt&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep2vsPt_pt&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;p_</span><span class="si">{T}</span><span class="s2">^{(2)} [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;lep3vsPt_pt&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep3vsPt_pt&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;p_</span><span class="si">{T}</span><span class="s2">^{(3)} [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">},</span>
-    <span class="s2">&quot;lep4vsPt_pt&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep4vsPt_pt&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;p_</span><span class="si">{T}</span><span class="s2">^{(4)} [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">},</span>
-
-    <span class="s2">&quot;lep1vsEta_eta&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep1vsEta_eta&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;#eta^{(1)}&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
-    <span class="s2">&quot;lep2vsEta_eta&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep2vsEta_eta&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;#eta^{(2)}&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
-    <span class="s2">&quot;lep3vsEta_eta&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep3vsEta_eta&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;#eta^{(3)}&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
-    <span class="s2">&quot;lep4vsEta_eta&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;lep4vsEta_eta&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;#eta^{(4)}&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
-<span class="p">}</span>
-
-
-<span class="n">rootFileS</span> <span class="o">=</span> <span class="n">TFile</span><span class="p">(</span><span class="n">FileS</span><span class="p">,</span><span class="s2">&quot;read&quot;</span><span class="p">)</span>
-<span class="n">treeS</span> <span class="o">=</span> <span class="n">rootFileS</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">treeName</span><span class="p">)</span>
-<span class="n">rootFileB</span> <span class="o">=</span> <span class="n">TFile</span><span class="p">(</span><span class="n">FileB</span><span class="p">,</span><span class="s2">&quot;read&quot;</span><span class="p">)</span>
-<span class="n">treeB</span> <span class="o">=</span> <span class="n">rootFileB</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">treeName</span><span class="p">)</span>
-
-<span class="n">dict_histoS</span> <span class="o">=</span>  <span class="p">{}</span>
-<span class="n">dict_histoB</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="p">:</span>
-    <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">TH1D</span><span class="p">(</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="n">var</span><span class="o">+</span><span class="s2">&quot;S;&quot;</span><span class="o">+</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;bin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmax&quot;</span><span class="p">])</span>
-    <span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">TH1D</span><span class="p">(</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;B;&quot;</span><span class="o">+</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;bin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmax&quot;</span><span class="p">])</span>
-
-
-
-<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">treeS</span><span class="o">.</span><span class="n">GetEntries</span><span class="p">())</span> <span class="p">:</span>
-    <span class="n">treeS</span><span class="o">.</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
-        <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Fill</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">treeS</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]))</span>
-
-<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">treeB</span><span class="o">.</span><span class="n">GetEntries</span><span class="p">())</span> <span class="p">:</span>
-    <span class="n">treeB</span><span class="o">.</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
-        <span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Fill</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">treeB</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]))</span>
-
-
-<span class="n">yAxisLabel</span> <span class="o">=</span> <span class="s2">&quot;a. u.&quot;</span>
-
-<span class="n">rightText</span> <span class="o">=</span> <span class="s2">&quot;GEN&quot;</span>
-<span class="n">leftText</span> <span class="o">=</span> <span class="s2">&quot;#sqrt</span><span class="si">{s}</span><span class="s2"> = 100 TeV&quot;</span>
-<span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>
-<span class="n">outputDirectory</span> <span class="o">=</span> <span class="s2">&quot;plots&quot;</span> 
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outputDirectory</span><span class="p">)</span> <span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir &quot;</span><span class="o">+</span><span class="n">outputDirectory</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span> 
-    <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">SetLineColor</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kRed</span><span class="p">)</span>
-   
-    <span class="k">try</span> <span class="p">:</span> 
-        <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Integral</span><span class="p">()))</span>
-        <span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Integral</span><span class="p">()))</span>
-    <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Can not renormalize because of integral = 0.&quot;</span><span class="p">)</span> 
-    
-    <span class="n">leg</span> <span class="o">=</span> <span class="n">TLegend</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.76</span><span class="p">,</span><span class="mf">0.89</span><span class="p">,</span><span class="mf">0.89</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="s2">&quot;p p #rightarrow H #rightarrow 4l&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="s2">&quot;p p #rightarrow ZZ / Z #gamma^{*} #rightarrow 4l&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">SetFillColor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">SetFillStyle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">SetLineColor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="c1">#c = ROOT.TCanvas()</span>
-    <span class="n">drawDoublehisto</span><span class="p">(</span><span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="n">var</span><span class="p">,</span><span class="n">yAxisLabel</span><span class="p">,</span><span class="n">leg</span><span class="p">,</span><span class="n">leftText</span><span class="p">,</span><span class="n">rightText</span><span class="p">,</span><span class="nb">format</span><span class="p">,</span><span class="n">outputDirectory</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-    <span class="c1">#c.Draw()</span>
-
-
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Info in &lt;TCanvas::Print&gt;: png file plots/lep3vsEta_eta.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep4vsPt_pt.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep3vsPt_pt.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep2vsEta_eta.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep1vsEta_eta.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep4vsEta_eta.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep2vsPt_pt.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/lep1vsPt_pt.png has been created
-</pre></div>
-</div>
-<p>The plots can be found in the <code class="docutils literal notranslate"><span class="pre">plots</span></code> directory:</p>
-<p><img alt="fast-sim-and-analysis/plots/lep4vsPt_pt.png" src="fast-sim-and-analysis/plots/lep4vsPt_pt.png" /></p>
-<p><img alt="../_images/lep1vsPt_pt.png" src="../_images/lep1vsPt_pt.png" />
-<img alt="../_images/lep1vsEta_eta.png" src="../_images/lep1vsEta_eta.png" /></p>
-<p>Produce Reco-level plots:</p>
-<p>Appreciate the signal yield for <strong>25 fb-1 of data</strong>. Compare with <a class="reference external" href="https://arxiv.org/pdf/1408.5191v3.pdf">ATLAS results</a> at 7,8 TeV .</p>
-<p><img alt="../_images/higgs_m.png" src="../_images/higgs_m.png" />
-<img alt="../_images/m4l_80_170_allYear_125.png" src="../_images/m4l_80_170_allYear_125.png" /></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load tutorials/fcc/createRecoHistos.py</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">TFile</span><span class="p">,</span> <span class="n">gROOT</span><span class="p">,</span> <span class="n">TH1D</span><span class="p">,</span> <span class="n">kRed</span><span class="p">,</span> <span class="n">TLegend</span><span class="p">,</span> <span class="n">THStack</span>
-<span class="c1">#from tools.drawCanvas import *</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">def</span> <span class="nf">printCanvas</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">format</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span> <span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir &quot;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span>
-        <span class="n">outFile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="nb">format</span>
-        <span class="n">canvas</span><span class="o">.</span><span class="n">Print</span><span class="p">(</span><span class="n">outFile</span><span class="p">)</span>
-
-        
-<span class="k">def</span> <span class="nf">drawStack</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">legend</span><span class="p">,</span> <span class="n">leftText</span><span class="p">,</span> <span class="n">rightText</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">logY</span><span class="p">,</span> <span class="n">hS</span><span class="p">,</span> <span class="n">hB</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">logY</span> <span class="p">:</span> 
-        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&quot;_logY&quot;</span>
-    <span class="n">canvas</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TCanvas</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span> 
-    <span class="k">if</span> <span class="n">logY</span> <span class="p">:</span> 
-        <span class="n">canvas</span><span class="o">.</span><span class="n">SetLogy</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    
-    <span class="n">font</span> <span class="o">=</span> <span class="mi">132</span>
-    
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gPad</span><span class="o">.</span><span class="n">SetLeftMargin</span><span class="p">(</span><span class="mf">0.20</span><span class="p">)</span> <span class="p">;</span> 
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gPad</span><span class="o">.</span><span class="n">SetRightMargin</span><span class="p">(</span><span class="mf">0.10</span><span class="p">)</span> <span class="p">;</span> 
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gPad</span><span class="o">.</span><span class="n">SetBottomMargin</span><span class="p">(</span><span class="mf">0.20</span><span class="p">)</span> <span class="p">;</span> 
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gStyle</span><span class="o">.</span><span class="n">SetOptStat</span><span class="p">(</span><span class="mi">0000000</span><span class="p">);</span>
-    <span class="n">ROOT</span><span class="o">.</span><span class="n">gStyle</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">);</span>
-    
-    <span class="n">Tleft</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TLatex</span><span class="p">(</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="n">leftText</span><span class="p">)</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">SetNDC</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kTRUE</span><span class="p">)</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">SetTextSize</span><span class="p">(</span><span class="mf">0.044</span><span class="p">)</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> 
-    
-    <span class="n">Tright</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TText</span><span class="p">(</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="n">rightText</span><span class="p">)</span> <span class="p">;</span>
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetTextAlign</span><span class="p">(</span><span class="mi">31</span><span class="p">);</span>
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetNDC</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kTRUE</span><span class="p">)</span> 
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetTextSize</span><span class="p">(</span><span class="mf">0.044</span><span class="p">)</span> 
-    <span class="n">Tright</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> 
-    
-    <span class="c1"># first retrieve maximum </span>
-    <span class="n">maxes</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">maxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hS</span><span class="o">.</span><span class="n">GetMaximum</span><span class="p">())</span>
-    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">hB</span><span class="p">:</span>
-       <span class="n">maxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">GetMaximum</span><span class="p">())</span>
-    
-    <span class="n">maxh</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxes</span><span class="p">)</span>
-     
-    <span class="c1"># define stacked histo</span>
-    <span class="n">hStack</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">THStack</span><span class="p">(</span><span class="s2">&quot;hstack&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kCyan</span><span class="o">-</span><span class="mi">6</span><span class="p">);</span>
-    <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kBlue</span><span class="o">-</span><span class="mi">6</span><span class="p">);</span>
-    <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kGreen</span><span class="o">-</span><span class="mi">6</span><span class="p">);</span>
-    <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kMagenta</span><span class="o">-</span><span class="mi">6</span><span class="p">);</span>
-    <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kOrange</span><span class="o">-</span><span class="mi">6</span><span class="p">);</span>
-   
-    <span class="c1"># first plot backgrounds</span>
-         
-    <span class="n">hB</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">hB</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetLineColor</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kBlack</span><span class="p">)</span>
-    <span class="n">hB</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SetFillColor</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    
-    <span class="n">hStack</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">hB</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    
-    <span class="c1"># now loop over other background (skipping first)</span>
-    <span class="n">iterh</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">hB</span><span class="p">)</span>
-    <span class="nb">next</span><span class="p">(</span><span class="n">iterh</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">iterh</span><span class="p">:</span>
-       <span class="n">h</span><span class="o">.</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-       <span class="n">h</span><span class="o">.</span><span class="n">SetLineColor</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kBlack</span><span class="p">)</span>
-       <span class="n">h</span><span class="o">.</span><span class="n">SetFillColor</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-       <span class="n">hStack</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-    
-    
-    <span class="c1"># finally add signal on top</span>
-    <span class="n">hS</span><span class="o">.</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">hS</span><span class="o">.</span><span class="n">SetLineColor</span><span class="p">(</span><span class="n">ROOT</span><span class="o">.</span><span class="n">kRed</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">hS</span><span class="p">)</span>
-    
-    <span class="n">hStack</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;hist&quot;</span><span class="p">)</span>
-   
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">hB</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">GetTitle</span><span class="p">())</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleOffset</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleOffset</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelOffset</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelOffset</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetTitleSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetLabelSize</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetNdivisions</span><span class="p">(</span><span class="mi">505</span><span class="p">);</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">.</span><span class="n">SetNdivisions</span><span class="p">(</span><span class="mi">505</span><span class="p">);</span>
-    <span class="n">hStack</span><span class="o">.</span><span class="n">SetMaximum</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">maxh</span><span class="p">)</span> 
-    <span class="n">hStack</span><span class="o">.</span><span class="n">SetTitle</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> 
-    
-   
-    <span class="n">legend</span><span class="o">.</span><span class="n">SetTextFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> 
-    <span class="n">legend</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span> 
-    <span class="n">Tleft</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span> 
-    <span class="n">Tright</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span> 
-    <span class="n">printCanvas</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span> 
-
-<span class="n">treeName</span> <span class="o">=</span> <span class="s2">&quot;events&quot;</span>
-<span class="n">FileS</span> <span class="o">=</span> <span class="s2">&quot;pp_h_4l/example/heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1/tree.root&quot;</span>
-<span class="n">FileB</span> <span class="o">=</span> <span class="s2">&quot;pp_zgzg_4l/example/heppy.analyzers.examples.hzz4l.HTo4lTreeProducer.HTo4lTreeProducer_1/tree.root&quot;</span>
-
-<span class="c1"># number of generated events</span>
-<span class="n">nGenS</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">nGenB</span> <span class="o">=</span> <span class="mi">10000</span>
-
-<span class="c1"># integrated luminosity</span>
-<span class="n">intLumi</span> <span class="o">=</span> <span class="mi">25000</span>
-
-<span class="n">kFactorS</span> <span class="o">=</span> <span class="mf">3.50</span>
-<span class="n">kFactorB</span> <span class="o">=</span> <span class="mf">1.80</span>
-
-<span class="c1"># MG5 LO XS x BR in (pb)</span>
-<span class="n">sigmaS</span> <span class="o">=</span> <span class="mf">0.026</span>
-<span class="n">sigmaB</span> <span class="o">=</span> <span class="mf">1.04</span>
-
-<span class="n">weightS</span> <span class="o">=</span> <span class="n">kFactorS</span><span class="o">*</span><span class="n">sigmaS</span><span class="o">*</span><span class="n">intLumi</span><span class="o">/</span><span class="n">nGenS</span>
-<span class="n">weightB</span> <span class="o">=</span> <span class="n">kFactorB</span><span class="o">*</span><span class="n">sigmaB</span><span class="o">*</span><span class="n">intLumi</span><span class="o">/</span><span class="n">nGenB</span>
-
-<span class="n">Vars</span> <span class="o">=</span> <span class="p">{</span>   
-    <span class="s2">&quot;zed1_m&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;zed1_m&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;m_</span><span class="si">{ll}</span><span class="s2">^{(1)} [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;zed2_m&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;zed2_m&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;m_</span><span class="si">{ll}</span><span class="s2">^{(2)} [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">},</span>
-    <span class="s2">&quot;higgs_m&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;higgs_m&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;m_</span><span class="si">{4l}</span><span class="s2"> [GeV]&quot;</span><span class="p">,</span><span class="s2">&quot;bin&quot;</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="mi">170</span><span class="p">},</span>
-<span class="p">}</span>
-
-<span class="n">rootFileS</span> <span class="o">=</span> <span class="n">TFile</span><span class="p">(</span><span class="n">FileS</span><span class="p">,</span><span class="s2">&quot;read&quot;</span><span class="p">)</span>
-<span class="n">treeS</span> <span class="o">=</span> <span class="n">rootFileS</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">treeName</span><span class="p">)</span>
-<span class="n">rootFileB</span> <span class="o">=</span> <span class="n">TFile</span><span class="p">(</span><span class="n">FileB</span><span class="p">,</span><span class="s2">&quot;read&quot;</span><span class="p">)</span>
-<span class="n">treeB</span> <span class="o">=</span> <span class="n">rootFileB</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">treeName</span><span class="p">)</span>
-
-<span class="n">dict_histoS</span> <span class="o">=</span> <span class="p">{</span><span class="n">var</span><span class="p">:</span><span class="n">TH1D</span><span class="p">(</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;S&quot;</span><span class="p">,</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;S;&quot;</span><span class="o">+</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;bin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmax&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="p">}</span>
-<span class="n">dict_histoB</span> <span class="o">=</span> <span class="p">{</span><span class="n">var</span><span class="p">:</span><span class="n">TH1D</span><span class="p">(</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;B;&quot;</span><span class="o">+</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;bin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmin&quot;</span><span class="p">],</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;xmax&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="p">}</span>
-
-
-
-
-<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">treeS</span><span class="o">.</span><span class="n">GetEntries</span><span class="p">())</span> <span class="p">:</span>
-    <span class="n">treeS</span><span class="o">.</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
-        <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Fill</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">treeS</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]))</span>
-
-<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">treeB</span><span class="o">.</span><span class="n">GetEntries</span><span class="p">())</span> <span class="p">:</span>
-    <span class="n">treeB</span><span class="o">.</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
-        <span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Fill</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">treeB</span><span class="p">,</span><span class="n">Vars</span><span class="p">[</span><span class="n">var</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]))</span>
-
-<span class="c1">#myBTGStyle()</span>
-
-<span class="n">yAxisLabel</span> <span class="o">=</span> <span class="s2">&quot;Events / 2.5 GeV&quot;</span>
-
-<span class="n">rightText</span> <span class="o">=</span> <span class="s2">&quot;RECO: Delphes-3.4.0&quot;</span>
-<span class="n">leftText</span> <span class="o">=</span> <span class="s2">&quot;#sqrt</span><span class="si">{s}</span><span class="s2"> = 100 TeV, L = 25 fb^{-1}&quot;</span>
-<span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>
-<span class="n">outputDirectory</span> <span class="o">=</span> <span class="s2">&quot;plots&quot;</span> 
-<span class="n">outFile</span> <span class="o">=</span> <span class="n">outputDirectory</span><span class="o">+</span><span class="s2">&quot;/plots.root&quot;</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outputDirectory</span><span class="p">)</span> <span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir &quot;</span><span class="o">+</span><span class="n">outputDirectory</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">Vars</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span> 
-     
-    <span class="k">try</span> <span class="p">:</span> 
-        
-	<span class="c1"># rescale by</span>
-        <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">weightS</span><span class="p">)</span>
-        <span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">weightB</span><span class="p">)</span>
-
-    <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="p">:</span>
-        <span class="nb">print</span> <span class="s2">&quot;Can not renormalize because of integral = 0.&quot;</span> 
-    
-    <span class="n">leg</span> <span class="o">=</span> <span class="n">TLegend</span><span class="p">(</span><span class="mf">0.69</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.88</span><span class="p">,</span><span class="mf">0.88</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="s2">&quot;ZZ / Z #gamma^{*}&quot;</span><span class="p">,</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="s2">&quot;H(125)&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">SetFillColor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">SetFillStyle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">leg</span><span class="o">.</span><span class="n">SetLineColor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="n">hS</span> <span class="o">=</span> <span class="n">dict_histoS</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
-    <span class="n">hB</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">hB</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_histoB</span><span class="p">[</span><span class="n">var</span><span class="p">])</span>
-
-    <span class="n">drawStack</span><span class="p">(</span><span class="n">var</span><span class="p">,</span><span class="n">yAxisLabel</span><span class="p">,</span><span class="n">leg</span><span class="p">,</span><span class="n">leftText</span><span class="p">,</span><span class="n">rightText</span><span class="p">,</span><span class="nb">format</span><span class="p">,</span><span class="n">outputDirectory</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">hS</span><span class="p">,</span><span class="n">hB</span><span class="p">)</span>
-
-
-
-
-
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Info in &lt;TCanvas::Print&gt;: png file plots/higgs_m.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/zed2_m.png has been created
-Info in &lt;TCanvas::Print&gt;: png file plots/zed1_m.png has been created
-</pre></div>
-</div>
-<p><img alt="fast-sim-and-analysis/plots/higgs_m.png" src="fast-sim-and-analysis/plots/higgs_m.png" />
-<img alt="fast-sim-and-analysis/plots/zed2_m.png" src="fast-sim-and-analysis/plots/zed2_m.png" />
-<img alt="fast-sim-and-analysis/plots/zed1_m.png" src="fast-sim-and-analysis/plots/zed1_m.png" /></p>
-</div>
-<div class="section" id="part-iv-homework">
-<h2>Part IV: Homework<a class="headerlink" href="#part-iv-homework" title="Permalink to this headline">¶</a></h2>
-<p>As an exercise you can <strong>re-run the full analysis with the CMS detector configuration</strong>.
-Additional Delphes cards canbe found in the <code class="docutils literal notranslate"><span class="pre">$DELPHES_DIR/cards</span></code> folder of your Delphes installation.</p>
-<p>Hint: The input Delphes card can be specified in the command line argument:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--DelphesCard /cvmfs/sft.cern.ch/lcg/releases/LCG_94/delphes/3.4.2pre12/x86_64-centos7-gcc62-opt/cards/delphes_card_CMS.tcl
-</pre></div>
-</div>
-<p>You should obtain a plot similar to the following!</p>
-<p><img alt="You should obtain a plot similar to this one." src="../_images/higgs_m_cms.png" /></p>
-<p>By comparing the CMS and FCC Delphes cards, try to explain:</p>
-<ul class="simple">
-<li><p>the <strong>event yields difference between 7/8 TeV and 100 TeV</strong> (by comparing the official ATLAS plot with the CMS configuration you just ran at 100 TeV)</p></li>
-<li><p>the <strong>event yields difference at 100 TeV</strong> between the CMS and FCC detector configurations</p></li>
-<li><p>the <strong>difference in the width of Z and H peaks</strong> between the CMS and FCC detector configurations</p></li>
-</ul>
 </div>
 <div class="section" id="other-documentation">
 <h2>Other documentation<a class="headerlink" href="#other-documentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/HEP-FCC/heppy/blob/master/doc/Heppy_-_Parallel_Processing">Submit Heppy jobs using the batch queue</a></p></li>
 <li><p><a class="reference external" href="http://fccsw.web.cern.ch/fccsw/index.html">FCCSW webpage</a></p></li>
 <li><p><a class="reference external" href="http://home.thep.lu.se/~torbjorn/pythia81html/Welcome.html">Pythia8 manual</a></p></li>
 <li><p><a class="reference external" href="https://cp3.irmp.ucl.ac.be/projects/delphes">Delphes website</a></p></li>
