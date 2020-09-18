@@ -718,6 +718,7 @@ python FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py PATH_TO_FILES_PART_I/p8_ee_W
 </ul>
 <ol class="simple">
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py</span></code> to include the muon tracks (look at the output file or to <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py</span></code> to check the name.</p></li>
+<li><p>Add the track informations to the output files by modifying <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py</span></code> for the <code class="docutils literal notranslate"><span class="pre">efcharged</span></code> collection and produce plots with them as in 1)</p></li>
 <li><p>Produce plots wiht larger statistic. In order to produce plots with more statistics, we could use already processed large statistics samples.
 To do so we re-run the pre-selection over 1 percent of the total statistics <a class="reference external" href="http://fcc-physics-events.web.cern.ch/fcc-physics-events/Delphesevents_fccee_v02.php">here</a>:</p></li>
 </ol>
@@ -735,7 +736,37 @@ python bin/doPlots.py FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py
 <div class="section" id="part-iii-compare-two-monte-carlo-samples">
 <h2>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
 <p>In this part we will compare two generators at the Z-pole.
-generate Z events with Whizard, produce a LHE events and</p>
+First, follow this tutorial to generate Z events with Whizard and produce a Les Houches Events file: <a class="reference external" href="https://hep-fcc.github.io/fcc-tutorials/fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#whizard">here</a>.</p>
+<p>Once you have followed this tutorial, start from a clean shell, go to your tutorial directoty and run the setup</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /cvmfs/fcc.cern.ch/sw/latest/setup.sh
+</pre></div>
+</div>
+<p>Then create a generic Pythi8 card for reading LHE files</p>
+<ul class="simple">
+<li><p><strong>Pythia_LHE.cmd</strong></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! 1) Settings that will be used in a main program.
+Main:numberOfEvents = 1            ! number of events to generate
+Main:timesAllowErrors = 10        ! abort run after this many flawed events
+
+! 2) Tell Pythia that LHEF input is used
+Beams:frameType             = 4
+Beams:setProductionScalesFromLHEF = off
+Beams:LHEF = events.lhe
+
+! 4) Settings for the event generation process in the Pythia8 library.
+PartonLevel:ISR = on               ! initial-state radiation
+PartonLevel:FSR = on               ! final-state radiation
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">Beams:LHEF</span> <span class="pre">=</span> <span class="pre">events.lhe</span></code> points to the file you have produced with Whizard.
+Then we shower with Pythia in FCCSW and run the Delphes detector paramterisation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_LHE.cmd --filename wizhardp8_ee_Z_ecm91.root -n <span class="m">10000</span>
+</pre></div>
+</div>
+<p>, shower with Pythia
+generate Z events with Pythia8
+Compare the two</p>
 </div>
 </div>
 
