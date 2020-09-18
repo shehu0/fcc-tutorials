@@ -761,7 +761,7 @@ PartonLevel:FSR = on               ! final-state radiation
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">Beams:LHEF</span> <span class="pre">=</span> <span class="pre">events.lhe</span></code> points to the file you have produced with Whizard.
 Then we shower with Pythia in FCCSW and run the Delphes detector paramterisation:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_LHE.cmd --filename wizhardp8_ee_Z_ecm91.root -n <span class="m">10000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_LHE.cmd --filename wizhardp8_ee_Z_Zmumu_ecm91.root -n <span class="m">10000</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -795,13 +795,18 @@ PartonLevel:FSR = on               ! final-state radiation
 </pre></div>
 </div>
 <p>and run fcc on it</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_ee_Zmumu_ecm91.cmd --filename p8_ee_Z_ecm91.root -n <span class="m">10000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_ee_Zmumu_ecm91.cmd --filename p8_ee_Z_Zmumu_ecm91.root -n <span class="m">10000</span>
 </pre></div>
 </div>
-<p>Now go to the <code class="docutils literal notranslate"><span class="pre">FCCAnalyses</span></code> repository you have cloned during Part II, and run the Z to mumu analysis on the file</p>
-<p>, shower with Pythia
-generate Z events with Pythia8
-Compare the two</p>
+<p>Now go to the <code class="docutils literal notranslate"><span class="pre">FCCAnalyses</span></code> repository you have cloned during Part II, and run the Z to mumu analysis on the files produced</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/Z_Zmumu/dataframe/analysis.py ../mytutorialtest/wizhardp8_ee_Z_Zmumu_ecm91.root
+python FCCeeAnalyses/Z_Zmumu/dataframe/analysis.py ../mytutorialtest/p8_ee_Z_Zmumu_ecm91.root
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/Z_Zmumu/dataframe/finalSel.py
+</pre></div>
+</div>
+<p>and look at the new plots in <code class="docutils literal notranslate"><span class="pre">FCCee/Z_Zmumu/plots/</span></code>.</p>
 </div>
 </div>
 
