@@ -712,9 +712,15 @@ python FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py PATH_TO_FILES_PART_I/p8_ee_W
 </pre></div>
 </div>
 <p>and look at them in <code class="docutils literal notranslate"><span class="pre">FCCee/ZH_Zmumu/plots/</span></code>.</p>
-<p>Please note that the event statistics is not great because we only run on 10 000 events.
-In order to produce plots with more statistics, we could use already processed large statistics samples.
-To do so we re-run the pre-selection over 1 percent of the total statistics <a class="reference external" href="http://fcc-physics-events.web.cern.ch/fcc-physics-events/Delphesevents_fccee_v01.php">here</a>:</p>
+<p>Please note that the event statistics is not great because we only run on 10 000 events.</p>
+<ul class="simple">
+<li><p><strong>Exercises</strong></p></li>
+</ul>
+<ol class="simple">
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py</span></code> to include the muon tracks (look at the output file or to <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py</span></code> to check the name.</p></li>
+<li><p>Produce plots wiht larger statistic. In order to produce plots with more statistics, we could use already processed large statistics samples.
+To do so we re-run the pre-selection over 1 percent of the total statistics <a class="reference external" href="http://fcc-physics-events.web.cern.ch/fcc-physics-events/Delphesevents_fccee_v02.php">here</a>:</p></li>
+</ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> python FCCeeAnalyses/ZH_Zmumu/dataframe/preSel.py
 </pre></div>
 </div>
@@ -728,6 +734,8 @@ python bin/doPlots.py FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py
 </div>
 <div class="section" id="part-iii-compare-two-monte-carlo-samples">
 <h2>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
+<p>In this part we will compare two generators at the Z-pole.
+generate Z events with Whizard, produce a LHE events and</p>
 </div>
 </div>
 
