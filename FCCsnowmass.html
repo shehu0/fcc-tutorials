@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FCC: Getting started with simulating events and analysing them &mdash; FCC Starterkit Lessons  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="_static/starterkit.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/panels.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> FCC Starterkit Lessons
+          
+
+          
+            
+            <img src="_static/starterkit.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software-basics/README.html">First  Steps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software-basics/prerequisites.html">Pre-workshop checklist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software-basics/prerequisites.html#setup">Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software-basics/introduction-to-course.html">Goals of the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-basics/fccsw.html">An introduction to FCC Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-basics/bookkeeping.html">Finding data in the Bookkeeping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software-basics/bookkeeping.html#gaining-access-permissions">Gaining access permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-basics/bookkeeping.html#finding-data">Finding Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software-basics/exploring-fcc-files.html">Inspecting an FCC data file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software-basics/exploring-fcc-files.html#the-events-tree">The <code class="docutils literal notranslate"><span class="pre">events</span></code> tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software-basics/exploring-fcc-files.html#the-metadata-tree">The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> tree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software-basics/asking-questions.html">Asking good questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fast-sim-and-analysis/README.html">Generators, Fast Simulation and Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html">FCC: Getting started with the production and analysis of fast-simulated events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#enabling-fccsw">Enabling FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#generators">Generators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#id1">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#pythia8">Pythia8</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#whizard">Whizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#madgraph5">MadGraph5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#herwig">Herwig</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#getting-started-with-delphes">Getting started with Delphes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#run-fccsw-with-pythia8-delphes-fcc-hh">Run FCCSW with Pythia8+Delphes (FCC-hh)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#run-fccsw-with-pythia8-delphes-fcc-ee">Run FCCSW with Pythia8+Delphes (FCC-ee)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#run-dataframe-fcc-ee">Run dataframe (FCC-ee)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fast-sim-and-analysis/FccFullAnalysis.html">FCC-hh: Pythia, Delphes, Heppy Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FccFullAnalysis.html#part-i-generate-and-simulate-events-with-fccsw">Part I: Generate and simulate Events with FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FccFullAnalysis.html#other-documentation">Other documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fast-sim-and-analysis/FcceeAnalysis.html">FCC-ee: Getting started with analysing simulated physics events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FcceeAnalysis.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FcceeAnalysis.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FcceeAnalysis.html#instructions">Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fast-sim-and-analysis/FcceeAnalysis.html#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="full-detector-simulations/README.html">Full Detector Simulations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html">FCC Calorimeter Performance Studies Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html#using-the-dd4hep-detector-model-in-fcc-software">Using the DD4hep detector model in FCC Software.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html#running-geant4-within-the-fcc-software-framework">Running Geant4 within the FCC Software Framework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html#obtaining-and-plotting-the-energy-resolution">Obtaining and Plotting the Energy Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html#extracting-and-plotting-the-resolution">Extracting and Plotting the Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html#further-topics-parametrizing-the-energy-resolution">Further Topics: Parametrizing the Energy Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FccCaloPerformance/FccCaloPerformance.html#further-topics-calculating-the-sampling-fraction-and-using-it-in-simulation">Further Topics: Calculating the Sampling Fraction and using it in Simulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="full-detector-simulations/FCCeeDriftChamber/FCCeeDriftChamber.html">FCCee: Full Simulation of IDEA Driftchamber</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="full-detector-simulations/FCCeeDriftChamber/FCCeeDriftChamber.html#part-i-simulations-with-the-idea-detector-model-in-fccsw">Part I: Simulations with the IDEA detector model in  FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="full-detector-simulations/FCCeeDriftChamber/FCCeeDriftChamber.html#part-ii-user-task-basic-reconstruction-with-a-hough-transform">Part II User Task: Basic Reconstruction with a Hough-Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="full-detector-simulations/FCCee_IR_Backgrounds_guinea/README.html">FCCee Interaction Region Backgrounds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="full-detector-simulations/FCCee_IR_Backgrounds_guinea/README.html#using-guinea-pig-to-generate-interaction-region-backgrounds">Using Guinea-Pig to generate interaction region backgrounds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FCCee_IR_Backgrounds_guinea/README.html#generating-e-e-pairs">Generating e- e+ pairs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FCCee_IR_Backgrounds_guinea/README.html#generating-large-amount-of-data-with-gp">Generating large amount of data with GP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="full-detector-simulations/FCCee_IR_Backgrounds_guinea/README.html#gp-production-of-gamma-gamma-hadrons">GP production of <span class="math notranslate nohighlight">\(\gamma\gamma\)</span>hadrons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing-fcc-software/README.html">Developing FCCSW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html">Github workflow and contribution guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#first-time-setup-of-git">First time setup of git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#generate-and-set-up-ssh-keys-for-github">Generate and set up ssh keys for github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#improving-your-git-experience">Improving your git experience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#development-workflow">Development workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#keeping-your-local-repository-up-to-date">Keeping your local repository up to date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#contributing-code">Contributing code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#recommendations">Recommendations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#general-recommendations">General recommendations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#commit-comments">Commit comments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#cleaning-history">Cleaning history</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#pull-requests">Pull requests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#trouble-shooting">Trouble-shooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#when-i-try-to-push-to-the-repository-i-get-an-authentication-error">When I try to push to the repository, I get an authentication error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#i-have-cloned-with-https-and-now-i-can-t-push-my-changes-what-do-i-do">I have cloned with https and now I can’t push my changes, what do I do?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccSoftwareGit.html#need-help">Need help?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html">CMake guide for the FCC software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#quick-start-into-building-fccsw">Quick start into building FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#cmake-example-packages">CMake example packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#cmake-in-the-fcc-software-framework">CMake in the FCC software framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#ctest-in-fccsw">CTest in FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#using-an-internal-library">Using an internal library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#building-a-new-gaudi-module">Building a new Gaudi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#using-an-external-library">Using an external library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccCMakeGuide.html#customizing-how-cmake-is-run">Customizing how CMake is run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developing-fcc-software/FccDocPage.html">Writing documentation for the FCC software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccDocPage.html#where-to-put-documentation">Where to put documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccDocPage.html#when-and-how-is-the-documentation-page-updated">When and how is the documentation page updated?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccDocPage.html#structure-of-the-content">Structure of the content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccDocPage.html#running-website-generation-locally">Running website generation locally</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developing-fcc-software/FccDocPage.html#about-jekyll">About jekyll</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developing-fcc-software/FccDocPage.html#for-website-admins">For website admins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">External links:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://hsf-training.github.io/analysis-essentials/">Analysis essentials</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://lhcb.github.io/starterkit">LHCb starterkit</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://hep-fcc.github.io/glossary">FCC software glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FCC Starterkit Lessons</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>FCC: Getting started with simulating events and analysing them</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/HEP-FCC/fcc-tutorials/blob/master/FCCsnowmass.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fcc-getting-started-with-simulating-events-and-analysing-them">
+<h1>FCC: Getting started with simulating events and analysing them<a class="headerlink" href="#fcc-getting-started-with-simulating-events-and-analysing-them" title="Permalink to this headline">¶</a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<p>This tutorial will teach you how to:</p>
+<ul class="simple">
+<li><p><strong>generate</strong> signal and background samples with <strong>Pythia8</strong> within FCCSW</p></li>
+<li><p>run a fast parametric <strong>detector simulation</strong> with <strong>Delphes</strong> within FCCSW</p></li>
+<li><p>apply an <strong>event selection</strong> on those samples with <strong>FCCAnalyses</strong></p></li>
+<li><p>produce <strong>flat ntuples</strong> with observables of interest with <strong>FCCAnalyses</strong></p></li>
+<li><p>produce plots with <strong>FCCAnalyses</strong></p></li>
+<li><p>compare distributions produced with different generators</p></li>
+</ul>
+</div>
+</div>
+<p>First login to to a fresh shell on lxplus, on OSG, or in one of the virtual machine that could be provided on open stack. Usage of bash shell is highly recommended. Create a working directory and go inside</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir mytutorial
+<span class="nb">cd</span> mytutorial
+</pre></div>
+</div>
+<p>Then, make sure your <strong>setup of the FCC software</strong> is working correctly. A quick check is that the executable <code class="docutils literal notranslate"><span class="pre">fccrun</span></code>, which allows you to run jobs in the Gaudi framework is available on the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which fccrun
+</pre></div>
+</div>
+<p>If the above command fails without printing a path like <code class="docutils literal notranslate"><span class="pre">/cvmfs/fcc.cern.ch/sw/releases/fccsw/0.14/x86_64-centos7-gcc8-opt/scripts/fccrun</span></code>, you need to setup the FCC software stack</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /cvmfs/fcc.cern.ch/sw/latest/setup.sh
+</pre></div>
+</div>
+<!-- 
+Please also add an environment varialbe for Delphes cards
+
+```bash
+export DELPHES_DIR='/cvmfs/sft.cern.ch/lcg/releases/delphes/3.4.3pre02-e4803/x86_64-centos7-gcc8-opt/'
+```
+--><div class="section" id="part-i-generate-and-simulate-events-with-fccsw">
+<h2>Part I: Generate and simulate Events with FCCSW<a class="headerlink" href="#part-i-generate-and-simulate-events-with-fccsw" title="Permalink to this headline">¶</a></h2>
+<p>For this tutorial we will consider the following <strong>physics processes</strong>:</p>
+<ul class="simple">
+<li><p>e+ e- -&gt; ZH -&gt; Z to mumu and H to anything</p></li>
+<li><p>e+ e- -&gt; ZZ -&gt; Z to anything</p></li>
+<li><p>e+ e- -&gt; WW -&gt; W to anything</p></li>
+</ul>
+<p>Let’s start by writing the pythia cards for the various processes.</p>
+<ul class="simple">
+<li><p><strong>Pythia_ee_ZH_Zmumu_ecm240.cmd</strong> for the Higgs Strahlung signal</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! File: Pythia_ee_ZH_Zmumu_ecm240.cmd
+Random:setSeed = on
+Main:timesAllowErrors = 10          ! how many aborts before run stops
+
+! 2) Settings related to output in init(), next() and stat().
+Next:numberCount = 100             ! print message every n events
+Beams:idA = 11                     ! first beam, e+ = 11
+Beams:idB = -11                    ! second beam, e- = -11
+
+! 3) Hard process : ZH at 240 GeV
+Beams:eCM = 240  ! CM energy of collision
+HiggsSM:ffbar2HZ = on
+
+! 4) Settings for the event generation process in the Pythia8 library.
+PartonLevel:ISR = on               ! initial-state radiation
+PartonLevel:FSR = on               ! final-state radiation
+
+! 5) Non-standard settings; exemplifies tuning possibilities.
+25:m0        = 125.0               ! Higgs mass
+23:onMode    = off		   ! switch off Z boson decays
+23:onIfAny   = 13		   ! switch on Z boson decay to muons
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Pythia_ee_ZZ_ecm240.cmd</strong> for the ZZ background</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! File: Pythia_ee_ZZ_ecm240.cmd
+Random:setSeed = on
+Main:timesAllowErrors = 10         ! how many aborts before run stops
+
+! 2) Settings related to output in init(), next() and stat().
+Next:numberCount = 100             ! print message every n events
+Beams:idA = 11                     ! first beam, e+ = 11
+Beams:idB = -11                    ! second beam, e- = -11
+
+! 3) Hard process : ZZ at 240 GeV
+Beams:eCM = 240  ! CM energy of collision
+WeakDoubleBoson:ffbar2gmZgmZ = on
+
+! 4) Settings for the event generation process in the Pythia8 library.
+PartonLevel:ISR = on               ! initial-state radiation
+PartonLevel:FSR = on               ! final-state radiation
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Pythia_ee_WW_ecm240.cmd</strong> for the WW background</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! File: Pythia_ee_WW_ecm240.cmd
+Random:setSeed = on
+Main:timesAllowErrors = 10         ! how many aborts before run stops
+
+! 2) Settings related to output in init(), next() and stat().
+Next:numberCount = 100             ! print message every n events
+Beams:idA = 11                     ! first beam, e+ = 11
+Beams:idB = -11                    ! second beam, e- = -11
+
+! 3) Hard process : WW at 240 GeV
+Beams:eCM = 240  ! CM energy of collision
+WeakDoubleBoson:ffbar2WW = on
+
+! 4) Settings for the event generation process in the Pythia8 library.
+PartonLevel:ISR = on               ! initial-state radiation
+PartonLevel:FSR = on               ! final-state radiation
+</pre></div>
+</div>
+<p>The detector response of the the baseline FCC-ee IDEA detector configuration is estimated with Delphes.
+Other detector cards can be found in the <code class="docutils literal notranslate"><span class="pre">$DELPHES_DIR/cards</span></code> directory, such as a ATLAS, CMS or ILD detector configurations:
+<code class="docutils literal notranslate"><span class="pre">delphes_card_ATLAS.tcl</span></code>, <code class="docutils literal notranslate"><span class="pre">delphes_card_CMS.tcl</span></code> and <code class="docutils literal notranslate"><span class="pre">delphes_card_ILD.tcl</span></code>.</p>
+<p>Both Pythia8 and Delphes are integrated in the Gaudi-based FCCSW framework as <em>Algorithms</em>. A job that runs the whole workflow consists of the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GenAlg</span></code> (Top level Generation Algorithm, with a <code class="docutils literal notranslate"><span class="pre">tool</span></code> that calls Pythia8)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HepMCConverter</span></code> (takes the HepMC output and translates it to the FCC event data model, understood by the Sim Algorithm)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DelphesSimulation</span></code>(Delphes integration, outputs reconstructed objects in the FCC event data model)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PodioOutput</span></code> (writes the event data to a root file on disk)</p></li>
+</ul>
+<p>To run the code, a job options like the following is needed (<strong>Note:</strong> While the format of the configuration is a python file, it is not necessarily “pythonic”. It can be used with GaudiPython, but we will only use it as to straightforwardly write down a job description for use with <code class="docutils literal notranslate"><span class="pre">fccrun</span></code> )</p>
+<ul class="simple">
+<li><p><strong>PythiaDelphes_config.py</strong> for the FCCSW configuration file</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">Gaudi.Configuration</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Workflow Steering</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">ApplicationMgr</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">EvtSel</span> <span class="o">=</span> <span class="s1">&#39;NONE&#39;</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">EvtMax</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1">## Data event model based on Podio</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">FCCDataSvc</span>
+<span class="n">podioEvent</span> <span class="o">=</span> <span class="n">FCCDataSvc</span><span class="p">(</span><span class="s2">&quot;EventDataSvc&quot;</span><span class="p">)</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">ExtSvc</span> <span class="o">+=</span> <span class="p">[</span><span class="n">podioEvent</span><span class="p">]</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">OutputLevel</span> <span class="o">=</span> <span class="n">INFO</span>
+
+
+<span class="c1">## Pythia generator</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">PythiaInterface</span>
+<span class="n">pythia8gentool</span> <span class="o">=</span> <span class="n">PythiaInterface</span><span class="p">()</span>
+<span class="n">pythia8gentool</span><span class="o">.</span><span class="n">Filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FCCSWSHAREDIR&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span><span class="s2">&quot;Generation/data/ee_Z_ddbar.cmd&quot;</span><span class="p">)</span>
+
+
+<span class="c1">## Write the HepMC::GenEvent to the data service</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">GenAlg</span>
+<span class="n">pythia8gen</span> <span class="o">=</span> <span class="n">GenAlg</span><span class="p">()</span>
+<span class="n">pythia8gen</span><span class="o">.</span><span class="n">SignalProvider</span> <span class="o">=</span> <span class="n">pythia8gentool</span>
+<span class="n">pythia8gen</span><span class="o">.</span><span class="n">hepmc</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;hepmc&quot;</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">TopAlg</span> <span class="o">+=</span> <span class="p">[</span><span class="n">pythia8gen</span><span class="p">]</span>
+
+
+<span class="c1">### Reads an HepMC::GenEvent from the data service and writes a collection of EDM Particles</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">HepMCToEDMConverter</span>
+<span class="n">hepmc_converter</span> <span class="o">=</span> <span class="n">HepMCToEDMConverter</span><span class="p">(</span><span class="s2">&quot;Converter&quot;</span><span class="p">)</span>
+<span class="n">hepmc_converter</span><span class="o">.</span><span class="n">hepmc</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;hepmc&quot;</span>
+<span class="n">hepmc_converter</span><span class="o">.</span><span class="n">genparticles</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;genParticles&quot;</span>
+<span class="n">hepmc_converter</span><span class="o">.</span><span class="n">genvertices</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;genVertices&quot;</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">TopAlg</span> <span class="o">+=</span> <span class="p">[</span><span class="n">hepmc_converter</span><span class="p">]</span>
+
+
+<span class="c1"># Define all output tools that convert the Delphes collections to FCC-EDM:</span>
+
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">DelphesSaveChargedParticles</span>
+
+<span class="n">muonSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveChargedParticles</span><span class="p">(</span><span class="s2">&quot;muons&quot;</span><span class="p">)</span>
+<span class="n">muonSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;MuonFilter/muons&quot;</span>
+<span class="n">muonSaveTool</span><span class="o">.</span><span class="n">particles</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;muons&quot;</span>
+<span class="n">muonSaveTool</span><span class="o">.</span><span class="n">particles_trkCov</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;muons_trkCov&quot;</span>
+<span class="n">muonSaveTool</span><span class="o">.</span><span class="n">mcAssociations</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;muonsToMC&quot;</span>
+<span class="n">muonSaveTool</span><span class="o">.</span><span class="n">isolationTags</span><span class="o">.</span><span class="n">Path</span>  <span class="o">=</span> <span class="s2">&quot;muonITags&quot;</span>
+
+<span class="n">eleSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveChargedParticles</span><span class="p">(</span><span class="s2">&quot;electrons&quot;</span><span class="p">)</span>
+<span class="n">eleSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;ElectronFilter/electrons&quot;</span>
+<span class="n">eleSaveTool</span><span class="o">.</span><span class="n">particles</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;electrons&quot;</span>
+<span class="n">eleSaveTool</span><span class="o">.</span><span class="n">particles_trkCov</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;electrons_trkCov&quot;</span>
+<span class="n">eleSaveTool</span><span class="o">.</span><span class="n">mcAssociations</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;electronsToMC&quot;</span>
+<span class="n">eleSaveTool</span><span class="o">.</span><span class="n">isolationTags</span><span class="o">.</span><span class="n">Path</span>  <span class="o">=</span> <span class="s2">&quot;electronITags&quot;</span>
+
+<span class="n">chhadSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveChargedParticles</span><span class="p">(</span><span class="s2">&quot;efcharged&quot;</span><span class="p">)</span>
+<span class="n">chhadSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;Calorimeter/eflowTracks&quot;</span>
+<span class="n">chhadSaveTool</span><span class="o">.</span><span class="n">saveIsolation</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">chhadSaveTool</span><span class="o">.</span><span class="n">particles</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;efcharged&quot;</span>
+<span class="n">chhadSaveTool</span><span class="o">.</span><span class="n">particles_trkCov</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;efcharged_trkCov&quot;</span>
+<span class="n">chhadSaveTool</span><span class="o">.</span><span class="n">mcAssociations</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;efchargedToMC&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">DelphesSaveNeutralParticles</span>
+
+<span class="c1"># Particle-Flow Photons output tool</span>
+<span class="n">pfphotonsSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveNeutralParticles</span><span class="p">(</span><span class="s2">&quot;efphotons&quot;</span><span class="p">)</span>
+<span class="n">pfphotonsSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span><span class="o">=</span><span class="s2">&quot;Calorimeter/eflowPhotons&quot;</span>
+<span class="n">pfphotonsSaveTool</span><span class="o">.</span><span class="n">saveIsolation</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">pfphotonsSaveTool</span><span class="o">.</span><span class="n">particles</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;efphotons&quot;</span>
+<span class="n">pfphotonsSaveTool</span><span class="o">.</span><span class="n">mcAssociations</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;efphotonsToMC&quot;</span>
+<span class="n">pfphotonsSaveTool</span><span class="o">.</span><span class="n">isolationTags</span><span class="o">.</span><span class="n">Path</span>  <span class="o">=</span> <span class="s2">&quot;efphotonITags&quot;</span>
+
+<span class="c1"># Photons output tool</span>
+<span class="n">photonsSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveNeutralParticles</span><span class="p">(</span><span class="s2">&quot;photons&quot;</span><span class="p">)</span>
+<span class="n">photonsSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;PhotonEfficiency/photons&quot;</span>
+<span class="n">photonsSaveTool</span><span class="o">.</span><span class="n">particles</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;photons&quot;</span>
+<span class="n">photonsSaveTool</span><span class="o">.</span><span class="n">mcAssociations</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;photonsToMC&quot;</span>
+<span class="n">photonsSaveTool</span><span class="o">.</span><span class="n">isolationTags</span><span class="o">.</span><span class="n">Path</span>  <span class="o">=</span> <span class="s2">&quot;photonITags&quot;</span>
+
+<span class="c1"># Particle-Flow Neutral Hadrons output tool</span>
+<span class="n">neuthadSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveNeutralParticles</span><span class="p">(</span><span class="s2">&quot;efneutrals&quot;</span><span class="p">)</span>
+<span class="n">neuthadSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;Calorimeter/eflowNeutralHadrons&quot;</span>
+<span class="n">neuthadSaveTool</span><span class="o">.</span><span class="n">saveIsolation</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">neuthadSaveTool</span><span class="o">.</span><span class="n">particles</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;efneutrals&quot;</span>
+<span class="n">neuthadSaveTool</span><span class="o">.</span><span class="n">mcAssociations</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;efneutralsToMC&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">DelphesSaveGenJets</span>
+
+<span class="n">genJetSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveGenJets</span><span class="p">(</span><span class="s2">&quot;genJets&quot;</span><span class="p">)</span>
+<span class="n">genJetSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;GenJetFinder/jets&quot;</span>
+<span class="n">genJetSaveTool</span><span class="o">.</span><span class="n">genJets</span><span class="o">.</span><span class="n">Path</span>             <span class="o">=</span> <span class="s2">&quot;genJets&quot;</span>
+<span class="n">genJetSaveTool</span><span class="o">.</span><span class="n">genJetsFlavorTagged</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;genJetsFlavor&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">DelphesSaveJets</span>
+
+<span class="n">jetSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveJets</span><span class="p">(</span><span class="s2">&quot;jets&quot;</span><span class="p">)</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">delphesArrayName</span> <span class="o">=</span> <span class="s2">&quot;JetEnergyScale/jets&quot;</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">jets</span><span class="o">.</span><span class="n">Path</span>             <span class="o">=</span> <span class="s2">&quot;jets&quot;</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">jetConstituents</span><span class="o">.</span><span class="n">Path</span>  <span class="o">=</span> <span class="s2">&quot;jetParts&quot;</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">jetsFlavorTagged</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;jetsFlavor&quot;</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">jetsBTagged</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;bTags&quot;</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">jetsCTagged</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;cTags&quot;</span>
+<span class="n">jetSaveTool</span><span class="o">.</span><span class="n">jetsTauTagged</span><span class="o">.</span><span class="n">Path</span>    <span class="o">=</span> <span class="s2">&quot;tauTags&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">DelphesSaveMet</span>
+
+<span class="n">metSaveTool</span> <span class="o">=</span> <span class="n">DelphesSaveMet</span><span class="p">(</span><span class="s2">&quot;met&quot;</span><span class="p">)</span>
+<span class="n">metSaveTool</span><span class="o">.</span><span class="n">delphesMETArrayName</span> <span class="o">=</span> <span class="s2">&quot;MissingET/momentum&quot;</span>
+<span class="n">metSaveTool</span><span class="o">.</span><span class="n">delphesSHTArrayName</span> <span class="o">=</span> <span class="s2">&quot;ScalarHT/energy&quot;</span>
+<span class="n">metSaveTool</span><span class="o">.</span><span class="n">missingEt</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;met&quot;</span>
+
+
+<span class="c1">## Delphes simulator -&gt; define objects to be written out</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">DelphesSimulation</span>
+<span class="n">delphessim</span> <span class="o">=</span> <span class="n">DelphesSimulation</span><span class="p">()</span>
+<span class="c1">## Define Delphes card</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">DelphesCard</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DELPHES_DIR&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;cards/delphes_card_IDEAtrkCov.tcl&quot;</span><span class="p">)</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">ROOTOutputFile</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">ApplyGenFilter</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span>
+                       <span class="s2">&quot;DelphesSaveChargedParticles/muons&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveChargedParticles/electrons&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveNeutralParticles/photons&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveChargedParticles/efcharged&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveNeutralParticles/efphotons&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveNeutralParticles/efneutrals&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveGenJets/genJets&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveJets/jets&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;DelphesSaveMet/met&quot;</span><span class="p">,</span>
+                     <span class="p">]</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">hepmc</span><span class="o">.</span><span class="n">Path</span>               <span class="o">=</span> <span class="s2">&quot;hepmc&quot;</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">genParticles</span><span class="o">.</span><span class="n">Path</span>        <span class="o">=</span> <span class="s2">&quot;skimmedGenParticles&quot;</span>
+<span class="n">delphessim</span><span class="o">.</span><span class="n">mcEventWeights</span><span class="o">.</span><span class="n">Path</span>      <span class="o">=</span> <span class="s2">&quot;mcEventWeights&quot;</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">TopAlg</span> <span class="o">+=</span> <span class="p">[</span><span class="n">delphessim</span><span class="p">]</span>
+
+
+<span class="c1">## FCC event-data model output -&gt; define objects to be written out</span>
+<span class="kn">from</span> <span class="nn">Configurables</span> <span class="kn">import</span> <span class="n">PodioOutput</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">PodioOutput</span><span class="p">(</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;FCCDelphesOutput.root&quot;</span>
+<span class="n">out</span><span class="o">.</span><span class="n">outputCommands</span> <span class="o">=</span> <span class="p">[</span>
+                       <span class="s2">&quot;keep *&quot;</span><span class="p">,</span> 
+                     <span class="p">]</span>
+<span class="n">ApplicationMgr</span><span class="p">()</span><span class="o">.</span><span class="n">TopAlg</span> <span class="o">+=</span> <span class="p">[</span><span class="n">out</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">fccrun</span></code> allows to change most <code class="docutils literal notranslate"><span class="pre">Properties</span></code> of the job on the command line. All possible arguments to fccrun  are listed with the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py -h
+</pre></div>
+</div>
+<p>Should return something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> --&gt;  GenAlg
+ --&gt;  Converter
+ --&gt;  DelphesSimulation
+ --&gt;  out
+ 
+
+usage: fccrun [-h] [--dry-run] [-v] [-n NUM_EVENTS] [-l] [--gdb]
+              [--ncpus NCPUS] [--input [INPUT]] [--Blocking [BLOCKING]]
+              [--PrintEmptyCounters [PRINTEMPTYCOUNTERS]]
+              [--Filename [FILENAME]]
+              [--printPythiaStatistics [PRINTPYTHIASTATISTICS]]
+              [--doEvtGenDecays [DOEVTGENDECAYS]]
+              [--EvtGenDecayFile [EVTGENDECAYFILE]]
+              [--EvtGenParticleDataFile [EVTGENPARTICLEDATAFILE]]
+              [--hepmcStatusList HEPMCSTATUSLIST [HEPMCSTATUSLIST ...]]
+              [--DelphesCard [DELPHESCARD]]
+              [--ROOTOutputFile [ROOTOUTPUTFILE]]
+              [--outputs OUTPUTS [OUTPUTS ...]]
+              [--ApplyGenFilter [APPLYGENFILTER]] [--filename [FILENAME]]
+              [--outputCommands OUTPUTCOMMANDS [OUTPUTCOMMANDS ...]]
+              [--filenameRemote [FILENAMEREMOTE]]
+              [config_files [config_files ...]]
+
+Run job in the FCC framework
+
+positional arguments:
+  config_files          Gaudi config (python) files describing the job
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --dry-run             Do not actually run the job, just parse the config
+                        files
+  -v, --verbose         Run job with verbose output
+  -n NUM_EVENTS, --num-events NUM_EVENTS
+                        Number of events to run
+  -l, --list            Print all the configurable components available in the
+                        framework and exit
+  --gdb                 Attach gdb debugger
+  --ncpus NCPUS         Start Gaudi in parallel mode using NCPUS processes. 0
+                        =&gt; serial mode (default), -1 =&gt; use all CPUs
+  --input [INPUT]       Name of the file to read [unknown owner type]
+  --Blocking [BLOCKING]
+                        if algorithm invokes CPU-blocking system calls
+                        (offloads computations to accelerators or quantum
+                        processors, performs disk or network I/O, is bound by
+                        resource synchronization, etc) [Gaudi::Algorithm]
+  --PrintEmptyCounters [PRINTEMPTYCOUNTERS]
+                        force printing of empty counters, otherwise only
+                        printed in DEBUG mode [GaudiCommon&lt;Algorithm&gt;]
+  --Filename [FILENAME]
+                        [PythiaInterface]
+  --printPythiaStatistics [PRINTPYTHIASTATISTICS]
+                        Print Pythia Statistics [PythiaInterface]
+  --doEvtGenDecays [DOEVTGENDECAYS]
+                        Do decays with EvtGen [PythiaInterface]
+  --EvtGenDecayFile [EVTGENDECAYFILE]
+                        Name of the EvtGen Decay File [PythiaInterface]
+  --EvtGenParticleDataFile [EVTGENPARTICLEDATAFILE]
+                        Name of the EvtGen Particle Data File
+                        [PythiaInterface]
+  --hepmcStatusList HEPMCSTATUSLIST [HEPMCSTATUSLIST ...]
+                        list of hepmc statuses to keep. An empty list means
+                        all statuses will be kept [HepMCToEDMConverter]
+  --DelphesCard [DELPHESCARD]
+                        Name of Delphes tcl config file with detector and
+                        simulation parameters [DelphesSimulation]
+  --ROOTOutputFile [ROOTOUTPUTFILE]
+                        Name of Delphes Root output file, if defined, the
+                        Delphes standard tree write out (in addition to FCC-
+                        EDM based output to transient data store)
+                        [DelphesSimulation]
+  --outputs OUTPUTS [OUTPUTS ...]
+                        [DelphesSimulation]
+  --ApplyGenFilter [APPLYGENFILTER]
+                        only for debugging purposes. If entire MC particle
+                        collection is needed, request in cfg file.
+                        [DelphesSimulation]
+  --filename [FILENAME]
+                        Name of the file to create [PodioOutput]
+  --outputCommands OUTPUTCOMMANDS [OUTPUTCOMMANDS ...]
+                        A set of commands to declare which collections to keep
+                        or drop. [PodioOutput]
+  --filenameRemote [FILENAMEREMOTE]
+                        An optional file path to copy the outputfile to.
+                        [PodioOutput]
+</pre></div>
+</div>
+<p>The following commands will run Pythia8 and Delphes and produce the relevant signal and background samples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_ee_ZH_Zmumu_ecm240.cmd --filename p8_ee_ZH_ecm240.root -n <span class="m">10000</span>
+fccrun PythiaDelphes_config.py --Filename Pythia_ee_ZZ_ecm240.cmd --filename p8_ee_ZZ_ecm240.root -n <span class="m">10000</span>
+fccrun PythiaDelphes_config.py --Filename Pythia_ee_WW_ecm240.cmd --filename p8_ee_WW_ecm240.root -n <span class="m">10000</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-ii-analyse-with-fccanalyses">
+<h2>Part II: Analyse with FCCAnalyses<a class="headerlink" href="#part-ii-analyse-with-fccanalyses" title="Permalink to this headline">¶</a></h2>
+<p>For this second part we start by cloning the FCCAnalyses GitHub repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FCCAnalyses.git
+</pre></div>
+</div>
+<p>and follow the instructions <a class="reference external" href="https://github.com/HEP-FCC/FCCAnalyses/#getting-started">here</a> to get started with installation.
+Once the code has been compiled, we can now run the pre-selection on previously produced samples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py PATH_TO_FILES_PART_I/p8_ee_ZH_ecm240.root
+python FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py PATH_TO_FILES_PART_I/p8_ee_ZZ_ecm240.root
+python FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py PATH_TO_FILES_PART_I/p8_ee_WW_ecm240.root
+</pre></div>
+</div>
+<p>this will produce small ntuples pre-selection files with only variables you are interested in.</p>
+<p>lets now run the final selection on the pre-selection files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/ZH_Zmumu/dataframe/finalSel.py
+</pre></div>
+</div>
+<p>this will produce 2 files for each sample and each selection, one with final tree with variables of interest, and one with histograms.</p>
+<p>Now we can produce plots:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">doPlots</span><span class="o">.</span><span class="n">py</span> <span class="n">FCCeeAnalyses</span><span class="o">/</span><span class="n">ZH_Zmumu</span><span class="o">/</span><span class="n">dataframe</span><span class="o">/</span><span class="n">plots</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>and look at them in <code class="docutils literal notranslate"><span class="pre">FCCee/ZH_Zmumu/plots/</span></code>.</p>
+<p>Please note that the event statistics is not great because we only run on 10 000 events.
+In order to produce plots with more statistics, we could use already processed large statistics samples.
+To do so we re-run the pre-selection over 1 percent of the total statistics <a class="reference external" href="http://fcc-physics-events.web.cern.ch/fcc-physics-events/Delphesevents_fccee_v01.php">here</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> python FCCeeAnalyses/ZH_Zmumu/dataframe/preSel.py
+</pre></div>
+</div>
+<p>and as before run the final selection and plots:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python FCCeeAnalyses/ZH_Zmumu/dataframe/finalSel.py
+python bin/doPlots.py FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py
+</pre></div>
+</div>
+<p>and look at the new plots in <code class="docutils literal notranslate"><span class="pre">FCCee/ZH_Zmumu/plots/</span></code>.</p>
+<p>To further increase the event statistics, increase the value (up to 1) of the parameter <code class="docutils literal notranslate"><span class="pre">fraction</span></code> in <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/preSel.py</span></code></p>
+</div>
+<div class="section" id="part-iii-compare-two-monte-carlo-samples">
+<h2>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, FCC Starterkit
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
