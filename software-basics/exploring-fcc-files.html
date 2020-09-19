@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Inspecting an FCC data file &mdash; FCC Starterkit Lessons  documentation</title>
+  <title>5. Inspecting an FCC data file &mdash; FCC Starterkit Lessons  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Asking good questions" href="asking-questions.html" />
-    <link rel="prev" title="Finding data in the Bookkeeping" href="bookkeeping.html" /> 
+    <link rel="next" title="6. Asking good questions" href="asking-questions.html" />
+    <link rel="prev" title="4. Finding data in the Bookkeeping" href="bookkeeping.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,23 +95,23 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">First  Steps</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="prerequisites.html">Pre-workshop checklist</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="prerequisites.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html">1. Pre-workshop checklist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html#setup">1.1. Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="introduction-to-course.html">Goals of the course</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fccsw.html">An introduction to FCC Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bookkeeping.html">Finding data in the Bookkeeping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="bookkeeping.html#gaining-access-permissions">Gaining access permissions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bookkeeping.html#finding-data">Finding Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction-to-course.html">2. Goals of the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fccsw.html">3. An introduction to FCC Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bookkeeping.html">4. Finding data in the Bookkeeping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bookkeeping.html#gaining-access-permissions">4.1. Gaining access permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bookkeeping.html#finding-data">4.2. Finding Data</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Inspecting an FCC data file</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-events-tree">The <code class="docutils literal notranslate"><span class="pre">events</span></code> tree</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-metadata-tree">The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> tree</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Inspecting an FCC data file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-events-tree">5.1. The <code class="docutils literal notranslate"><span class="pre">events</span></code> tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-metadata-tree">5.2. The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> tree</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="asking-questions.html">Asking good questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asking-questions.html">6. Asking good questions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fast-sim-and-analysis/README.html">Generators, Fast Simulation and Analysis</a><ul>
@@ -293,7 +293,7 @@
         
           <li><a href="README.html">First  Steps</a> &raquo;</li>
         
-      <li>Inspecting an FCC data file</li>
+      <li><span class="section-number">5. </span>Inspecting an FCC data file</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -315,7 +315,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="inspecting-an-fcc-data-file">
-<h1>Inspecting an FCC data file<a class="headerlink" href="#inspecting-an-fcc-data-file" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Inspecting an FCC data file<a class="headerlink" href="#inspecting-an-fcc-data-file" title="Permalink to this headline">¶</a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -327,7 +327,7 @@
 </div>
 </div>
 <div class="section" id="the-events-tree">
-<h2>The <code class="docutils literal notranslate"><span class="pre">events</span></code> tree<a class="headerlink" href="#the-events-tree" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>The <code class="docutils literal notranslate"><span class="pre">events</span></code> tree<a class="headerlink" href="#the-events-tree" title="Permalink to this headline">¶</a></h2>
 <p>FCC Data is generally stored in ROOT files. The layout of the file is determined by the “Event Data Model”, which describes conceptually how the data is structured, and technically what branches are written in the final file.</p>
 <p>The implementation of the event data model uses simple structs in order to keep the resulting file simple - it already has a “flat tree” structure.
 The definition of the structs can be found in the <a class="reference external" href="https://github.com/HEP-FCC/fcc-edm/blob/master/edm.yaml"><code class="docutils literal notranslate"><span class="pre">fcc-edm</span></code> repository</a>.
@@ -363,7 +363,7 @@ Open the file with ROOT and determine:</p>
 </div>
 </div>
 <div class="section" id="the-metadata-tree">
-<h2>The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> tree<a class="headerlink" href="#the-metadata-tree" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>The <code class="docutils literal notranslate"><span class="pre">metadata</span></code> tree<a class="headerlink" href="#the-metadata-tree" title="Permalink to this headline">¶</a></h2>
 <p>FCC data files contain another tree called <code class="docutils literal notranslate"><span class="pre">metadata</span></code>.
 As the name suggests, this information is mostly used to process the actual data in the <code class="docutils literal notranslate"><span class="pre">events</span></code> tree.
 However, files produced with newer (&gt;0.11) versions of FCCSW
@@ -406,10 +406,10 @@ SimG4Alg.GeantinoGun.vertexZ = &quot;0.0&quot;;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="asking-questions.html" class="btn btn-neutral float-right" title="Asking good questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="asking-questions.html" class="btn btn-neutral float-right" title="6. Asking good questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bookkeeping.html" class="btn btn-neutral float-left" title="Finding data in the Bookkeeping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bookkeeping.html" class="btn btn-neutral float-left" title="4. Finding data in the Bookkeeping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
