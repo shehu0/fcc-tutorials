@@ -315,6 +315,17 @@
             
   <div class="section" id="fcc-calorimeter-performance-studies-workflow">
 <h1><span class="section-number">3.1. </span>FCC Calorimeter Performance Studies Workflow<a class="headerlink" href="#fcc-calorimeter-performance-studies-workflow" title="Permalink to this headline">¶</a></h1>
+<p>{% discussion “Run this page as a Notebook on SWAN” <a class="reference external" href="https://swan.cern.ch/hub/user-redirect/download?projurl=https://raw.githubusercontent.com/HEP-FCC/fcc-tutorials/gh-pages/full-detector-simulations/FccCaloPerformance/FccCaloPerformance.ipynb"><img alt="Click to run this page on SWAN" src="https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png" /></a> %}</p>
+<p>This page can be run as a notebook on the SWAN service at CERN (or any ipython notebook server that can run fcc software). Use the following link</p>
+<p><a class="reference external" href="https://swan.cern.ch/hub/user-redirect/download?projurl=https://raw.githubusercontent.com/HEP-FCC/fcc-tutorials/gh-pages/full-detector-simulations/FccCaloPerformance/FccCaloPerformance.ipynb"><img alt="Click to run this page on SWAN" src="https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png" /></a></p>
+<p>When configuring the environment, you <strong>must</strong> select the  97a Python2 software stack, and paste the following in the “Environment Script” Box</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/eos/experiment/fcc/ee/tutorial/setup_swan.sh
+</pre></div>
+</div>
+<p>When first starting a new notebook in this environment, SWAN may fail to select a kernel and you will see a red box saying <code class="docutils literal notranslate"><span class="pre">None</span> <span class="pre">not</span> <span class="pre">found</span></code> in the top right corner.
+To fix this, click:  <code class="docutils literal notranslate"><span class="pre">KERNEL</span> <span class="pre">&gt;</span> <span class="pre">Change</span> <span class="pre">kernel</span> <span class="pre">&gt;</span> <span class="pre">Python2</span></code> in the top menu.</p>
+<p>See <a class="reference external" href="https://github.com/swan-cern/help">https://github.com/swan-cern/help</a> for more details on SWAN.</p>
+<p>{% enddiscussion %}</p>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -326,22 +337,6 @@
 <li><p><strong>reconstruct</strong> physics object from raw signals</p></li>
 <li><p>produce <strong>plots</strong> of energy resolutions and other quantities.</p></li>
 </ul>
-</div>
-</div>
-<div class="panel panel-discussion docutils container">
-<div class="panel-header docutils container">
-<p id="run-as-notebook-on-swan"><i class="fa fa-bell"></i> Run as Notebook on SWAN</p>
-</div>
-<div class="panel-body docutils container">
-<p>This page can be run as a notebook on the SWAN service at CERN (or any ipython notebook server that can run fcc software). Use the following link</p>
-<p><a class="reference external" href="https://swan.cern.ch/hub/user-redirect/download?projurl=https://raw.githubusercontent.com/HEP-FCC/fcc-tutorials/gh-pages/full-detector-simulations/FccCaloPerformance/FccCaloPerformance.ipynb">![https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png]</a></p>
-<p>When configuring the environment, you <strong>must</strong> select the  97a Python2 software stack, and paste the following in the “Environment Script” Box</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/eos/experiment/fcc/ee/tutorial/setup_swan.sh
-</pre></div>
-</div>
-<p>When first starting a new notebook in this environment, SWAN may fail to select a kernel and you will see a red box saying “None not found” in the top right corner.
-To fix this, click:  <code class="docutils literal notranslate"><span class="pre">KERNEL</span> <span class="pre">&gt;</span> <span class="pre">Change</span> <span class="pre">kernel</span> <span class="pre">&gt;</span> <span class="pre">Python2</span></code> in the top menu.</p>
-<p>See <a class="reference external" href="https://github.com/swan-cern/help">https://github.com/swan-cern/help</a> for more details on SWAN.</p>
 </div>
 </div>
 <p>First, make sure your setup of the FCC software is working.
