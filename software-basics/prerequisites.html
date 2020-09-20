@@ -96,7 +96,14 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">1. First  Steps</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. Pre-workshop checklist</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setup">1.1.1. Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checking-the-chosen-resources">1.1.1. Checking the chosen resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-the-fccsw-software-installation-from-cvmfs">1.1.2. Enabling the FCCSW software installation from <code class="docutils literal notranslate"><span class="pre">cvmfs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-notes-or-alternative-cases-settings">1.1.3. Special notes or alternative cases / settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bash-shell">1.1.3.1. Bash shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-virtual-machine-through-virtualbox">1.1.3.2. Using a virtual machine through VirtualBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows">1.1.3.3. Windows</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="introduction-to-course.html">1.2. Goals of the course</a></li>
@@ -327,32 +334,30 @@
 </div>
 </div>
 <ul class="simple">
-<li><p>Follow this guide before arriving; we will not have time to help
-you with problems on these issues during the workshop. This means
-you will end up watching instead of participating.</p></li>
-<li><p>This will be an interactive workshop, so you will need to bring
-a computer. There will be no machines for you to use in the room.</p></li>
+<li><p>Follow this guide before arriving; we will do a quick introduction to environment setup
+but we will not have much time to help you with problems on these issues during the workshop.
+This means you will end up watching instead of participating.</p></li>
+<li><p>This will be an interactive workshop. In all cases (in-person or virtual tutorials) you will need to use
+your own computer (for in-person events there will be no machines for you to use in the room).
+You will use your own computer to connect to resources available for the tutorial (check the event
+announcement for the available options).</p></li>
 <li><p>Follow all the steps using the computer you plan to bring, not
 your desktop or someone else’s computer.</p></li>
-<li><p>If this is the first time you are bringing your laptop to CERN, you
-will have to <a class="reference external" href="https://information-technology.web.cern.ch/help/connect-your-device">register it</a> before it can
+<li><p>In case of a in-person event</p>
+<ul>
+<li><p>Make sure that you can connect to the network in the room. For example, for events at CERN, if this is the first time you are bringing your laptop to CERN, you will have to <a class="reference external" href="https://information-technology.web.cern.ch/help/connect-your-device">register it</a> before it can
 access the internet.</p></li>
-<li><p>Please bring your power supply, as well as a plug adaptor to Swiss and European plugs.</p></li>
+<li><p>Do not forget to bring your power supply, as well as the relevant plug adaptor, e.g., for CERN, to Swiss and European plugs.</p></li>
 </ul>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="windows"><i class="fa fa-info-circle"></i> Windows</p>
-</div>
-<div class="panel-body docutils container">
-<p>In the following we assume you use Mac OS X or Linux. If you are running
-Windows, step 2 is replaced by a list of instructions given at the bottom
-of this page.</p>
-</div>
-</div>
-<p>Try the following steps with the computer you will use at the workshop:</p>
+</li>
+<li><p>The FCCSW has been developed on Linux and the main platform supported is the default platform on CERN lxplus, i.e. CentOS7 .
+Experimental support for other Linux systems (e.g. Ubuntu 20.04 LTS) and MacOxS is provided as it is. There is no support for Windows.</p></li>
+</ul>
+<div class="section" id="checking-the-chosen-resources">
+<h2><span class="section-number">1.1.1. </span>Checking the chosen resources<a class="headerlink" href="#checking-the-chosen-resources" title="Permalink to this headline">¶</a></h2>
+<p>Please try the following steps with the computer you will use at the workshop (the example is given for lxplus, but should hold for the other resources as well):</p>
 <ol>
-<li><p>From a terminal (<code class="docutils literal notranslate"><span class="pre">xterm</span></code> on Linux or <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> on Mac OS X) connect to
-lxplus with <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">lxplus.cern.ch</span></code>.
+<li><p>From a terminal (<code class="docutils literal notranslate"><span class="pre">xterm</span></code> on Linux or <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> on Mac OS X) connect to lxplus with <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">lxplus.cern.ch</span></code>.
 If your local username is different from your <code class="docutils literal notranslate"><span class="pre">lxplus</span></code> one use <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">mylxplusname&#64;lxplus.cern.ch</span></code>.
 Please try exactly this command even if you usually use an alias or other shortcut.</p>
 <blockquote>
@@ -373,11 +378,18 @@ a new window. Press <code class="docutils literal notranslate"><span class="pre"
 </ol>
 <p>If you can successfully execute all of the above steps, you are ready to go for
 the workshop!</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="using-bash"><i class="fa fa-info-circle"></i> Using Bash</p>
 </div>
-<div class="panel-body docutils container">
+<div class="section" id="enabling-the-fccsw-software-installation-from-cvmfs">
+<h2><span class="section-number">1.1.2. </span>Enabling the FCCSW software installation from <code class="docutils literal notranslate"><span class="pre">cvmfs</span></code><a class="headerlink" href="#enabling-the-fccsw-software-installation-from-cvmfs" title="Permalink to this headline">¶</a></h2>
+<p>There is a complete installation of FCC software provided on <code class="docutils literal notranslate"><span class="pre">cvmfs</span></code>, which can be set up using:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source /cvmfs/fcc.cern.ch/sw/latest/setup.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="special-notes-or-alternative-cases-settings">
+<h2><span class="section-number">1.1.3. </span>Special notes or alternative cases / settings<a class="headerlink" href="#special-notes-or-alternative-cases-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bash-shell">
+<h3><span class="section-number">1.1.3.1. </span>Bash shell<a class="headerlink" href="#bash-shell" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="http://cern.ch/go/gdJ9">Bash shell</a> will be used
 throughout the workshop.
 The default for new computing accounts is now Bash. If you have an older
@@ -392,13 +404,52 @@ services”, then “List services”, “LXPLUS and Linux”, “Settings”, t
 <p>If you don’t want to change your default shell, just execute the <code class="docutils literal notranslate"><span class="pre">bash</span></code>
 command when you login to lxplus.</p>
 </div>
+<div class="section" id="using-a-virtual-machine-through-virtualbox">
+<h3><span class="section-number">1.1.3.2. </span>Using a virtual machine through VirtualBox<a class="headerlink" href="#using-a-virtual-machine-through-virtualbox" title="Permalink to this headline">¶</a></h3>
+<p>The CernVM project provides a convenient tool to start VMs, <a class="reference external" href="https://cernvm.cern.ch/portal/launch">cernvm-launch</a>, and a <a class="reference external" href="https://github.com/cernvm/public-contexts">public repository</a> of contexts to be used with <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> to configure the VM at your needs. The tool <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> is available for Linux, Mac and Windows.
+A context dedicated to the FCC tutorials is available in the repository. The <a class="reference external" href="https://cernvm.cern.ch/portal/launch">cernvm-launch</a> works with <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>, virtualization manager available for free for all platforms.</p>
+<p>If you have a CERN account, this is a convenient way to enable access to the EOS storage system.</p>
+<p>To create and use a CernVM virtual machine for the FCC tutorials please follow the following steps:</p>
+<ul>
+<li><p>Make sure <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a> is installed (details installing instructions from the product web page).</p></li>
+<li><p>Download the <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> binary for your platform either from the <a class="reference external" href="https://ecsft.cern.ch/dist/cernvm/launch/bin/">dedicated download page</a> or from the following links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fccsw.web.cern.ch/fccsw/utils/vm/cernvm/launch/linux/cernvm-launch">Linux</a></p></li>
+<li><p><a class="reference external" href="https://fccsw.web.cern.ch/fccsw/utils/vm/cernvm/launch/mac/cernvm-launch">Mac</a></p></li>
+<li><p><a class="reference external" href="https://fccsw.web.cern.ch/fccsw/utils/vm/cernvm/launch/win/cernvm-launch">Win</a></p></li>
+</ul>
+<p>Make sure is visible in your $PATH.</p>
+</li>
+<li><p>Get the <a class="reference external" href="https://raw.githubusercontent.com/cernvm/public-contexts/master/fcc-tutorial.context">fcc-tutorial.context</a> (use wget or curl)</p></li>
+</ul>
+<p>Once you have all this you can create the VM with this command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cernvm-launch create --name fcc-tutorial --cpus 4 --memory 8000 --disk 20000 fcc-tutorial.context
+</pre></div>
 </div>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="windows-specific-instructions"><i class="fa fa-info-circle"></i> Windows-specific Instructions</p>
+<p>You an choose how many CPU cores to use, the memory and the disk space. Good rules of thumb are to use half the cores of your machine, at least 2 GB memory per core, and enough disk for your job. The above command should oepn a window with VirtualBox and produce on the screen an output like this</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Using user data file: fcc-tutorial.context
+Parameters used for the machine creation:
+        name: fcc-tutorial
+        cpus: 4
+        memory: 8000
+        disk: 20000
+        cernvmVersion: 2020.07-1
+        sharedFolder: /Users/ganis
+</pre></div>
 </div>
-<div class="panel-body docutils container">
-<p>On Windows, some additional steps are required before you can connect via SSH.</p>
+<p>You see in partcular that your <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> area is shared with the VM, so you can exchange files between the VM and the host machine very conveniently.</p>
+<p>From now on you can either work in the VirtualBox window or ssh to the machine with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cernvm-launch ssh [username@]fcc-tutorial
+</pre></div>
+</div>
+<p>The default user name and password are <code class="docutils literal notranslate"><span class="pre">fccuser</span></code> and <code class="docutils literal notranslate"><span class="pre">xpass</span></code>; these can be changed in the <code class="docutils literal notranslate"><span class="pre">fcc-tutorial.context</span></code> file before creating the VM. Graphics is automatically enable when connecting via ssh. Note, however, that GL-related graphics may not work on Mac hosts; for the time being the only workaround is to use directly the VirtualBox desktop.</p>
+<p>The user has sudo privileges. Passless ssh connection can be setup as usual but needs to be enabled in <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> (editable as sudo).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> also supports listing, stopping, starting virtual machines. Please run <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span> <span class="pre">-h</span></code> for all the available options.</p>
+</div>
+<div class="section" id="windows">
+<h3><span class="section-number">1.1.3.3. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>On Windows, some additional steps are required before you can connect via SSH.
+The following instructions may help in achieving this:</p>
 <p>Set up steps (you only have to perform this once):</p>
 <ol class="simple">
 <li><p>Download the <a class="reference external" href="https://sourceforge.net/projects/xming/files/latest/download">Xming installer</a>.</p></li>
@@ -418,13 +469,6 @@ command when you login to lxplus.</p>
 <li><p>The window should say <code class="docutils literal notranslate"><span class="pre">Using</span> <span class="pre">keyboard-interactive</span> <span class="pre">authentication.</span> <span class="pre">Password:</span></code>. Type your password, again followed by Enter.</p></li>
 <li><p>You now have a remote SSH session at an lxplus server node!</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="setup">
-<h2><span class="section-number">1.1.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<p>There is a complete installation of FCC software provided on <code class="docutils literal notranslate"><span class="pre">cvmfs</span></code>, which can be set up using:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source /cvmfs/fcc.cern.ch/sw/latest/setup.sh
-</pre></div>
 </div>
 </div>
 </div>
