@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FCC: Getting started with simulating events and analysing them &mdash; FCC Starterkit Lessons  documentation</title>
+  <title>2.4. FCC: Getting started with simulating events and analysing them &mdash; FCC Starterkit Lessons  documentation</title>
   
 
   
@@ -42,7 +42,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Full Detector Simulations" href="../full-detector-simulations/README.html" />
+    <link rel="prev" title="2.3. FCC-ee: Getting started with analysing simulated physics events" href="FcceeAnalysis.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,7 +93,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../software-basics/README.html">1. First  Steps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../software-basics/prerequisites.html">1.1. Pre-workshop checklist</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../software-basics/prerequisites.html#checking-the-chosen-resources">1.1.1. Checking the chosen resources</a></li>
@@ -119,7 +121,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../software-basics/asking-questions.html">1.6. Asking good questions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="README.html">2. Generators, Fast Simulation and Analysis</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">2. Generators, Fast Simulation and Analysis</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html">2.1. FCC: Getting started with the production and analysis of fast-simulated events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#overview">2.1.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGettingStartedFastSim.html#enabling-fccsw">2.1.2. Enabling FCCSW</a></li>
@@ -149,6 +151,12 @@
 <li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#installation">2.3.2. Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#instructions">2.3.3. Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FcceeAnalysis.html#exercises">2.3.4. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. FCC: Getting started with simulating events and analysing them</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#part-i-generate-and-simulate-events-with-fccsw">2.4.1. Part I: Generate and simulate Events with FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-ii-analyse-with-fccanalyses">2.4.2. Part II: Analyse with FCCAnalyses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-iii-compare-two-monte-carlo-samples">2.4.3. Part III: Compare two Monte-Carlo samples</a></li>
 </ul>
 </li>
 </ul>
@@ -296,7 +304,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>FCC: Getting started with simulating events and analysing them</li>
+          <li><a href="README.html"><span class="section-number">2. </span>Generators, Fast Simulation and Analysis</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4. </span>FCC: Getting started with simulating events and analysing them</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -318,7 +328,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fcc-getting-started-with-simulating-events-and-analysing-them">
-<h1>FCC: Getting started with simulating events and analysing them<a class="headerlink" href="#fcc-getting-started-with-simulating-events-and-analysing-them" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4. </span>FCC: Getting started with simulating events and analysing them<a class="headerlink" href="#fcc-getting-started-with-simulating-events-and-analysing-them" title="Permalink to this headline">¶</a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -355,7 +365,7 @@ Please also add an environment varialbe for Delphes cards
 export DELPHES_DIR='/cvmfs/sft.cern.ch/lcg/releases/delphes/3.4.3pre02-e4803/x86_64-centos7-gcc8-opt/'
 ```
 --><div class="section" id="part-i-generate-and-simulate-events-with-fccsw">
-<h2>Part I: Generate and simulate Events with FCCSW<a class="headerlink" href="#part-i-generate-and-simulate-events-with-fccsw" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.1. </span>Part I: Generate and simulate Events with FCCSW<a class="headerlink" href="#part-i-generate-and-simulate-events-with-fccsw" title="Permalink to this headline">¶</a></h2>
 <p>For this tutorial we will consider the following <strong>physics processes</strong>:</p>
 <ul class="simple">
 <li><p>e+ e- -&gt; ZH -&gt; Z to mumu and H to anything</p></li>
@@ -696,7 +706,7 @@ fccrun PythiaDelphes_config.py --Filename Pythia_ee_WW_ecm240.cmd --filename p8_
 </div>
 </div>
 <div class="section" id="part-ii-analyse-with-fccanalyses">
-<h2>Part II: Analyse with FCCAnalyses<a class="headerlink" href="#part-ii-analyse-with-fccanalyses" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2. </span>Part II: Analyse with FCCAnalyses<a class="headerlink" href="#part-ii-analyse-with-fccanalyses" title="Permalink to this headline">¶</a></h2>
 <p>For this second part we start by cloning the FCCAnalyses GitHub repository</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FCCAnalyses.git
 <span class="nb">cd</span> FCCAnalyses
@@ -744,7 +754,7 @@ python bin/doPlots.py FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py
 <p>To further increase the event statistics, increase the value (up to 1) of the parameter <code class="docutils literal notranslate"><span class="pre">fraction</span></code> in <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/preSel.py</span></code></p>
 </div>
 <div class="section" id="part-iii-compare-two-monte-carlo-samples">
-<h2>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3. </span>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
 <p>In this part we will compare two generators at the Z-pole.
 First, follow this tutorial to generate Z events with Whizard and produce a Les Houches Events file: <a class="reference external" href="https://hep-fcc.github.io/fcc-tutorials/fast-sim-and-analysis/FccSoftwareGettingStartedFastSim.html#whizard">here</a>.</p>
 <p>Once you have followed this tutorial, start from a clean shell, go to your tutorial directoty and run the setup</p>
@@ -838,6 +848,15 @@ python FCCeeAnalyses/Z_Zmumu/dataframe/analysis.py PATH_TO_FILES/p8_ee_Z_Zmumu_e
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../full-detector-simulations/README.html" class="btn btn-neutral float-right" title="3. Full Detector Simulations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="FcceeAnalysis.html" class="btn btn-neutral float-left" title="2.3. FCC-ee: Getting started with analysing simulated physics events" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
