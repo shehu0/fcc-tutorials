@@ -140,7 +140,8 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. FCC: Getting started with analysing simulated events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#part-iii-compare-two-monte-carlo-samples">2.3.1. Part III: Compare two Monte-Carlo samples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analyse-with-fccanalyses">2.3.1. Analyse with FCCAnalyses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-iii-compare-two-monte-carlo-samples">2.3.2. Part III: Compare two Monte-Carlo samples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="FccFastSimParticleMultiplicity.html">2.4. FCC: Particle multiplicity</a></li>
@@ -328,15 +329,11 @@
 </ul>
 </div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
-
-## Analyse with FCCAnalyses
-
-For this part we start by cloning the FCCAnalyses GitHub repository
-
-```bash
-git clone https://github.com/HEP-FCC/FCCAnalyses.git
-cd FCCAnalyses
+<div class="section" id="analyse-with-fccanalyses">
+<h2><span class="section-number">2.3.1. </span>Analyse with FCCAnalyses<a class="headerlink" href="#analyse-with-fccanalyses" title="Permalink to this headline">¶</a></h2>
+<p>For this part we start by cloning the FCCAnalyses GitHub repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FCCAnalyses.git
+<span class="nb">cd</span> FCCAnalyses
 </pre></div>
 </div>
 <p>and follow the compilation instructions <a class="reference external" href="https://github.com/HEP-FCC/FCCAnalyses/#getting-started">here</a> to get started with <strong>ONLY</strong> the installation.
@@ -379,8 +376,9 @@ python bin/doPlots.py FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py
 </div>
 <p>and look at the new plots in <code class="docutils literal notranslate"><span class="pre">FCCee/ZH_Zmumu/plots/</span></code>.</p>
 <p>To further increase the event statistics, increase the value (up to 1) of the parameter <code class="docutils literal notranslate"><span class="pre">fraction</span></code> in <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/preSel.py</span></code></p>
+</div>
 <div class="section" id="part-iii-compare-two-monte-carlo-samples">
-<h2><span class="section-number">2.3.1. </span>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3.2. </span>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
 <p>In this part we will compare two generators at the Z-pole.
 First, follow this tutorial to generate Z events with Whizard and produce a Les Houches Events file: <a class="reference external" href="https://hep-fcc.github.io/fcc-tutorials/fast-sim-and-analysis/FccFastSimGeneration.html#whizard">here</a>.</p>
 <p>Once you have followed this tutorial, start from a clean shell, go to your tutorial directoty and run the setup</p>
