@@ -140,7 +140,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. FCC: Getting started with analysing simulated events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#analyse-with-fccanalyses">2.3.1. Analyse with FCCAnalyses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-ii-analyse-with-fccanalyses">2.3.1. Part II: Analyse with FCCAnalyses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#part-iii-compare-two-monte-carlo-samples">2.3.2. Part III: Compare two Monte-Carlo samples</a></li>
 </ul>
 </li>
@@ -329,8 +329,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="analyse-with-fccanalyses">
-<h2><span class="section-number">2.3.1. </span>Analyse with FCCAnalyses<a class="headerlink" href="#analyse-with-fccanalyses" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-ii-analyse-with-fccanalyses">
+<h2><span class="section-number">2.3.1. </span>Part II: Analyse with FCCAnalyses<a class="headerlink" href="#part-ii-analyse-with-fccanalyses" title="Permalink to this headline">¶</a></h2>
 <p>For this part we start by cloning the FCCAnalyses GitHub repository</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/HEP-FCC/FCCAnalyses.git
 <span class="nb">cd</span> FCCAnalyses
@@ -350,14 +350,16 @@ python FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py PATH_TO_FILES_PART_I/p8_ee_W
 </div>
 <p>this will produce 2 files for each sample and each selection, one with final tree with variables of interest, and one with histograms.</p>
 <p>Now we can produce plots:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">doPlots</span><span class="o">.</span><span class="n">py</span> <span class="n">FCCeeAnalyses</span><span class="o">/</span><span class="n">ZH_Zmumu</span><span class="o">/</span><span class="n">dataframe</span><span class="o">/</span><span class="n">plots</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">doPlots</span><span class="o">.</span><span class="n">py</span> <span class="n">FCCeeAnalyses</span><span class="o">/</span><span class="n">ZH_Zmumu</span><span class="o">/</span><span class="n">dataframe</span><span class="o">/</span><span class="n">plots</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>and look at them in <code class="docutils literal notranslate"><span class="pre">FCCee/ZH_Zmumu/plots/</span></code>.</p>
 <p>Please note that the event statistics is not great because we only run on 10 000 events.</p>
-<ul class="simple">
-<li><p><strong>Exercises</strong></p></li>
-</ul>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="exercises"><i class="fa fa-square-o"></i> Exercises</p>
+</div>
+<div class="panel-body docutils container">
 <ol class="simple">
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py</span></code> to include the muon tracks (look at the output file or to <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py</span></code> to check the name.</p></li>
 <li><p>Add the track informations to the output files by modifying <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/analysis.py</span></code> for the <code class="docutils literal notranslate"><span class="pre">efcharged</span></code> collection and produce plots with them as in 1)</p></li>
@@ -377,6 +379,8 @@ python bin/doPlots.py FCCeeAnalyses/ZH_Zmumu/dataframe/plots.py
 <p>and look at the new plots in <code class="docutils literal notranslate"><span class="pre">FCCee/ZH_Zmumu/plots/</span></code>.</p>
 <p>To further increase the event statistics, increase the value (up to 1) of the parameter <code class="docutils literal notranslate"><span class="pre">fraction</span></code> in <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/ZH_Zmumu/dataframe/preSel.py</span></code></p>
 </div>
+</div>
+</div>
 <div class="section" id="part-iii-compare-two-monte-carlo-samples">
 <h2><span class="section-number">2.3.2. </span>Part III: Compare two Monte-Carlo samples<a class="headerlink" href="#part-iii-compare-two-monte-carlo-samples" title="Permalink to this headline">¶</a></h2>
 <p>In this part we will compare two generators at the Z-pole.
@@ -385,7 +389,7 @@ First, follow this tutorial to generate Z events with Whizard and produce a Les 
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /cvmfs/fcc.cern.ch/sw/latest/setup.sh
 </pre></div>
 </div>
-<p>Then create a generic Pythi8 card for reading LHE files</p>
+<p>Then create a generic Pythia8 card for reading LHE files</p>
 <ul class="simple">
 <li><p><strong>Pythia_LHE.cmd</strong></p></li>
 </ul>
@@ -404,7 +408,7 @@ Beams:LHEF = events.lhe
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">Beams:LHEF</span> <span class="pre">=</span> <span class="pre">events.lhe</span></code> points to the file you have produced with Whizard.
-Then we shower with Pythia in FCCSW and run the Delphes detector paramterisation:</p>
+Then we shower with Pythia in FCCSW and run the Delphes detector parameterisation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccrun PythiaDelphes_config.py --Filename Pythia_LHE.cmd --filename wizhardp8_ee_Z_Zmumu_ecm91.root -n <span class="m">10000</span>
 </pre></div>
 </div>
@@ -452,18 +456,22 @@ python FCCeeAnalyses/Z_Zmumu/dataframe/analysis.py PATH_TO_FILES/p8_ee_Z_Zmumu_e
 </pre></div>
 </div>
 <p>Now we can produce plots:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">doPlots</span><span class="o">.</span><span class="n">py</span> <span class="n">FCCeeAnalyses</span><span class="o">/</span><span class="n">Z_Zmumu</span><span class="o">/</span><span class="n">dataframe</span><span class="o">/</span><span class="n">plots</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">doPlots</span><span class="o">.</span><span class="n">py</span> <span class="n">FCCeeAnalyses</span><span class="o">/</span><span class="n">Z_Zmumu</span><span class="o">/</span><span class="n">dataframe</span><span class="o">/</span><span class="n">plots</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>and look at the new plots in <code class="docutils literal notranslate"><span class="pre">FCCee/Z_Zmumu/plots/</span></code>.</p>
-<ul class="simple">
-<li><p><strong>Exercises</strong></p></li>
-</ul>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="exercises"><i class="fa fa-square-o"></i> Exercises</p>
+</div>
+<div class="panel-body docutils container">
 <ol class="simple">
 <li><p>Whizard already contains ISR/FSR. To see this effect, rerun FCCSW on the Whizard LHE file by uncommenting the ISR/FSR in the Pythia card, and run the analysis to produce new plots and compare (move the old plots to an other directory as they will be overwritten)</p></li>
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/Z_Zmumu/dataframe/analysis.py</span></code> and <code class="docutils literal notranslate"><span class="pre">FCCeeAnalyses/Z_Zmumu/dataframe/plots.py</span></code> to include the muon tracks.</p></li>
 <li><p><strong>For Experts</strong> Produce the same process with madgraph, shower the LHE file produced with Ptyhia8 in FCCSW (together with Delphes) and compare the dimuon invariant mass distribution with Pythia and Whizard.</p></li>
 </ol>
+</div>
+</div>
 </div>
 </div>
 
