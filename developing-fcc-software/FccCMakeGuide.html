@@ -203,9 +203,17 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. CMake guide for the FCC software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">4.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quick-start-into-building-fccsw">4.2.2. Quick start into building FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quick-start-into-building-fccsw">4.2.2. Quick start into building FCCSW</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-the-environment">4.2.2.1. Set up the environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-top-level-makefile">4.2.2.2. Using the top-level Makefile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-plain-cmake">4.2.2.3. Using plain CMake</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#cmake-example-packages">4.2.3. CMake example packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cmake-in-the-fcc-software-framework">4.2.4. CMake in the FCC software framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmake-in-the-fcc-software-framework">4.2.4. CMake in the FCC software framework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#runtime-environment">4.2.4.1. Runtime Environment</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#ctest-in-fccsw">4.2.5. CTest in FCCSW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-an-internal-library">4.2.6. Using an internal library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-a-new-gaudi-module">4.2.7. Building a new Gaudi module</a></li>
@@ -218,7 +226,7 @@
 <li class="toctree-l2"><a class="reference internal" href="FccDocPage.html">4.3. Writing documentation for the FCC software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#where-to-put-documentation">4.3.1. Where to put documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#when-and-how-is-the-documentation-page-updated">4.3.2. When and how is the documentation page updated?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#structure-of-the-content">4.3.3. Structure of the content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#structure-of-the-content-of-the-main-page">4.3.3. Structure of the content of the main page</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#running-website-generation-locally">4.3.4. Running website generation locally</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="FccDocPage.html#about-jekyll">4.3.4.1. About jekyll</a></li>
 </ul>
@@ -326,6 +334,18 @@ various Gaudi CMake functions.</p>
 </div>
 <div class="section" id="quick-start-into-building-fccsw">
 <h2><span class="section-number">4.2.2. </span>Quick start into building FCCSW<a class="headerlink" href="#quick-start-into-building-fccsw" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-the-environment">
+<h3><span class="section-number">4.2.2.1. </span>Set up the environment<a class="headerlink" href="#set-up-the-environment" title="Permalink to this headline">¶</a></h3>
+<p>In case you are unsure, it is best to use the <code class="docutils literal notranslate"><span class="pre">init.sh</span></code> script provided with FCCSW:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source ./init.sh`
+</pre></div>
+</div>
+<p>Note that mixing setup scripts (from another package, for example) may or may not work as intended - more likely not.
+For any requests to changes in the environment, feel free to contact the software team on the mailing list or any other channels.
+Developers may also look into <code class="docutils literal notranslate"><span class="pre">spack</span></code> to have more fine-grained control over the build dependencies.</p>
+</div>
+<div class="section" id="using-the-top-level-makefile">
+<h3><span class="section-number">4.2.2.2. </span>Using the top-level Makefile<a class="headerlink" href="#using-the-top-level-makefile" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The software can be compiled in the root directory with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j8</span></code>.</p></li>
 <li><p>After adding new files, do <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">configure</span></code></p></li>
@@ -333,6 +353,19 @@ various Gaudi CMake functions.</p>
 <li><p>Cleaning up (rebuild from scratch): <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">purge</span></code></p></li>
 <li><p>To change the build-type (e.g. Release or Debug), set the <code class="docutils literal notranslate"><span class="pre">BUILDTYPE</span></code> variable (e.g. <code class="docutils literal notranslate"><span class="pre">BUILDTYPE=Debug</span> <span class="pre">make</span></code>)</p></li>
 </ul>
+</div>
+<div class="section" id="using-plain-cmake">
+<h3><span class="section-number">4.2.2.3. </span>Using plain CMake<a class="headerlink" href="#using-plain-cmake" title="Permalink to this headline">¶</a></h3>
+<p>The steps that the top-level Makefile does can also be done manually:</p>
+<ul class="simple">
+<li><p>Create a build directory: <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build;</span> <span class="pre">cd</span> <span class="pre">build</span></code></p></li>
+<li><p>Run CMake in the build directory: <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> </code></p></li>
+<li><p>Change any cmake options by rerunning cmake. For example: <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-DCMAKE_INSTALL_PREFIX=install</span></code>. Tools like ccmake may also be useful: <code class="docutils literal notranslate"><span class="pre">ccmake</span> <span class="pre">..</span></code></p></li>
+<li><p>Compile the software, using all the cpus available:    <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span> <span class="pre">`getconf</span> <span class="pre">_NPROCESSORS_ONLN`</span> </code></p></li>
+<li><p>Install by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code></p></li>
+<li><p>In case any dependency is changed, most likely you need to remove all the contents of the build folder and rerun cmake and the compilation.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="cmake-example-packages">
 <h2><span class="section-number">4.2.3. </span>CMake example packages<a class="headerlink" href="#cmake-example-packages" title="Permalink to this headline">¶</a></h2>
@@ -354,6 +387,8 @@ cd cmake-examples
 the file <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>, defining its content. To build the entire
 SW, a Makefile is provided in the top level directory, so <code class="docutils literal notranslate"><span class="pre">make</span></code> can be invoked there to build FCCSW. To rebuild a single package
 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">packagename</span></code> is sufficient.</p>
+<p>Note that single subdirectory cannot be installed individually at the moment.
+If you need to install, it is best to compile everything in the beginning (which may take a while), and then work with the build folder. Any changes should only lead to the changed subdirectories being recompiled.</p>
 <p>When adding new source files to a package, the CMake build system needs
 to be made aware of them. Usually <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> contains a wildcard
 expression that adds all implementation files in a subfolder, e.g.
@@ -372,6 +407,19 @@ successfully build the software:</p>
 </ul>
 <p>In those cases you’ll need to do <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">purge</span></code> (this target deletes the build and install directories) and rebuild the
 entire software.</p>
+<div class="section" id="runtime-environment">
+<h3><span class="section-number">4.2.4.1. </span>Runtime Environment<a class="headerlink" href="#runtime-environment" title="Permalink to this headline">¶</a></h3>
+<p>FCCSW consists of executables, headers, scripts, dynamic libraries, xmls  and special files describing gaudi components.
+In order to use these, some environment variables need to be set.
+FCCSW includes a setup script that is installed automatically and can be sourced to set up the required variables.</p>
+<p>Gaudi also offers the possibility to set up the environment via the <code class="docutils literal notranslate"><span class="pre">xenv</span></code> command. This is done by simply prefixing the command you want to run with the <code class="docutils literal notranslate"><span class="pre">run</span></code> script in the top level directory of FCCSW, or directly in the build directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build/run fccrun Examples/options/pythia.py
+</pre></div>
+</div>
+<p>Sometimes it is convenient to run FCCSW directly from the binaries in the build directory without installing them.
+This can be done by using the <code class="docutils literal notranslate"><span class="pre">run</span></code> script in the build directory, or setting the environment variables as in <code class="docutils literal notranslate"><span class="pre">setup.sh</span></code> for the build folder.
+Note that the directories in the  build folder differ a bit. Mostly it is important the the LD_LIBRARY_PATH is pre-fixed with the library directories. The fccrun command should pick up the components from the build folder then.</p>
+</div>
 </div>
 <div class="section" id="ctest-in-fccsw">
 <h2><span class="section-number">4.2.5. </span>CTest in FCCSW<a class="headerlink" href="#ctest-in-fccsw" title="Permalink to this headline">¶</a></h2>

@@ -203,9 +203,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html">4.2. CMake guide for the FCC software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#overview">4.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#quick-start-into-building-fccsw">4.2.2. Quick start into building FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#quick-start-into-building-fccsw">4.2.2. Quick start into building FCCSW</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FccCMakeGuide.html#set-up-the-environment">4.2.2.1. Set up the environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccCMakeGuide.html#using-the-top-level-makefile">4.2.2.2. Using the top-level Makefile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccCMakeGuide.html#using-plain-cmake">4.2.2.3. Using plain CMake</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#cmake-example-packages">4.2.3. CMake example packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#cmake-in-the-fcc-software-framework">4.2.4. CMake in the FCC software framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#cmake-in-the-fcc-software-framework">4.2.4. CMake in the FCC software framework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FccCMakeGuide.html#runtime-environment">4.2.4.1. Runtime Environment</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#ctest-in-fccsw">4.2.5. CTest in FCCSW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#using-an-internal-library">4.2.6. Using an internal library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#building-a-new-gaudi-module">4.2.7. Building a new Gaudi module</a></li>
@@ -218,7 +226,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Writing documentation for the FCC software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#where-to-put-documentation">4.3.1. Where to put documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#when-and-how-is-the-documentation-page-updated">4.3.2. When and how is the documentation page updated?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#structure-of-the-content">4.3.3. Structure of the content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure-of-the-content-of-the-main-page">4.3.3. Structure of the content of the main page</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-website-generation-locally">4.3.4. Running website generation locally</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#about-jekyll">4.3.4.1. About jekyll</a></li>
 </ul>
@@ -318,9 +326,9 @@
 <div class="section" id="where-to-put-documentation">
 <h2><span class="section-number">4.3.1. </span>Where to put documentation<a class="headerlink" href="#where-to-put-documentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>API documentation is done with Doxygen in the source code</p></li>
-<li><p>Slightly higher level documentation on usage of a piece of software is usually put directly in the corresponding repository</p></li>
-<li><p>Tutorials that introduce users to a piece of software belong in fcc-tutorials</p></li>
+<li><p>API documentation of classes and functions is done with Doxygen notation in the source code.</p></li>
+<li><p>Slightly higher level documentation on usage of a piece of software is usually put directly in the corresponding repository.</p></li>
+<li><p>Long-form documentations  that introduce users to a piece of software belong in <a class="reference external" href="https://hep-fcc.github.io/fcc-tutorials/">fcc-tutorials</a>.</p></li>
 </ul>
 <div class="panel panel-callout docutils container">
 <div class="panel-header open docutils container">
@@ -333,20 +341,19 @@
 </div>
 <div class="section" id="when-and-how-is-the-documentation-page-updated">
 <h2><span class="section-number">4.3.2. </span>When and how is the documentation page updated?<a class="headerlink" href="#when-and-how-is-the-documentation-page-updated" title="Permalink to this headline">¶</a></h2>
-<p>The documentation page consists of a static website based on <code class="docutils literal notranslate"><span class="pre">github-pages</span></code>. The content of the website is hosted in EOS (<code class="docutils literal notranslate"><span class="pre">/eos/project/f/fccsw-web/www</span></code>). Only members
+<p>There are both a main website (<a class="reference external" href="https://cern.ch/fccsw">https://cern.ch/fccsw</a>) and a readthedocs-style page for the tutorials (<a class="reference external" href="https://hep-fcc.github.io/fcc-tutorials/">https://hep-fcc.github.io/fcc-tutorials/</a>).</p>
+<p>Both consists of a static website based on <code class="docutils literal notranslate"><span class="pre">github-pages</span></code>. The  main website points to EOS (<code class="docutils literal notranslate"><span class="pre">/eos/project/f/fccsw-web/www</span></code>), from where it is redirected to the github-pages site of FCCSW. Only members
 of the corresponding e-group have write access. All markdown and configuration files are stored in the <a class="reference external" href="https://github.com/HEP-FCC/FCCSW/tree/gh-pages"><code class="docutils literal notranslate"><span class="pre">gh-pages</span></code></a> branch of the
 FCCSW Github repository. All dependencies (jquery, bootstrap-sass) are included in the mentioned repository and any change should be automatically deployed to:</p>
 <p><a class="reference external" href="http://hep-fcc.github.io/FCCSW/">http://hep-fcc.github.io/FCCSW/</a></p>
-<p>The old URL <a class="reference external" href="http://cern.ch/fccsw">http://cern.ch/fccsw</a> now redirects to <a class="reference external" href="http://hep-fcc.github.io/FCCSW/">http://hep-fcc.github.io/FCCSW/</a>.</p>
 </div>
-<div class="section" id="structure-of-the-content">
-<h2><span class="section-number">4.3.3. </span>Structure of the content<a class="headerlink" href="#structure-of-the-content" title="Permalink to this headline">¶</a></h2>
-<p>There are four main folder which aggregate markdown files by category:</p>
+<div class="section" id="structure-of-the-content-of-the-main-page">
+<h2><span class="section-number">4.3.3. </span>Structure of the content of the main page<a class="headerlink" href="#structure-of-the-content-of-the-main-page" title="Permalink to this headline">¶</a></h2>
+<p>Folders can be added to aggregate markdown files by category:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">computing</span></code>: FCC Computing Resources</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">presentations</span></code>: Selection of Publications and Presentations relating to FCC Software</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stack</span></code>: Main pieces of software that compose the FCC Software stack</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tutorials</span></code>: Different how-to guides for getting started with the different FCC Software packages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">presentations</span></code>: Selection of Publications and Presentations relating to FCC Software
+…</p></li>
 </ul>
 <p>The rest of folders and files are mainly configuration files to generate the website itself with <a class="reference external" href="https://jekyllrb.com/">Jekyll</a>:</p>
 <ul class="simple">
