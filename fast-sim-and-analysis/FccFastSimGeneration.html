@@ -383,10 +383,11 @@ including capability to read events in LHEF format.</p>
 </div>
 <p>It is advised to work in a separate directory for each process. For example, for Z_mumu, we have:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> mkdir test_whizard/Z_mumu<span class="p">;</span> <span class="nb">cd</span> test_whizard/Z_mumu
- cp -rp /eos/project-f/fccsw-web/www/share/gen/whizard/Zpole/Z_mumu.sin .
+ wget https://fccsw.web.cern.ch/fccsw/share/gen/whizard/Zpole/Z_mumu.sin
  whizard Z_mumu.sin
 </pre></div>
 </div>
+<p>Note that you can also copy from /eos/project-f/fccsw-web/www/share/gen/whizard/Zpole/ is EOS is available.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>| Writing log to &#39;whizard.log&#39;
 |=============================================================================|
 |                                                                             |
