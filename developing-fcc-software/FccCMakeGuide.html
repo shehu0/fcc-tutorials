@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CMake guide for the FCC software &mdash; FCC Starterkit Lessons  documentation</title>
+  <title>4.2. CMake guide for the FCC software &mdash; FCC Starterkit Lessons  documentation</title>
   
 
   
@@ -42,7 +42,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.3. Writing Gaudi Algorithms" href="WritingAlgorithms.html" />
+    <link rel="prev" title="4.1. Github workflow and contribution guide" href="FccSoftwareGit.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,7 +93,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../software-basics/README.html">1. First  Steps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../software-basics/prerequisites.html">1.1. Pre-workshop checklist</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../software-basics/prerequisites.html#checking-the-chosen-resources">1.1.1. Checking the chosen resources</a></li>
@@ -173,7 +175,72 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="README.html">4. Developing FCCSW</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">4. Developing FCCSW</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html">4.1. Github workflow and contribution guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#overview">4.1.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#first-time-setup-of-git">4.1.2. First time setup of git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#generate-and-set-up-ssh-keys-for-github">4.1.3. Generate and set up ssh keys for github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#improving-your-git-experience">4.1.4. Improving your git experience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#development-workflow">4.1.5. Development workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#keeping-your-local-repository-up-to-date">4.1.5.1. Keeping your local repository up to date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#contributing-code">4.1.5.2. Contributing code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#recommendations">4.1.6. Recommendations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#general-recommendations">4.1.6.1. General recommendations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#commit-comments">4.1.6.2. Commit comments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#cleaning-history">4.1.6.3. Cleaning history</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#pull-requests">4.1.6.4. Pull requests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#trouble-shooting">4.1.7. Trouble-shooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#when-i-try-to-push-to-the-repository-i-get-an-authentication-error">4.1.7.1. When I try to push to the repository, I get an authentication error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FccSoftwareGit.html#i-have-cloned-with-https-and-now-i-can-t-push-my-changes-what-do-i-do">4.1.7.2. I have cloned with https and now I can’t push my changes, what do I do?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#need-help">4.1.8. Need help?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. CMake guide for the FCC software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">4.2.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quick-start-into-building-fccsw">4.2.2. Quick start into building FCCSW</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-the-environment">4.2.2.1. Set up the environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-top-level-makefile">4.2.2.2. Using the top-level Makefile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-plain-cmake">4.2.2.3. Using plain CMake</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cmake-example-packages">4.2.3. CMake example packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmake-in-the-fcc-software-framework">4.2.4. CMake in the FCC software framework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#runtime-environment">4.2.4.1. Runtime Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ctest-in-fccsw">4.2.5. CTest in FCCSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-an-internal-library">4.2.6. Using an internal library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-a-new-gaudi-module">4.2.7. Building a new Gaudi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-an-external-library">4.2.8. Using an external library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#customizing-how-cmake-is-run">4.2.8.1. Customizing how CMake is run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="WritingAlgorithms.html">4.3. Writing Gaudi Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="WritingAlgorithms.html#getting-started">4.3.1. Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WritingAlgorithms.html#exercise-adding-an-algorithm">4.3.2. Exercise: Adding an Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FccDocPage.html">4.4. Writing documentation for the FCC software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#where-to-put-documentation">4.4.1. Where to put documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#when-and-how-is-the-documentation-page-updated">4.4.2. When and how is the documentation page updated?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#structure-of-the-content-of-the-main-page">4.4.3. Structure of the content of the main page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#running-website-generation-locally">4.4.4. Running website generation locally</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="FccDocPage.html#about-jekyll">4.4.4.1. About jekyll</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#for-website-admins">4.4.5. For website admins</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">5. Contributing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">5.1. Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">5.2. Dependencies</a><ul>
@@ -236,7 +303,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>CMake guide for the FCC software</li>
+          <li><a href="README.html"><span class="section-number">4. </span>Developing FCCSW</a> &raquo;</li>
+        
+      <li><span class="section-number">4.2. </span>CMake guide for the FCC software</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -258,9 +327,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cmake-guide-for-the-fcc-software">
-<h1>CMake guide for the FCC software<a class="headerlink" href="#cmake-guide-for-the-fcc-software" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.2. </span>CMake guide for the FCC software<a class="headerlink" href="#cmake-guide-for-the-fcc-software" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>CMake is a tool for building software, which has become the de-facto
 standard outside HEP. In HEP, it is for example used by the ILC/CLIC
 communities and by the LHCb collaboration. For CMS people, CMake is the
@@ -269,9 +338,9 @@ equivalent of scram. In FCCSW, CMake is used mainly via Gaudi macros, which are 
 various Gaudi CMake functions.</p>
 </div>
 <div class="section" id="quick-start-into-building-fccsw">
-<h2>Quick start into building FCCSW<a class="headerlink" href="#quick-start-into-building-fccsw" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.2. </span>Quick start into building FCCSW<a class="headerlink" href="#quick-start-into-building-fccsw" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="set-up-the-environment">
-<h3>Set up the environment<a class="headerlink" href="#set-up-the-environment" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2.1. </span>Set up the environment<a class="headerlink" href="#set-up-the-environment" title="Permalink to this headline">¶</a></h3>
 <p>In case you are unsure, it is best to use the <code class="docutils literal notranslate"><span class="pre">init.sh</span></code> script provided with FCCSW:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source ./init.sh`
 </pre></div>
@@ -281,7 +350,7 @@ For any requests to changes in the environment, feel free to contact the softwar
 Developers may also look into <code class="docutils literal notranslate"><span class="pre">spack</span></code> to have more fine-grained control over the build dependencies.</p>
 </div>
 <div class="section" id="using-the-top-level-makefile">
-<h3>Using the top-level Makefile<a class="headerlink" href="#using-the-top-level-makefile" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2.2. </span>Using the top-level Makefile<a class="headerlink" href="#using-the-top-level-makefile" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The software can be compiled in the root directory with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j8</span></code>.</p></li>
 <li><p>After adding new files, do <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">configure</span></code></p></li>
@@ -291,7 +360,7 @@ Developers may also look into <code class="docutils literal notranslate"><span c
 </ul>
 </div>
 <div class="section" id="using-plain-cmake">
-<h3>Using plain CMake<a class="headerlink" href="#using-plain-cmake" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2.3. </span>Using plain CMake<a class="headerlink" href="#using-plain-cmake" title="Permalink to this headline">¶</a></h3>
 <p>The steps that the top-level Makefile does can also be done manually:</p>
 <ul class="simple">
 <li><p>Create a build directory: <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build;</span> <span class="pre">cd</span> <span class="pre">build</span></code></p></li>
@@ -304,7 +373,7 @@ Developers may also look into <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="section" id="cmake-example-packages">
-<h2>CMake example packages<a class="headerlink" href="#cmake-example-packages" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.3. </span>CMake example packages<a class="headerlink" href="#cmake-example-packages" title="Permalink to this headline">¶</a></h2>
 <p>Colin provides <a class="reference external" href="https://github.com/cbernet/cmake-examples">a few simple CMake
 examples</a> independent from
 the FCC software framework. They are helpful to understand the basics of
@@ -318,7 +387,7 @@ cd cmake-examples
 <a class="reference external" href="https://github.com/cbernet/cmake-examples/blob/master/README">README.md</a>.</p>
 </div>
 <div class="section" id="cmake-in-the-fcc-software-framework">
-<h2>CMake in the FCC software framework<a class="headerlink" href="#cmake-in-the-fcc-software-framework" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.4. </span>CMake in the FCC software framework<a class="headerlink" href="#cmake-in-the-fcc-software-framework" title="Permalink to this headline">¶</a></h2>
 <p>The FCC software framework is split into single packages <code class="docutils literal notranslate"><span class="pre">Generation</span></code>, <code class="docutils literal notranslate"><span class="pre">Examples</span></code>, <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> , …. Each of these packages contains
 the file <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>, defining its content. To build the entire
 SW, a Makefile is provided in the top level directory, so <code class="docutils literal notranslate"><span class="pre">make</span></code> can be invoked there to build FCCSW. To rebuild a single package
@@ -344,7 +413,7 @@ successfully build the software:</p>
 <p>In those cases you’ll need to do <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">purge</span></code> (this target deletes the build and install directories) and rebuild the
 entire software.</p>
 <div class="section" id="runtime-environment">
-<h3>Runtime Environment<a class="headerlink" href="#runtime-environment" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.1. </span>Runtime Environment<a class="headerlink" href="#runtime-environment" title="Permalink to this headline">¶</a></h3>
 <p>FCCSW consists of executables, headers, scripts, dynamic libraries, xmls  and special files describing gaudi components.
 In order to use these, some environment variables need to be set.
 FCCSW includes a setup script that is installed automatically and can be sourced to set up the required variables.</p>
@@ -358,12 +427,12 @@ Note that the directories in the  build folder differ a bit. Mostly it is import
 </div>
 </div>
 <div class="section" id="ctest-in-fccsw">
-<h2>CTest in FCCSW<a class="headerlink" href="#ctest-in-fccsw" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.5. </span>CTest in FCCSW<a class="headerlink" href="#ctest-in-fccsw" title="Permalink to this headline">¶</a></h2>
 <p>FCCSW also uses the cmake for integration tests.
 This is described in detail in the documentation page on <a class="reference external" href="https://github.com/HEP-FCC/FCCSW/blob/master/doc/AddingTestsToFCCSW">adding tests to FCCSW</a>.</p>
 </div>
 <div class="section" id="using-an-internal-library">
-<h2>Using an internal library<a class="headerlink" href="#using-an-internal-library" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.6. </span>Using an internal library<a class="headerlink" href="#using-an-internal-library" title="Permalink to this headline">¶</a></h2>
 <p>Libraries are the main tool to avoid code duplication, i.e. make pieces of code available in other parts of the framework.
 Once Gaudi is notified that a certain subdirectory is needed by invoking <code class="docutils literal notranslate"><span class="pre">gaudi_depends_on_subdir</span></code>, internal libraries defined in this subdirectory can be used by simply adding them to the list of <code class="docutils literal notranslate"><span class="pre">INCLUDE_DIRS</span></code> and <code class="docutils literal notranslate"><span class="pre">LINK_LIBRARIES</span></code>. An example would be the way the internal library <code class="docutils literal notranslate"><span class="pre">DetCommon</span></code> is used by the module  <a class="reference external" href="https://github.com/HEP-FCC/FCCSW/blob/master/Test/TestGeometry/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">Test/TestGeometryPlugins</span></code></a>  in FCCSW.
 The required changes to use the <code class="docutils literal notranslate"><span class="pre">DetCommon</span></code> library are</p>
@@ -374,7 +443,7 @@ The required changes to use the <code class="docutils literal notranslate"><span
 </ul>
 </div>
 <div class="section" id="building-a-new-gaudi-module">
-<h2>Building a new Gaudi module<a class="headerlink" href="#building-a-new-gaudi-module" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.7. </span>Building a new Gaudi module<a class="headerlink" href="#building-a-new-gaudi-module" title="Permalink to this headline">¶</a></h2>
 <p>A more general introduction to Gaudi modules and the differences with respect to libraries can be found in the <a class="reference external" href="https://twiki.cern.ch/twiki/bin/view/LHCb/GaudiCMakeConfiguration#Building_a_Module_AKA_component">LHCb twiki</a>.
 The best way is to look at existing modules in FCCSW for inspiration. The syntax to declare the module <a class="reference external" href="https://github.com/HEP-FCC/FCCSW/blob/master/Test/TestGeometry/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">TestGeometryPlugins</span></code></a>, for example, is:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">gaudi_add_module</span><span class="p">(</span><span class="s">TestGeometryPlugins</span>
@@ -385,7 +454,7 @@ The best way is to look at existing modules in FCCSW for inspiration. The syntax
 </div>
 </div>
 <div class="section" id="using-an-external-library">
-<h2>Using an external library<a class="headerlink" href="#using-an-external-library" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.8. </span>Using an external library<a class="headerlink" href="#using-an-external-library" title="Permalink to this headline">¶</a></h2>
 <p>This can be done using the standard cmake command <a class="reference external" href="https://cmake.org/cmake/help/v3.0/command/find_package.html">find_package</a>. See <a class="reference external" href="https://github.com/cbernet/cmake-examples">Colins CMake examples</a> for details.</p>
 <p>Sometimes external libraries require special treatment, and their documentation needs to be consulted. One known case is DD4hep, for which in some cases the CMake variable <code class="docutils literal notranslate"><span class="pre">${DD4hep_COMPONENT_LIBRARIES}</span></code> needs to be used in the <code class="docutils literal notranslate"><span class="pre">LINK_LIBRARIES</span></code> line (if the DDRec or DDSegmentation package is used). Example:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">gaudi_add_library</span><span class="p">(</span><span class="s">DetCommon</span>
@@ -397,7 +466,7 @@ The best way is to look at existing modules in FCCSW for inspiration. The syntax
 </div>
 <p>ROOT is needed in many modules of FCCSW. More information how to use it in a CMake-based project is available on the <a class="reference external" href="https://root.cern.ch/how/integrate-root-my-project-cmake">ROOT website</a>.</p>
 <div class="section" id="customizing-how-cmake-is-run">
-<h3>Customizing how CMake is run<a class="headerlink" href="#customizing-how-cmake-is-run" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.8.1. </span>Customizing how CMake is run<a class="headerlink" href="#customizing-how-cmake-is-run" title="Permalink to this headline">¶</a></h3>
 <p>An environment variable is used to forward command line arguments to the cmake command, for example to run cmake with the <code class="docutils literal notranslate"><span class="pre">trace</span></code> option:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CMAKEFLAGS=&#39;--trace&#39; make
 </pre></div>
@@ -422,6 +491,15 @@ The best way is to look at existing modules in FCCSW for inspiration. The syntax
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="WritingAlgorithms.html" class="btn btn-neutral float-right" title="4.3. Writing Gaudi Algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="FccSoftwareGit.html" class="btn btn-neutral float-left" title="4.1. Github workflow and contribution guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
