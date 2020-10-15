@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Developing FCCSW &mdash; FCC Starterkit Lessons  documentation</title>
+  <title>4.4. Guide to the Transition of FCCSW to EDM4hep &mdash; FCC Starterkit Lessons  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.1. Github workflow and contribution guide" href="FccSoftwareGit.html" />
-    <link rel="prev" title="3.3. FCCee Interaction Region Backgrounds" href="../full-detector-simulations/FCCeeGuineaPigIRBackgrounds/README.html" /> 
+    <link rel="next" title="4.5. Writing documentation for the FCC software" href="FccDocPage.html" />
+    <link rel="prev" title="4.3. Writing Gaudi Algorithms" href="WritingAlgorithms.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -175,7 +175,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Developing FCCSW</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">4. Developing FCCSW</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html">4.1. Github workflow and contribution guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#overview">4.1.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#first-time-setup-of-git">4.1.2. First time setup of git</a></li>
@@ -228,10 +228,10 @@
 <li class="toctree-l3"><a class="reference internal" href="WritingAlgorithms.html#exercise-adding-an-algorithm">4.3.2. Exercise: Adding an Algorithm</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Edm4hepTransition.html">4.4. Guide to the Transition of FCCSW to EDM4hep</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Edm4hepTransition.html#technical-information">4.4.1. Technical Information</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Edm4hepTransition.html#build-system">4.4.1.1. Build System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Edm4hepTransition.html#component-source-code">4.4.1.2. Component source Code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. Guide to the Transition of FCCSW to EDM4hep</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#technical-information">4.4.1. Technical Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-system">4.4.1.1. Build System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#component-source-code">4.4.1.2. Component source Code</a></li>
 </ul>
 </li>
 </ul>
@@ -311,14 +311,16 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">4. </span>Developing FCCSW</li>
+          <li><a href="README.html"><span class="section-number">4. </span>Developing FCCSW</a> &raquo;</li>
+        
+      <li><span class="section-number">4.4. </span>Guide to the Transition of FCCSW to EDM4hep</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/HEP-FCC/fcc-tutorials/blob/master/developing-fcc-software/README.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/HEP-FCC/fcc-tutorials/blob/master/developing-fcc-software/Edm4hepTransition.md" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -332,87 +334,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="developing-fccsw">
-<h1><span class="section-number">4. </span>Developing FCCSW<a class="headerlink" href="#developing-fccsw" title="Permalink to this headline">¶</a></h1>
-<p>Sooner rather than later you will find it necessary write code for FCCSW. These pages cover some software development topics  to remove any friction.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="FccSoftwareGit.html">4.1. Github workflow and contribution guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#overview">4.1.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#first-time-setup-of-git">4.1.2. First time setup of git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#generate-and-set-up-ssh-keys-for-github">4.1.3. Generate and set up ssh keys for github</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#improving-your-git-experience">4.1.4. Improving your git experience</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#development-workflow">4.1.5. Development workflow</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#keeping-your-local-repository-up-to-date">4.1.5.1. Keeping your local repository up to date</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#contributing-code">4.1.5.2. Contributing code</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#recommendations">4.1.6. Recommendations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#general-recommendations">4.1.6.1. General recommendations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#commit-comments">4.1.6.2. Commit comments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#cleaning-history">4.1.6.3. Cleaning history</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#pull-requests">4.1.6.4. Pull requests</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#trouble-shooting">4.1.7. Trouble-shooting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#when-i-try-to-push-to-the-repository-i-get-an-authentication-error">4.1.7.1. When I try to push to the repository, I get an authentication error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccSoftwareGit.html#i-have-cloned-with-https-and-now-i-can-t-push-my-changes-what-do-i-do">4.1.7.2. I have cloned with https and now I can’t push my changes, what do I do?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="FccSoftwareGit.html#need-help">4.1.8. Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="FccCMakeGuide.html">4.2. CMake guide for the FCC software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#overview">4.2.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#quick-start-into-building-fccsw">4.2.2. Quick start into building FCCSW</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#set-up-the-environment">4.2.2.1. Set up the environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#using-the-top-level-makefile">4.2.2.2. Using the top-level Makefile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#using-plain-cmake">4.2.2.3. Using plain CMake</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#cmake-example-packages">4.2.3. CMake example packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#cmake-in-the-fcc-software-framework">4.2.4. CMake in the FCC software framework</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#runtime-environment">4.2.4.1. Runtime Environment</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#ctest-in-fccsw">4.2.5. CTest in FCCSW</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#using-an-internal-library">4.2.6. Using an internal library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#building-a-new-gaudi-module">4.2.7. Building a new Gaudi module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccCMakeGuide.html#using-an-external-library">4.2.8. Using an external library</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccCMakeGuide.html#customizing-how-cmake-is-run">4.2.8.1. Customizing how CMake is run</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WritingAlgorithms.html">4.3. Writing Gaudi Algorithms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WritingAlgorithms.html#getting-started">4.3.1. Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WritingAlgorithms.html#exercise-adding-an-algorithm">4.3.2. Exercise: Adding an Algorithm</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Edm4hepTransition.html">4.4. Guide to the Transition of FCCSW to EDM4hep</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Edm4hepTransition.html#technical-information">4.4.1. Technical Information</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Edm4hepTransition.html#build-system">4.4.1.1. Build System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Edm4hepTransition.html#component-source-code">4.4.1.2. Component source Code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Edm4hepTransition.html#generation-mcparticles">4.4.1.2.1. Generation / MCParticles</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="FccDocPage.html">4.5. Writing documentation for the FCC software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FccDocPage.html#where-to-put-documentation">4.5.1. Where to put documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccDocPage.html#when-and-how-is-the-documentation-page-updated">4.5.2. When and how is the documentation page updated?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccDocPage.html#structure-of-the-content-of-the-main-page">4.5.3. Structure of the content of the main page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FccDocPage.html#running-website-generation-locally">4.5.4. Running website generation locally</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="FccDocPage.html#about-jekyll">4.5.4.1. About jekyll</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="FccDocPage.html#for-website-admins">4.5.5. For website admins</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="guide-to-the-transition-of-fccsw-to-edm4hep">
+<h1><span class="section-number">4.4. </span>Guide to the Transition of FCCSW to EDM4hep<a class="headerlink" href="#guide-to-the-transition-of-fccsw-to-edm4hep" title="Permalink to this headline">¶</a></h1>
+<p>For the studies of the Conceptual Design Report, FCC software used its own datamodel, <a class="reference external" href="https://github.com/hep-fcc/fccedm">FCCEDM</a>.
+The technical implementation was based on a novel library called <a class="reference external" href="https://github.com/aidasoft/podio">PODIO</a>, and tries to use “Plain Old Data” to achieve thread safety and general ease of use.</p>
+<p>While FCCEDM has served its purpose, continued use has revealed some minor issues, inconsistencies and impracticalities (see <a class="reference external" href="https://github.com/HEP-FCC/fcc-edm/issues?q=is%3Aissue+">here</a> and <a class="reference external" href="https://fccsw-forum.web.cern.ch/t/event-data-model-discussion/32">here</a>).
+Since then, FCC has joined a common software effort with other Future Collider Communities, and decided to base the common software (<a class="reference external" href="cern.ch/key4hep">Key4HEP</a>) on a new, common datamodel (<a class="reference external" href="https://github.com/key4hep/edm4hep">EDM4HEP</a>).</p>
+<p>The types defined by EDM4HEP are somewhat closer to <a class="reference external" href="https://github.com/ilcsoft/lcio">LCIO</a>, but like FCCEDM it is implemented with PODIO.
+In any case, the transition, while time-intensive, is no major technical challenge, and provides the basis for a common experiment software beyond FCC.</p>
+<p>This document should guide users and developers through the transition.</p>
+<p>EDM4HEP and FCCEDM can coexist, but for a frictionless transition, FCCEDM should be replaced completely as soon as possible.</p>
+<p>The following sections focus on the Gaudi-based framework FCCSW and explain how to transition the components of the datamodel</p>
+<div class="section" id="technical-information">
+<h2><span class="section-number">4.4.1. </span>Technical Information<a class="headerlink" href="#technical-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-system">
+<h3><span class="section-number">4.4.1.1. </span>Build System<a class="headerlink" href="#build-system" title="Permalink to this headline">¶</a></h3>
+<p>EDM4HEP ships a CMake configuration (in uppercase: <code class="docutils literal notranslate"><span class="pre">EDM4HEPConfig.cmake</span></code>) that defines CMake Targets (in lowercase: <code class="docutils literal notranslate"><span class="pre">EDM4HEP::edm4hep</span></code>).
+To include and link edm4hep, it is sufficient to add the following to the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> of an example project:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+find_package(EDM4HEP)
+
+ gaudi_add_module(ExampleModule
+                  src/components/*.cpp
+                  INCLUDE_DIRS # nothing needs to be added here, the target defines the includes
+                  LINK_LIBRARIES EDM4HEP::edm4hep)
+</pre></div>
+</div>
+</div>
+<div class="section" id="component-source-code">
+<h3><span class="section-number">4.4.1.2. </span>Component source Code<a class="headerlink" href="#component-source-code" title="Permalink to this headline">¶</a></h3>
+<p>The code now can be adapted changing any mention of <code class="docutils literal notranslate"><span class="pre">datamodel</span></code> to <code class="docutils literal notranslate"><span class="pre">edm4hep</span></code> and converting the types:</p>
+<div class="section" id="generation-mcparticles">
+<h4><span class="section-number">4.4.1.2.1. </span>Generation / MCParticles<a class="headerlink" href="#generation-mcparticles" title="Permalink to this headline">¶</a></h4>
+<p>FCCEDM had several types to describe particles at the Generator Level: <code class="docutils literal notranslate"><span class="pre">GenParticle</span></code>, <code class="docutils literal notranslate"><span class="pre">GenVertex</span></code> and <code class="docutils literal notranslate"><span class="pre">GenJet</span></code>.
+The mother/daughter relationship was encoded in the vertices; A particle and its decay product were supposed to share one vertex object (the mother particle as its endvertex, the daughter particle as its startvertex). A library for creating directed acyclic graphs was supposed to help deal with this slightly cumbersome system, but was not really used in practice.</p>
+<p>EDM4HEP replaces this by the single type <code class="docutils literal notranslate"><span class="pre">MCParticle</span></code>. This contains the vertex information, and Jets are generally treated as particles in EDM4hep.</p>
+<p>The correspondence is fairly direct:
+| | |
+|—-|—-|
+| EDM4HEP | FCCEDM |
+| MCParticle | MCParticle/GenVertex/GenJet |
+| PDG | core.pdgId |
+| generatorStatus | core.status |
+| charge | charge |
+| time |  startVertex.ctau # Note the unit differences! |
+| vertex | startVertex.position |
+| endpoint | endVertex.position |
+| momentum, mass | core.p4 |
+| momentumAtEndpoint ||
+| spin | |
+| colorFlow | |</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -424,10 +397,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="FccSoftwareGit.html" class="btn btn-neutral float-right" title="4.1. Github workflow and contribution guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="FccDocPage.html" class="btn btn-neutral float-right" title="4.5. Writing documentation for the FCC software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../full-detector-simulations/FCCeeGuineaPigIRBackgrounds/README.html" class="btn btn-neutral float-left" title="3.3. FCCee Interaction Region Backgrounds" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="WritingAlgorithms.html" class="btn btn-neutral float-left" title="4.3. Writing Gaudi Algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
